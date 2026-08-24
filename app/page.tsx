@@ -2975,12 +2975,13 @@ export default function Home() {
               {/* PREVIEW VIDEO SNAPCHAT */}
               <div className="relative mx-auto w-full max-w-[380px] overflow-hidden rounded-[34px] border border-white/15 bg-black shadow-2xl">
                 <video
+                  className="aspect-[9/16] w-full object-cover"
                   autoPlay
                   muted
                   loop
                   playsInline
+                  controls
                   preload="metadata"
-                  className="h-full w-full object-cover"
                 >
                   <source
                     src="/videos/filtre-snapchat.mp4"
