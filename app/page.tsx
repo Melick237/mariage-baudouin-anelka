@@ -173,6 +173,13 @@ export default function Home() {
                 </a>
 
                 <a
+                  href="#programme"
+                  className="transition hover:text-[#F4C58C]"
+                >
+                  Programme
+                </a>
+
+                <a
                   href="#rsvp"
                   className="transition hover:text-[#F4C58C]"
                 >
@@ -2984,7 +2991,7 @@ export default function Home() {
                   preload="metadata"
                 >
                   <source
-                    src="/videos/filtre-snapchat.mp4"
+                    src="/videos/filtre-snapchat-web.mp4"
                     type="video/mp4"
                   />
 
