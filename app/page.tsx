@@ -166,17 +166,17 @@ export default function Home() {
                 </a>
 
                 <a
-                  href="#dresscode"
-                  className="transition hover:text-[#F4C58C]"
-                >
-                  Dress Code
-                </a>
-
-                <a
                   href="#programme"
                   className="transition hover:text-[#F4C58C]"
                 >
                   Programme
+                </a>
+
+                <a
+                  href="#dresscode"
+                  className="transition hover:text-[#F4C58C]"
+                >
+                  Dress Code
                 </a>
 
                 <a
