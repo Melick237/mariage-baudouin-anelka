@@ -149,7 +149,7 @@ export default function Home() {
                 }}
                 className="shrink-0 font-serif text-sm tracking-[0.15em] text-[#F4C58C]"
               >
-                B | A
+                A | B
               </button>
 
 
@@ -292,7 +292,7 @@ export default function Home() {
               {/* PETIT TITRE */}
               <div className="px-4 pb-3 pt-2">
                 <p className="text-[8px] uppercase tracking-[0.4em] text-[#F4C58C]/70">
-                  Baudouin & Anelka
+                  Anelka & Baudouin
                 </p>
               </div>
 
@@ -310,12 +310,21 @@ export default function Home() {
                 </a>
 
                 <a
+                  href="#programme"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center justify-between rounded-[18px] px-4 py-3 text-sm text-white/80 transition hover:bg-white/5 hover:text-[#F4C58C]"
+                >
+                  <span>Programme</span>
+                  <span className="text-white/30">02</span>
+                </a>
+
+                <a
                   href="#dresscode"
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center justify-between rounded-[18px] px-4 py-3 text-sm text-white/80 transition hover:bg-white/5 hover:text-[#F4C58C]"
                 >
                   <span>Dress Code</span>
-                  <span className="text-white/30">02</span>
+                  <span className="text-white/30">03</span>
                 </a>
 
                 <a
@@ -324,7 +333,7 @@ export default function Home() {
                   className="flex items-center justify-between rounded-[18px] px-4 py-3 text-sm text-white/80 transition hover:bg-white/5 hover:text-[#F4C58C]"
                 >
                   <span>Confirmer ma présence</span>
-                  <span className="text-white/30">03</span>
+                  <span className="text-white/30">04</span>
                 </a>
 
                 <a
@@ -333,7 +342,7 @@ export default function Home() {
                   className="flex items-center justify-between rounded-[18px] px-4 py-3 text-sm text-white/80 transition hover:bg-white/5 hover:text-[#F4C58C]"
                 >
                   <span>Hébergements</span>
-                  <span className="text-white/30">04</span>
+                  <span className="text-white/30">05</span>
                 </a>
 
                 <a
@@ -342,7 +351,7 @@ export default function Home() {
                   className="flex items-center justify-between rounded-[18px] px-4 py-3 text-sm text-white/80 transition hover:bg-white/5 hover:text-[#F4C58C]"
                 >
                   <span>Localisation</span>
-                  <span className="text-white/30">05</span>
+                  <span className="text-white/30">06</span>
                 </a>
 
                 <a
@@ -351,7 +360,7 @@ export default function Home() {
                   className="flex items-center justify-between rounded-[18px] px-4 py-3 text-sm text-white/80 transition hover:bg-white/5 hover:text-[#F4C58C]"
                 >
                   <span>Cadeaux & attentions</span>
-                  <span className="text-white/30">06</span>
+                  <span className="text-white/30">07</span>
                 </a>
 
                 <a
@@ -360,7 +369,7 @@ export default function Home() {
                   className="flex items-center justify-between rounded-[18px] px-4 py-3 text-sm text-white/80 transition hover:bg-white/5 hover:text-[#F4C58C]"
                 >
                   <span>Filtre Snapchat</span>
-                  <span className="text-white/30">07</span>
+                  <span className="text-white/30">08</span>
                 </a>
 
               </div>
@@ -405,47 +414,76 @@ export default function Home() {
         <section className="relative min-h-screen overflow-hidden text-white">
           <Image
             src="/images/couple.jpeg"
-            alt="Baudouin et Anelka"
+            alt="Anelka et Baudouin"
             fill
             priority
             sizes="100vw"
             className="object-cover object-[center_25%] md:object-[center_30%]"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#7f4634]/10 to-[#4d271e]/75" />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-[#6D071A]/10 to-[#3A1F1A]/80" />
 
+          {/* Contenu */}
           <div className="relative z-10 flex min-h-screen items-center justify-center px-6">
-            <div className="w-full max-w-xl text-center">
-              <p className="mb-4 text-xs uppercase tracking-[0.45em] md:text-sm">
-                Nous nous marions
+            <div className="w-full max-w-2xl text-center">
+
+              {/* Petite introduction */}
+              <p className="text-[10px] uppercase tracking-[0.4em] text-[#F3D0AD] md:text-xs">
+                Ensemble avec leurs familles
               </p>
 
-              <div className="mx-auto mb-5 h-px w-36 bg-[#e8c79d]/80" />
+              <div className="mx-auto mt-5 h-px w-28 bg-[#E8C79D]/70" />
 
-              <h1 className="font-serif text-5xl leading-[0.95] md:text-7xl">
-                Baudouin
-                <span className="my-1 block text-[#e2a066]">&</span>
+              {/* Noms */}
+              <h1 className="mt-7 font-serif text-5xl leading-[0.95] md:text-7xl">
                 Anelka
+
+                <span className="my-2 block text-[#E2A066]">
+                  &
+                </span>
+
+                Baudouin
               </h1>
 
-              <p className="mt-7 text-xl md:text-2xl">
-                24 & 28 novembre 2026
-              </p>
+              {/* Invitation */}
+              <div className="mx-auto mt-8 w-fit rounded-2xl border border-white/10 bg-[#3A1F1A]/15 px-7 py-4 shadow-lg backdrop-blur-[3px]">
+                <p className="font-serif text-lg leading-7 text-[#FFF7F0] md:text-xl md:leading-8">
+                  ont la joie de vous inviter
+                  <br />
+                  à célébrer leur mariage
+                </p>
+              </div>
 
-              <p className="mt-2 text-sm tracking-wide text-white/90 md:text-base">
+              {/* Date */}
+              <div className="mx-auto mt-8 flex max-w-md items-center justify-center gap-4">
+                <div className="h-px flex-1 bg-[#E8C79D]/45" />
+
+                <span className="text-[10px] uppercase tracking-[0.28em] text-[#F3D0AD]">
+                  24 & 28 novembre 2026
+                </span>
+
+                <div className="h-px flex-1 bg-[#E8C79D]/45" />
+              </div>
+
+              {/* Événements */}
+              <p className="mt-4 text-xs uppercase tracking-[0.2em] text-white/80 md:text-sm">
                 Dote • Mairie • Église • Soirée
               </p>
 
+              {/* Bouton */}
               <button
                 onClick={openInvitation}
-                className="mt-9 rounded-full bg-[#fff1e3] px-9 py-4 font-semibold text-[#A93D17] shadow-2xl transition duration-300 hover:scale-105"
+                className="mt-10 rounded-full border border-[#E8C79D]/60 bg-[#FFF1E3] px-10 py-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#A93D17] shadow-2xl transition duration-300 hover:scale-105 hover:bg-white"
               >
                 Ouvrir l’invitation
               </button>
 
-              <div className="mt-5 animate-bounce text-xl text-[#f3d0ad]">
+              {/* Petite indication */}
+              <div className="mt-6 animate-bounce text-xl text-[#F3D0AD]">
                 ↓
               </div>
+
             </div>
           </div>
         </section>
@@ -478,7 +516,7 @@ export default function Home() {
           <div className="relative z-10 mx-auto w-full max-w-6xl">
             <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full border border-[#F6DFC8]/60">
               <span className="font-serif text-xl tracking-[0.15em] text-[#FFF8F0]">
-                B | A
+                A | B
               </span>
             </div>
 
@@ -603,7 +641,7 @@ export default function Home() {
                 <div className="relative h-[420px] overflow-hidden rounded-[34px] shadow-xl md:h-[540px]">
                   <Image
                     src="/images/histoire1.jpeg"
-                    alt="Baudouin et Anelka"
+                    alt="Anelka et Baudouin"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover object-[center_30%]"
@@ -678,7 +716,7 @@ export default function Home() {
                 <div className="relative order-1 h-[420px] overflow-hidden rounded-[34px] shadow-xl md:order-2 md:h-[540px]">
                   <Image
                     src="/images/histoire22.jpeg"
-                    alt="Baudouin et Anelka"
+                    alt="Anelka et Baudouin"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover object-center"
@@ -691,7 +729,7 @@ export default function Home() {
                 <div className="relative h-[420px] overflow-hidden rounded-[34px] shadow-xl md:h-[540px]">
                   <Image
                     src="/images/histoire33.jpeg"
-                    alt="Baudouin et Anelka"
+                    alt="Anelka et Baudouin"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover object-center"
@@ -760,7 +798,7 @@ export default function Home() {
                 <div className="relative order-1 h-[420px] overflow-hidden rounded-[34px] shadow-xl md:order-2 md:h-[540px]">
                   <Image
                     src="/images/histoire4.jpeg"
-                    alt="Baudouin et Anelka"
+                    alt="Anelka et Baudouin"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover object-center"
@@ -866,7 +904,7 @@ export default function Home() {
             <div className="mt-28 text-center">
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-[#D77A57]/60">
                 <span className="font-serif text-sm tracking-[0.15em] text-[#A93D17]">
-                  B | A
+                  A | B
                 </span>
               </div>
 
@@ -878,7 +916,7 @@ export default function Home() {
               </p>
 
               <p className="mt-6 text-xs uppercase tracking-[0.35em] text-[#A93D17]">
-                Baudouin & Anelka
+                Anelka & Baudouin
               </p>
 
               <p className="mt-6 font-serif text-2xl italic text-[#6D3828] md:text-3xl">
@@ -899,7 +937,7 @@ export default function Home() {
 
             <div className="shrink-0 text-center">
               <p className="font-serif text-xl tracking-[0.22em] text-[#F1C3AE]">
-                B | A
+                A | B
               </p>
 
               <p className="mt-2 text-[9px] uppercase tracking-[0.42em] text-[#FBEDE3]">
@@ -1484,7 +1522,7 @@ export default function Home() {
               <div className="mx-auto mt-10 flex h-16 w-16 items-center justify-center rounded-full border border-[#F4C58C]/60">
 
                 <span className="font-serif text-sm tracking-[0.15em] text-[#F4C58C]">
-                  B | A
+                  A | B
                 </span>
 
               </div>
@@ -1879,7 +1917,7 @@ export default function Home() {
                 <div className="h-px w-16 bg-[#D8A060]/50" />
 
                 <span className="font-serif text-sm tracking-[0.15em] text-[#C54716]">
-                  B | A
+                  A | B
                 </span>
 
                 <div className="h-px w-16 bg-[#D8A060]/50" />
@@ -2025,7 +2063,7 @@ export default function Home() {
 
                     {/* WHATSAPP */}
                     <a
-                      href="https://wa.me/237679190700?text=Bonjour%2C%20je%20vous%20contacte%20concernant%20un%20hébergement%20pour%20le%20mariage%20de%20Baudouin%20et%20Anelka.%20Pourriez-vous%20me%20communiquer%20vos%20disponibilités%20s'il%20vous%20plaît%20%3F"
+                      href="https://wa.me/237679190700?text=Bonjour%2C%20je%20vous%20contacte%20concernant%20un%20hébergement%20pour%20le%20mariage%20de%Anelka%20et%20Baudouin.%20Pourriez-vous%20me%20communiquer%20vos%20disponibilités%20s'il%20vous%20plaît%20%3F"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="
@@ -2158,7 +2196,7 @@ export default function Home() {
 
                     {/* WHATSAPP */}
                     <a
-                      href="https://wa.me/237671298113?text=Bonjour%2C%20je%20vous%20contacte%20concernant%20un%20hébergement%20pour%20le%20mariage%20de%20Baudouin%20et%20Anelka.%20Pourriez-vous%20me%20communiquer%20vos%20disponibilités%20s'il%20vous%20plaît%20%3F"
+                      href="https://wa.me/237671298113?text=Bonjour%2C%20je%20vous%20contacte%20concernant%20un%20hébergement%20pour%20le%20mariage%20de%20Anelka%20et%20Baudouin.%20Pourriez-vous%20me%20communiquer%20vos%20disponibilités%20s'il%20vous%20plaît%20%3F"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="
@@ -2333,7 +2371,7 @@ export default function Home() {
 
                     {/* WHATSAPP */}
                     <a
-                      href="https://wa.me/237655080288?text=Bonjour%2C%20je%20vous%20contacte%20concernant%20un%20hébergement%20pour%20le%20mariage%20de%20Baudouin%20et%20Anelka.%20Pourriez-vous%20me%20communiquer%20vos%20disponibilités%20s'il%20vous%20plaît%20%3F"
+                      href="https://wa.me/237655080288?text=Bonjour%2C%20je%20vous%20contacte%20concernant%20un%20hébergement%20pour%20le%20mariage%20de%20Anelka%20et%20Baudouin.%20Pourriez-vous%20me%20communiquer%20vos%20disponibilités%20s'il%20vous%20plaît%20%3F"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="
@@ -2389,7 +2427,7 @@ export default function Home() {
                 <div className="h-px w-16 bg-[#C54716]/25" />
 
                 <span className="font-serif text-sm text-[#C54716]">
-                  B | A
+                  A | B
                 </span>
 
                 <div className="h-px w-16 bg-[#C54716]/25" />
@@ -2528,7 +2566,7 @@ export default function Home() {
               <div className="mx-auto flex items-center justify-center gap-4">
                 <div className="h-px w-16 bg-[#F4C58C]/40" />
                 <span className="font-serif text-sm text-[#F4C58C]">
-                  B | A
+                  A | B
                 </span>
                 <div className="h-px w-16 bg-[#F4C58C]/40" />
               </div>
@@ -2649,7 +2687,7 @@ export default function Home() {
                     {/* MONOGRAMME */}
                     <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-[#F4C58C]/30 bg-white/5">
                       <span className="font-serif text-xl text-[#F4C58C]">
-                        B | A
+                        A | B
                       </span>
                     </div>
 
@@ -2666,7 +2704,7 @@ export default function Home() {
                       <div className="relative aspect-square w-full overflow-hidden rounded-[14px]">
                         <Image
                           src="/images/qr-liste-cadeaux.jpg"
-                          alt="QR code de la liste de cadeaux de Baudouin et Anelka"
+                          alt="QR code de la liste de cadeaux d'Anelka et Baudouin"
                           fill
                           sizes="170px"
                           className="object-contain"
@@ -2930,7 +2968,7 @@ export default function Home() {
                 <div className="h-px w-16 bg-[#D77A57]/50" />
 
                 <span className="font-serif text-sm text-[#C54716]">
-                  B | A
+                  A | B
                 </span>
 
                 <div className="h-px w-16 bg-[#D77A57]/50" />
@@ -2973,7 +3011,7 @@ export default function Home() {
 
               <p className="mx-auto mt-7 max-w-2xl leading-8 text-white/80">
                 Immortalisez vos plus beaux moments avec notre filtre personnalisé
-                Baudouin & Anelka.
+                Anelka & Baudouin.
               </p>
             </div>
 
@@ -2987,7 +3025,6 @@ export default function Home() {
                   muted
                   loop
                   playsInline
-                  controls
                   preload="metadata"
                 >
                   <source
@@ -3002,7 +3039,7 @@ export default function Home() {
               {/* INFOS */}
               <div className="rounded-[34px] border border-white/15 bg-white/10 p-8 backdrop-blur md:p-10">
                 <p className="text-[10px] uppercase tracking-[0.35em] text-[#F4C58C]">
-                  Baudouin & Anelka
+                  Anelka & Baudouin
                 </p>
 
                 <h3 className="mt-4 font-serif text-4xl">
@@ -3045,7 +3082,7 @@ export default function Home() {
             <div className="mt-16 text-center">
               <div className="mx-auto flex items-center justify-center gap-4">
                 <div className="h-px w-16 bg-[#F4C58C]/40" />
-                <span className="font-serif text-sm text-[#F4C58C]">B | A</span>
+                <span className="font-serif text-sm text-[#F4C58C]">A | B</span>
                 <div className="h-px w-16 bg-[#F4C58C]/40" />
               </div>
 
@@ -3108,9 +3145,9 @@ export default function Home() {
                 </p>
 
                 <h2 className="mt-3 font-serif text-3xl leading-[1.05]">
-                  <span className="block">Baudouin</span>
-                  <span className="my-1 block text-[#d69a65]">&</span>
                   <span className="block">Anelka</span>
+                  <span className="my-1 block text-[#d69a65]">&</span>
+                  <span className="block">Baudouin</span>
                 </h2>
 
                 <div className="mx-auto my-3 h-px w-20 bg-[#d4aa81]" />
@@ -3185,7 +3222,7 @@ export default function Home() {
                 }`}
               >
                 <div className="flex h-[58px] w-[58px] items-center justify-center rounded-full border border-[#dda66c]/60 font-serif text-lg tracking-wide text-[#f6d1a7]">
-                  B | A
+                  A | B
                 </div>
               </div>
             </div>
@@ -3220,9 +3257,9 @@ export default function Home() {
               </p>
 
               <h2 className="mt-5 font-serif text-4xl md:text-6xl">
-                Baudouin
-                <span className="mx-3 text-[#C54716]">&</span>
                 Anelka
+                <span className="mx-3 text-[#C54716]">&</span>
+                Baudouin
               </h2>
 
               <div className="mx-auto mt-7 h-px w-24 bg-[#F4C58C]/60" />
@@ -3302,7 +3339,7 @@ export default function Home() {
 
             <div className="mt-7 flex flex-col items-center justify-between gap-4 text-center text-[10px] text-white/35 md:flex-row md:text-left">
               <p>
-                Baudouin & Anelka · 2026
+                Anelka & Baudouin · 2026
               </p>
 
               <p className="font-serif italic">
