@@ -198,7 +198,7 @@ export default function Navigation() {
             </Link>
 
             <Link
-              href="/#programme"
+              href="/programme"
               onClick={closeMenu}
               className="flex items-center justify-between rounded-[18px] px-4 py-3 text-sm text-white/80 transition hover:bg-white/5 hover:text-[#F4C58C]"
             >
