@@ -42,7 +42,7 @@ export default function ProgrammePage() {
 
 
           {/* =====================================================
-              24 NOVEMBRE 2026
+              26 NOVEMBRE 2026
           ====================================================== */}
           <div className="mx-auto mt-20 max-w-4xl">
 
@@ -53,7 +53,7 @@ export default function ProgrammePage() {
               </p>
 
               <h2 className="mt-3 font-serif text-4xl text-[#4A2924] md:text-5xl">
-                24 novembre 2026
+                26 novembre 2026
               </h2>
 
               <p className="mt-3 font-serif text-xl italic text-[#B8522C]">

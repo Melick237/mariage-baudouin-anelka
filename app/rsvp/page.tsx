@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 export default function RsvpPage() {
   const [rsvpForm, setRsvpForm] = useState({
     name: "",
-    presence24: "",
+    presence26: "",
     presence28: "",
     accommodation: "",
     guests: "1",
@@ -44,7 +44,7 @@ export default function RsvpPage() {
 
       setRsvpForm({
         name: "",
-        presence24: "",
+        presence26: "",
         presence28: "",
         accommodation: "",
         guests: "1",
@@ -137,11 +137,11 @@ export default function RsvpPage() {
             </div>
 
 
-            {/* ================= 24 NOVEMBRE ================= */}
+            {/* ================= 26 NOVEMBRE ================= */}
             <div className="mt-12">
 
               <p className="text-[10px] uppercase tracking-[0.35em] text-[#A65A43]">
-                24 novembre 2026
+                26 novembre 2026
               </p>
 
               <h3 className="mt-2 font-serif text-2xl">
@@ -156,21 +156,21 @@ export default function RsvpPage() {
 
                 <label
                   className={`cursor-pointer rounded-[20px] border px-5 py-4 text-center transition ${
-                    rsvpForm.presence24 === "oui"
+                    rsvpForm.presence26 === "oui"
                       ? "border-[#C54716] bg-[#C54716] text-white"
                       : "border-[#E4D0C4] bg-[#FFF9F5] hover:border-[#C54716]"
                   }`}
                 >
                   <input
                     type="radio"
-                    name="presence24"
+                    name="presence26"
                     value="oui"
                     required
-                    checked={rsvpForm.presence24 === "oui"}
+                    checked={rsvpForm.presence26 === "oui"}
                     onChange={(e) =>
                       setRsvpForm({
                         ...rsvpForm,
-                        presence24: e.target.value,
+                        presence26: e.target.value,
                       })
                     }
                     className="hidden"
@@ -181,20 +181,20 @@ export default function RsvpPage() {
 
                 <label
                   className={`cursor-pointer rounded-[20px] border px-5 py-4 text-center transition ${
-                    rsvpForm.presence24 === "non"
+                    rsvpForm.presence26 === "non"
                       ? "border-[#6D071A] bg-[#6D071A] text-white"
                       : "border-[#E4D0C4] bg-[#FFF9F5] hover:border-[#6D071A]"
                   }`}
                 >
                   <input
                     type="radio"
-                    name="presence24"
+                    name="presence26"
                     value="non"
-                    checked={rsvpForm.presence24 === "non"}
+                    checked={rsvpForm.presence26 === "non"}
                     onChange={(e) =>
                       setRsvpForm({
                         ...rsvpForm,
-                        presence24: e.target.value,
+                        presence26: e.target.value,
                       })
                     }
                     className="hidden"

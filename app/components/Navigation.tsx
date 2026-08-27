@@ -267,7 +267,7 @@ export default function Navigation() {
           <div className="mt-3 rounded-[20px] bg-[#C54716]/10 px-4 py-4 text-center">
 
             <p className="font-serif text-sm italic text-[#F4C58C]">
-              24 & 28 novembre 2026
+              26 & 28 novembre 2026
             </p>
 
             <p className="mt-1 text-[8px] uppercase tracking-[0.3em] text-white/40">

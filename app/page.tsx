@@ -51,7 +51,7 @@ export default function Home() {
 }, []);
 
   useEffect(() => {
-    const targetDate = new Date("2026-11-24T00:00:00");
+    const targetDate = new Date("2026-11-26T00:00:00");
 
     const updateCountdown = () => {
       const now = new Date();
@@ -316,7 +316,7 @@ export default function Home() {
                 <div className="h-px flex-1 bg-[#E8C79D]/45" />
 
                 <span className="text-[10px] uppercase tracking-[0.28em] text-[#F3D0AD]">
-                  24 & 28 novembre 2026
+                  26 & 28 novembre 2026
                 </span>
 
                 <div className="h-px flex-1 bg-[#E8C79D]/45" />
@@ -387,7 +387,7 @@ export default function Home() {
             <div className="mx-auto mt-7 h-px w-24 bg-[#F1C3AE]" />
 
             <p className="mt-6 text-sm text-[#F7DDD0] md:text-base">
-              Jusqu’au 24 novembre 2026
+              Jusqu’au 26 novembre 2026
             </p>
 
             <div className="mx-auto mt-14 grid max-w-5xl grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
@@ -821,7 +821,7 @@ export default function Home() {
               </p>
 
               <p className="mt-2 text-[9px] uppercase tracking-[0.42em] text-[#FBEDE3]">
-                24 · 28 novembre 2026
+                26 · 28 novembre 2026
               </p>
             </div>
 
@@ -894,7 +894,7 @@ export default function Home() {
                 </p>
 
                 <p className="mt-4 font-serif text-xl">
-                  24 & 28 novembre 2026
+                  26 & 28 novembre 2026
                 </p>
 
                 <p className="mt-2 text-xs">

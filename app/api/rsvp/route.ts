@@ -21,7 +21,7 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         name: body.name ?? "",
-        presence24: body.presence24 ?? "",
+        presence26: body.presence26 ?? "",
         presence28: body.presence28 ?? "",
         accommodation: body.accommodation ?? "",
         guests: body.guests ?? "",

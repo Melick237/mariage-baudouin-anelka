@@ -32,7 +32,7 @@ export default function Footer() {
           <div className="mx-auto mt-7 h-px w-24 bg-[#F4C58C]/60" />
 
           <p className="mt-6 font-serif text-xl italic text-white/80">
-            24 & 28 novembre 2026
+            26 & 28 novembre 2026
           </p>
 
           <p className="mt-3 text-sm tracking-wide text-white/60">
