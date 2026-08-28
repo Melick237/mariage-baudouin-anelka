@@ -40,47 +40,48 @@ export default function Home() {
   }, [siteReady, enteredSite]);
 
   useEffect(() => {
-  const invitationAlreadyOpened =
-    localStorage.getItem("invitationOpened") === "true";
+    const hash = window.location.hash;
 
-  if (invitationAlreadyOpened) {
-    setEnteredSite(true);
-  }
+    // Si on arrive avec un lien vers une section du site,
+    // on entre directement dans le site sans afficher l'invitation.
+    if (hash) {
+      setEnteredSite(true);
+    }
 
-  setSiteReady(true);
-}, []);
+    setSiteReady(true);
+  }, []);
 
   useEffect(() => {
-    const targetDate = new Date("2026-11-26T00:00:00");
+  const targetDate = new Date("2026-11-26T00:00:00");
 
-    const updateCountdown = () => {
-      const now = new Date();
-      const difference = targetDate.getTime() - now.getTime();
+  const updateCountdown = () => {
+    const now = new Date();
+    const difference = targetDate.getTime() - now.getTime();
 
-      if (difference <= 0) {
-        setTimeLeft({
-          days: 0,
-          hours: 0,
-          minutes: 0,
-          seconds: 0,
-        });
-        return;
-      }
-
+    if (difference <= 0) {
       setTimeLeft({
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / (1000 * 60)) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
       });
-    };
+      return;
+    }
 
-    updateCountdown();
+    setTimeLeft({
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / (1000 * 60)) % 60),
+      seconds: Math.floor((difference / 1000) % 60),
+    });
+  };
 
-    const interval = setInterval(updateCountdown, 1000);
+  updateCountdown();
 
-    return () => clearInterval(interval);
-  }, []);
+  const interval = setInterval(updateCountdown, 1000);
+
+  return () => clearInterval(interval);
+}, []);
 
   const openInvitation = () => {
     setShowEnvelope(true);
@@ -911,8 +912,6 @@ export default function Home() {
 
                     setTimeout(() => {
                     setShowEnvelope(false);
-
-                      localStorage.setItem("invitationOpened", "true");
 
                       setEnteredSite(true);
 

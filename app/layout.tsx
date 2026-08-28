@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL(
+    "https://mariage-baudouin-anelka.vercel.app"
+  ),
 
   title: "Anelka & Baudouin | 26 & 28 novembre 2026",
 
@@ -10,17 +12,17 @@ export const metadata: Metadata = {
     "Nous avons la joie de vous inviter à célébrer notre mariage les 26 et 28 novembre 2026 à Yaoundé.",
 
   openGraph: {
-    title: "Anelka & Baudouin",
+    title: "Anelka & Baudouin | Mariage",
     description:
       "26 & 28 novembre 2026 · Dote · Mairie · Église · Soirée",
-    url: "https://example.com",
+    url: "https://mariage-baudouin-anelka.vercel.app",
     siteName: "Anelka & Baudouin",
     images: [
       {
         url: "/images/og-mariage.jpg",
         width: 1200,
         height: 630,
-        alt: "Anelka et Baudouin",
+        alt: "Mariage Anelka et Baudouin",
       },
     ],
     locale: "fr_FR",
@@ -29,14 +31,13 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Anelka & Baudouin",
+    title: "Anelka & Baudouin | Mariage",
     description:
-      "26 & 28 novembre 2026 · Nous avons la joie de vous inviter à célébrer notre mariage.",
+      "26 & 28 novembre 2026 · Dote · Mairie · Église · Soirée",
     images: ["/images/og-mariage.jpg"],
   },
 
   icons: {
-    icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
 };
