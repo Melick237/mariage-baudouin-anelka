@@ -120,7 +120,7 @@ export default function Footer() {
         <div className="mt-14 text-center">
 
           <Link
-            href="/"
+            href="/#countdown"
             className="group inline-flex flex-col items-center text-white/60 transition hover:text-[#F4C58C]"
           >
             <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 transition group-hover:border-[#F4C58C]/60">

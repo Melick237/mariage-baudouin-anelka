@@ -200,7 +200,7 @@ export default function CadeauxPage() {
             {/* ===================================================
                 MOYENS DE CONTRIBUTION
             =================================================== */}
-            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-2">
 
 
               {/* PAYPAL */}
@@ -234,10 +234,12 @@ export default function CadeauxPage() {
                 <div className="mt-auto pt-6">
 
                   <a
-                    href="#"
-                    className="flex w-full items-center justify-center rounded-full border border-[#6D071A]/20 px-4 py-3 text-[9px] uppercase tracking-[0.18em] text-[#6D071A]"
+                    href="https://www.paypal.me/tchuente1999"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex w-full items-center justify-center rounded-full border border-[#6D071A]/20 px-4 py-3 text-[9px] uppercase tracking-[0.18em] text-[#6D071A] transition hover:bg-[#6D071A] hover:text-white"
                   >
-                    Informations à venir
+                    Envoyer via PayPal
                   </a>
 
                 </div>
@@ -275,15 +277,40 @@ export default function CadeauxPage() {
 
                 <div className="mt-auto pt-6">
 
-                  <div className="rounded-[18px] bg-[#FFF8F2] px-4 py-3 text-center">
+                  <div className="rounded-[18px] bg-[#FFF8F2] px-4 py-4 text-center">
 
                     <p className="text-[9px] uppercase tracking-[0.2em] text-[#9A7C72]">
-                      Coordonnées bancaires
+                      Titulaire
                     </p>
 
-                    <p className="mt-2 text-sm text-[#6D071A]">
-                      À renseigner
+                    <p className="mt-2 text-[11px] font-medium leading-5 text-[#6D071A]">
+                      B Keunne Manfouo &amp; A MEPPO TCHUENTE
                     </p>
+
+                    <div className="my-3 h-px bg-[#E7D5CA]" />
+
+                    <p className="text-[9px] uppercase tracking-[0.2em] text-[#9A7C72]">
+                      IBAN
+                    </p>
+
+                    <p className="mt-2 break-all text-[11px] font-medium leading-5 text-[#6D071A]">
+                      DE46 1001 0178 6335 3929 41
+                    </p>
+
+                    <div className="my-3 h-px bg-[#E7D5CA]" />
+
+                    <p className="text-[9px] uppercase tracking-[0.2em] text-[#9A7C72]">
+                      Revolut
+                    </p>
+
+                    <a
+                      href="https://revolut.me/anelka99"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2 inline-flex text-[11px] font-medium text-[#C54716] underline underline-offset-4"
+                    >
+                      Envoyer via Revolut
+                    </a>
 
                   </div>
 
@@ -328,7 +355,11 @@ export default function CadeauxPage() {
                     </p>
 
                     <p className="mt-2 text-sm font-medium text-[#C54716]">
-                      À renseigner
+                      +237 698 229 501
+                    </p>
+
+                    <p className="mt-2 text-[11px] text-[#8A6D63]">
+                      Anelka Meppo Tchuente
                     </p>
 
                   </div>
@@ -375,7 +406,11 @@ export default function CadeauxPage() {
                     </p>
 
                     <p className="mt-2 text-sm font-medium text-[#274E13]">
-                      À renseigner
+                      +237 681993556
+                    </p>
+
+                    <p className="mt-2 text-[11px] text-[#8A6D63]">
+                      Meppo Tchuente Anelka
                     </p>
 
                   </div>

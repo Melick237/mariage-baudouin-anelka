@@ -18,70 +18,99 @@ export default function Home() {
     seconds: 0,
   });
 
+  /* =========================================================
+      NAVIGATION VERS COUNTDOWN / STORY
+  ========================================================= */
   useEffect(() => {
-    if (!siteReady || !enteredSite) return;
+    const scrollToCurrentSection = () => {
+      const hash = window.location.hash;
+
+      if (!hash) return;
+
+      const sectionId = hash.replace("#", "");
+
+      // Si on arrive directement sur une section,
+      // on entre dans le site sans afficher l'invitation.
+      setEnteredSite(true);
+
+      // On attend que React affiche la section avant de scroller.
+      setTimeout(() => {
+        const section = document.getElementById(sectionId);
+
+        if (section) {
+          section.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }, 100);
+    };
 
     const hash = window.location.hash;
 
-    if (!hash) return;
-
-    const sectionId = hash.replace("#", "");
-
-    setTimeout(() => {
-      const section = document.getElementById(sectionId);
-
-      if (section) {
-        section.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-    }, 100);
-  }, [siteReady, enteredSite]);
-
-  useEffect(() => {
-    const hash = window.location.hash;
-
-    // Si on arrive avec un lien vers une section du site,
-    // on entre directement dans le site sans afficher l'invitation.
+    // Si l'adresse contient #countdown ou #story,
+    // on entre directement dans le site.
     if (hash) {
       setEnteredSite(true);
+
+      setTimeout(() => {
+        const sectionId = hash.replace("#", "");
+        const section = document.getElementById(sectionId);
+
+        if (section) {
+          section.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }, 100);
     }
 
     setSiteReady(true);
+
+    // Permet de passer de #story à #countdown
+    // et inversement sans recharger la page.
+    window.addEventListener("hashchange", scrollToCurrentSection);
+
+    return () => {
+      window.removeEventListener("hashchange", scrollToCurrentSection);
+    };
   }, []);
 
+  /* =========================================================
+      COMPTE À REBOURS
+  ========================================================= */
   useEffect(() => {
-  const targetDate = new Date("2026-11-26T00:00:00");
+    const targetDate = new Date("2026-11-26T00:00:00");
 
-  const updateCountdown = () => {
-    const now = new Date();
-    const difference = targetDate.getTime() - now.getTime();
+    const updateCountdown = () => {
+      const now = new Date();
+      const difference = targetDate.getTime() - now.getTime();
 
-    if (difference <= 0) {
+      if (difference <= 0) {
+        setTimeLeft({
+          days: 0,
+          hours: 0,
+          minutes: 0,
+          seconds: 0,
+        });
+        return;
+      }
+
       setTimeLeft({
-        days: 0,
-        hours: 0,
-        minutes: 0,
-        seconds: 0,
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / (1000 * 60)) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
       });
-      return;
-    }
+    };
 
-    setTimeLeft({
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((difference / (1000 * 60)) % 60),
-      seconds: Math.floor((difference / 1000) % 60),
-    });
-  };
+    updateCountdown();
 
-  updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
 
-  const interval = setInterval(updateCountdown, 1000);
-
-  return () => clearInterval(interval);
-}, []);
+    return () => clearInterval(interval);
+  }, []);
 
   const openInvitation = () => {
     setShowEnvelope(true);
@@ -99,16 +128,13 @@ export default function Home() {
     }, 500);
   };
 
-
   if (!siteReady) {
-    return (
-      <main className="min-h-screen bg-[#7f4634]" />
-    );
+    return <main className="min-h-screen bg-[#7f4634]" />;
   }
 
   const storyMoments = [
     {
-      year: "Bien avant 2019",
+      year: "En 2019",
       title: "Ils s’étaient déjà croisés",
       image: "/images/histoire1.jpeg",
       imagePosition: "center 30%",
@@ -258,7 +284,6 @@ export default function Home() {
     },
   ];
 
-
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#7f4634]">
 
@@ -285,14 +310,12 @@ export default function Home() {
           <div className="relative z-10 flex min-h-screen items-center justify-center px-6">
             <div className="w-full max-w-2xl text-center">
 
-              {/* Petite introduction */}
               <p className="text-[10px] uppercase tracking-[0.4em] text-[#F3D0AD] md:text-xs">
                 Ensemble avec leurs familles
               </p>
 
               <div className="mx-auto mt-5 h-px w-28 bg-[#E8C79D]/70" />
 
-              {/* Noms */}
               <h1 className="mt-7 font-serif text-5xl leading-[0.95] md:text-7xl">
                 Anelka
 
@@ -303,7 +326,6 @@ export default function Home() {
                 Baudouin
               </h1>
 
-              {/* Invitation */}
               <div className="mx-auto mt-8 w-fit rounded-2xl border border-white/10 bg-[#3A1F1A]/15 px-7 py-4 shadow-lg backdrop-blur-[3px]">
                 <p className="font-serif text-lg leading-7 text-[#FFF7F0] md:text-xl md:leading-8">
                   ont la joie de vous inviter
@@ -312,7 +334,6 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* Date */}
               <div className="mx-auto mt-8 flex max-w-md items-center justify-center gap-4">
                 <div className="h-px flex-1 bg-[#E8C79D]/45" />
 
@@ -323,12 +344,10 @@ export default function Home() {
                 <div className="h-px flex-1 bg-[#E8C79D]/45" />
               </div>
 
-              {/* Événements */}
               <p className="mt-4 text-xs uppercase tracking-[0.2em] text-white/80 md:text-sm">
                 Dote • Mairie • Église • Soirée
               </p>
 
-              {/* Bouton */}
               <button
                 onClick={openInvitation}
                 className="mt-10 rounded-full border border-[#E8C79D]/60 bg-[#FFF1E3] px-10 py-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#A93D17] shadow-2xl transition duration-300 hover:scale-105 hover:bg-white"
@@ -336,7 +355,6 @@ export default function Home() {
                 Ouvrir l’invitation
               </button>
 
-              {/* Petite indication */}
               <div className="mt-6 animate-bounce text-xl text-[#F3D0AD]">
                 ↓
               </div>
@@ -352,7 +370,7 @@ export default function Home() {
       {enteredSite && (
         <section
           id="countdown"
-          className="relative flex min-h-screen items-center overflow-hidden bg-[#B95F43] px-6 py-24 text-center"
+          className="relative flex min-h-screen items-center overflow-hidden bg-[#6D071A] px-6 py-24 text-center"
         >
           <div className="pointer-events-none absolute -left-32 -top-32 h-[420px] w-[420px] rounded-full border border-[#F4D8C7]/20" />
           <div className="pointer-events-none absolute -left-20 -top-20 h-[300px] w-[300px] rounded-full border border-[#F4D8C7]/20" />
@@ -392,6 +410,7 @@ export default function Home() {
             </p>
 
             <div className="mx-auto mt-14 grid max-w-5xl grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+
               <div className="rounded-[28px] border border-white/20 bg-[#FFF8F0]/95 px-4 py-8 shadow-xl backdrop-blur md:py-10">
                 <p className="font-serif text-5xl text-[#8F4633] md:text-6xl">
                   {String(timeLeft.days).padStart(2, "0")}
@@ -431,6 +450,7 @@ export default function Home() {
                   Secondes
                 </p>
               </div>
+
             </div>
 
             <p className="mt-12 font-serif text-lg italic text-[#FFEBDD] md:text-xl">
@@ -462,9 +482,6 @@ export default function Home() {
           id="story"
           className="relative overflow-hidden bg-[#F8EFE9] px-6 py-24 text-[#6D3828] md:px-12 md:py-28"
         >
-          {/* =====================================================
-              DÉCORATIONS
-          ====================================================== */}
           <div className="pointer-events-none absolute -left-24 top-32 h-72 w-72 rounded-full bg-[#D99573]/10 blur-3xl" />
 
           <div className="pointer-events-none absolute -right-24 bottom-32 h-80 w-80 rounded-full bg-[#C54716]/10 blur-3xl" />
@@ -477,12 +494,8 @@ export default function Home() {
             B
           </div>
 
-
           <div className="relative z-10 mx-auto max-w-6xl">
 
-            {/* =====================================================
-                INTRODUCTION
-            ====================================================== */}
             <div className="mx-auto max-w-3xl text-center">
 
               <p className="text-xs uppercase tracking-[0.4em] text-[#A93D17]">
@@ -505,38 +518,11 @@ export default function Home() {
                 Et quelque part entre les deux, il y a leur histoire.
               </p>
 
-
-              {/* PETITES SIGNATURES */}
-              <div className="mx-auto mt-10 flex max-w-md items-center justify-center gap-4">
-
-                <div className="rounded-full border border-[#C54716]/20 bg-white/50 px-5 py-2">
-                  <span className="text-[9px] uppercase tracking-[0.3em] text-[#C54716]">
-                    La voix d’Anelka
-                  </span>
-                </div>
-
-                <span className="font-serif text-[#D77A57]">
-                  &
-                </span>
-
-                <div className="rounded-full border border-[#274E13]/20 bg-white/50 px-5 py-2">
-                  <span className="text-[9px] uppercase tracking-[0.3em] text-[#274E13]">
-                    La voix de Baudouin
-                  </span>
-                </div>
-
-              </div>
-
             </div>
 
-
-            {/* =====================================================
-                HISTOIRE
-            ====================================================== */}
             <div className="mt-24 space-y-32 md:mt-28 md:space-y-40">
 
               {storyMoments.map((moment, index) => {
-
                 const imageOnLeft = index % 2 === 0;
 
                 return (
@@ -545,7 +531,6 @@ export default function Home() {
                     className="relative"
                   >
 
-                    {/* NUMÉRO DÉCORATIF */}
                     <div
                       className={`pointer-events-none absolute -top-16 hidden font-serif text-[120px] leading-none text-[#C54716]/[0.045] lg:block ${
                         imageOnLeft
@@ -556,15 +541,8 @@ export default function Home() {
                       {String(index + 1).padStart(2, "0")}
                     </div>
 
-
-                    {/* =================================================
-                        PHOTO + RÉCITS
-                    ================================================== */}
                     <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
 
-                      {/* =================================================
-                          PHOTO
-                      ================================================== */}
                       <div
                         className={`${
                           imageOnLeft
@@ -585,11 +563,8 @@ export default function Home() {
                             }}
                           />
 
-                          {/* VOILE PHOTO */}
                           <div className="absolute inset-0 bg-gradient-to-t from-[#3A1F1A]/55 via-transparent to-transparent" />
 
-
-                          {/* PETIT CARTOUCHE SUR PHOTO */}
                           <div className="absolute bottom-6 left-6 right-6">
 
                             <p className="text-[9px] uppercase tracking-[0.35em] text-[#F4C58C]">
@@ -605,10 +580,6 @@ export default function Home() {
                         </div>
                       </div>
 
-
-                      {/* =================================================
-                          RÉCITS
-                      ================================================== */}
                       <div
                         className={`${
                           imageOnLeft
@@ -617,22 +588,16 @@ export default function Home() {
                         }`}
                       >
 
-                        {/* ÉPOQUE */}
                         <p className="text-[10px] uppercase tracking-[0.4em] text-[#B84A20]">
                           {moment.year}
                         </p>
 
-                        {/* TITRE */}
                         <h3 className="mt-4 font-serif text-3xl leading-tight text-[#5A3026] md:text-4xl">
                           {moment.title}
                         </h3>
 
                         <div className="mt-6 h-px w-16 bg-[#D77A57]" />
 
-
-                        {/* =============================================
-                            ANELKA
-                        ============================================== */}
                         <div className="mt-8">
 
                           <div className="flex items-center gap-3">
@@ -655,7 +620,6 @@ export default function Home() {
 
                           </div>
 
-
                           <div className="mt-5 space-y-4">
 
                             {moment.anelka.map((paragraph, paragraphIndex) => (
@@ -671,8 +635,6 @@ export default function Home() {
 
                         </div>
 
-
-                        {/* PETIT SÉPARATEUR */}
                         <div className="my-9 flex items-center gap-4">
 
                           <div className="h-px flex-1 bg-[#D77A57]/25" />
@@ -685,10 +647,6 @@ export default function Home() {
 
                         </div>
 
-
-                        {/* =============================================
-                            BAUDOUIN
-                        ============================================== */}
                         <div className="rounded-[26px] border border-[#274E13]/10 bg-[#F1F4EC]/65 p-6 md:p-7">
 
                           <div className="flex items-center gap-3">
@@ -711,7 +669,6 @@ export default function Home() {
 
                           </div>
 
-
                           <div className="mt-5 space-y-4">
 
                             {moment.baudouin.map((paragraph, paragraphIndex) => (
@@ -731,10 +688,6 @@ export default function Home() {
 
                     </div>
 
-
-                    {/* =================================================
-                        TRANSITION ENTRE LES CHAPITRES
-                    ================================================== */}
                     {index !== storyMoments.length - 1 && (
                       <div className="mx-auto mt-24 flex max-w-xl items-center gap-5 md:mt-28">
 
@@ -757,10 +710,7 @@ export default function Home() {
 
             </div>
 
-
-            {/* =====================================================
-                CONCLUSION
-            ====================================================== */}
+            {/* CONCLUSION */}
             <div className="mx-auto mt-32 max-w-4xl text-center md:mt-40">
 
               <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full border border-[#D77A57]/50 bg-white/30">
@@ -773,7 +723,6 @@ export default function Home() {
 
               <div className="mx-auto mt-8 h-px w-24 bg-[#D77A57]" />
 
-
               <p className="mx-auto mt-8 max-w-3xl font-serif text-2xl italic leading-10 text-[#6D3828] md:text-3xl md:leading-[1.55]">
                 Deux souvenirs parfois différents.
                 <br />
@@ -782,7 +731,6 @@ export default function Home() {
                 Et aujourd’hui, un même avenir.
               </p>
 
-
               <p className="mx-auto mt-8 max-w-2xl leading-8 text-[#805B4E]">
                 Il aura suffi d’une photo aperçue un mardi matin,
                 d’un appel vidéo lancé presque spontanément
@@ -790,7 +738,6 @@ export default function Home() {
                 pour que deux anciens camarades de classe
                 commencent à écrire l’histoire qui les mène aujourd’hui jusqu’au mariage.
               </p>
-
 
               <p className="mt-9 text-[10px] uppercase tracking-[0.4em] text-[#A93D17]">
                 Anelka & Baudouin
@@ -911,14 +858,19 @@ export default function Home() {
                     setOpened(false);
 
                     setTimeout(() => {
-                    setShowEnvelope(false);
-
+                      setShowEnvelope(false);
                       setEnteredSite(true);
 
-                      window.scrollTo({
-                        top: 0,
-                        behavior: "smooth",
-                      });
+                      // On entre directement sur le compte à rebours.
+                      setTimeout(() => {
+                        const countdown =
+                          document.getElementById("countdown");
+
+                        countdown?.scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        });
+                      }, 100);
                     }, 500);
                   }}
                   className="mt-5 rounded-full bg-[#A93D17] px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:scale-105"

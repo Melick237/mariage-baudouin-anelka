@@ -57,7 +57,12 @@ export default function ProgrammePage() {
               </h2>
 
               <p className="mt-3 font-serif text-xl italic text-[#B8522C]">
-                Mairie & Dote
+                Dote & Mairie
+              </p>
+
+              <p className="mx-auto mt-5 max-w-xl text-sm leading-6 text-[#755B54]">
+                Les cérémonies se dérouleront au domicile des parents
+                d’Anelka à Bayangam.
               </p>
 
             </div>
@@ -69,29 +74,25 @@ export default function ProgrammePage() {
               <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-[#D77A57] to-transparent" />
 
 
-              {/* MAIRIE */}
+              {/* 08H */}
               <div className="relative mb-14 flex justify-center">
 
                 <div className="relative z-10 w-[88%] rounded-[28px] border border-[#E7CABB]/50 bg-[#FFF9F3] px-6 py-9 text-center shadow-[0_15px_40px_rgba(83,46,35,0.06)] md:w-[70%]">
 
                   <div className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[#F8F1E8] bg-[#C54716]" />
 
-                  <p className="text-[10px] uppercase tracking-[0.35em] text-[#C54716]">
-                    Cérémonie civile
+                  <p className="font-serif text-4xl text-[#C54716]">
+                    08:00
                   </p>
 
-                  <h3 className="mt-3 font-serif text-3xl text-[#4A2924]">
-                    La Mairie
-                  </h3>
+                  <div className="mx-auto my-4 h-px w-12 bg-[#D77A57]" />
 
-                  <div className="mx-auto my-5 h-px w-12 bg-[#D77A57]" />
-
-                  <p className="text-sm text-[#755B54]">
-                    Mairie de Bayangam
+                  <p className="text-xs uppercase tracking-[0.3em] text-[#755B54]">
+                    Arrivée des invités
                   </p>
 
-                  <p className="mt-2 text-xs italic text-[#A28479]">
-                    Heure et adresse exacte à venir
+                  <p className="mt-3 text-xs italic text-[#A28479]">
+                    Domicile des parents d’Anelka · Bayangam
                   </p>
 
                 </div>
@@ -99,29 +100,125 @@ export default function ProgrammePage() {
               </div>
 
 
-              {/* DOTE */}
+              {/* 09H */}
+              <div className="relative mb-14 flex justify-center">
+
+                <div className="relative z-10 w-[88%] rounded-[28px] border border-[#E7CABB]/50 bg-[#FFF9F3] px-6 py-9 text-center shadow-[0_15px_40px_rgba(83,46,35,0.06)] md:w-[70%]">
+
+                  <div className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[#F8F1E8] bg-[#C54716]" />
+
+                  <p className="font-serif text-4xl text-[#C54716]">
+                    09:00
+                  </p>
+
+                  <div className="mx-auto my-4 h-px w-12 bg-[#D77A57]" />
+
+                  <p className="text-xs uppercase tracking-[0.3em] text-[#755B54]">
+                    Cérémonies traditionnelles
+                  </p>
+
+                  <p className="mt-3 font-serif italic text-[#9F4728]">
+                    La Dote
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              {/* 12H */}
+              <div className="relative mb-14 flex justify-center">
+
+                <div className="relative z-10 w-[88%] rounded-[28px] border border-[#E7CABB]/50 bg-[#FFF9F3] px-6 py-9 text-center shadow-[0_15px_40px_rgba(83,46,35,0.06)] md:w-[70%]">
+
+                  <div className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[#F8F1E8] bg-[#D77A57]" />
+
+                  <p className="font-serif text-4xl text-[#C54716]">
+                    12:00
+                  </p>
+
+                  <div className="mx-auto my-4 h-px w-12 bg-[#D77A57]" />
+
+                  <p className="text-xs uppercase tracking-[0.3em] text-[#755B54]">
+                    Apéro
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              {/* 13H */}
+              <div className="relative mb-14 flex justify-center">
+
+                <div className="relative z-10 w-[88%] rounded-[28px] border border-[#E7CABB]/50 bg-[#FFF9F3] px-6 py-9 text-center shadow-[0_15px_40px_rgba(83,46,35,0.06)] md:w-[70%]">
+
+                  <div className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[#F8F1E8] bg-[#C54716]" />
+
+                  <p className="font-serif text-4xl text-[#C54716]">
+                    13:00
+                  </p>
+
+                  <div className="mx-auto my-4 h-px w-12 bg-[#D77A57]" />
+
+                  <p className="text-xs uppercase tracking-[0.3em] text-[#755B54]">
+                    Mariage civil
+                  </p>
+
+                  <p className="mt-3 font-serif italic text-[#9F4728]">
+                    La Mairie
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              {/* 14H */}
+              <div className="relative mb-14 flex justify-center">
+
+                <div className="relative z-10 w-[88%] rounded-[28px] border border-[#E7CABB]/50 bg-[#FFF9F3] px-6 py-9 text-center shadow-[0_15px_40px_rgba(83,46,35,0.06)] md:w-[70%]">
+
+                  <div className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[#F8F1E8] bg-[#D77A57]" />
+
+                  <p className="font-serif text-4xl text-[#C54716]">
+                    14:00
+                  </p>
+
+                  <div className="mx-auto my-4 h-px w-12 bg-[#D77A57]" />
+
+                  <p className="text-xs uppercase tracking-[0.3em] text-[#755B54]">
+                    Photos
+                  </p>
+
+                  <p className="mt-3 text-xs italic text-[#A28479]">
+                    Souvenirs avec les mariés
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              {/* 16H */}
               <div className="relative flex justify-center">
 
                 <div className="relative z-10 w-[88%] rounded-[28px] border border-[#E7CABB]/50 bg-[#FFF9F3] px-6 py-9 text-center shadow-[0_15px_40px_rgba(83,46,35,0.06)] md:w-[70%]">
 
                   <div className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[#F8F1E8] bg-[#C54716]" />
 
-                  <p className="text-[10px] uppercase tracking-[0.35em] text-[#C54716]">
-                    Tradition
+                  <p className="font-serif text-4xl text-[#C54716]">
+                    16:00
                   </p>
 
-                  <h3 className="mt-3 font-serif text-3xl text-[#4A2924]">
-                    La Dote
-                  </h3>
+                  <div className="mx-auto my-4 h-px w-12 bg-[#D77A57]" />
 
-                  <div className="mx-auto my-5 h-px w-12 bg-[#D77A57]" />
-
-                  <p className="text-sm text-[#755B54]">
-                    Maison familiale · Bayangam
+                  <p className="text-xs uppercase tracking-[0.3em] text-[#755B54]">
+                    Vin d’honneur
                   </p>
 
-                  <p className="mt-2 text-xs italic text-[#A28479]">
-                    Heure et adresse exacte à venir
+                  <p className="mt-3 font-serif italic text-[#9F4728]">
+                    Un moment de partage pour clôturer cette première journée
                   </p>
 
                 </div>
@@ -165,6 +262,12 @@ export default function ProgrammePage() {
               <p className="mt-3 font-serif text-xl italic text-[#B8522C]">
                 Église & Soirée
               </p>
+              <p className="mx-auto mt-5 max-w-xl text-sm leading-6 text-[#755B54]">
+                L&apos;église et la soirée se dérouleront au même endroit :
+                <span className="font-medium text-[#6D071A]"> Green Garden</span>
+                <br />
+                Yaoundé · Odza, Immeuble HAPPY
+              </p>
 
             </div>
 
@@ -197,7 +300,7 @@ export default function ProgrammePage() {
               </div>
 
 
-              {/* EGLISE */}
+              {/* 14H */}
               <div className="relative mb-14 flex justify-center">
 
                 <div className="relative z-10 w-[88%] rounded-[28px] border border-[#E7CABB]/50 bg-[#FFF9F3] px-6 py-9 text-center shadow-[0_15px_40px_rgba(83,46,35,0.06)] md:w-[70%]">
@@ -219,7 +322,7 @@ export default function ProgrammePage() {
               </div>
 
 
-              {/* VIN D'HONNEUR */}
+              {/* 16H */}
               <div className="relative mb-14 flex justify-center">
 
                 <div className="relative z-10 w-[88%] rounded-[28px] border border-[#E7CABB]/50 bg-[#FFF9F3] px-6 py-9 text-center shadow-[0_15px_40px_rgba(83,46,35,0.06)] md:w-[70%]">
@@ -227,13 +330,38 @@ export default function ProgrammePage() {
                   <div className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[#F8F1E8] bg-[#D77A57]" />
 
                   <p className="font-serif text-4xl text-[#C54716]">
-                    15:00
+                    16:00
                   </p>
 
                   <div className="mx-auto my-4 h-px w-12 bg-[#D77A57]" />
 
                   <p className="text-xs uppercase tracking-[0.3em] text-[#755B54]">
-                    Vin d’honneur
+                    Photos
+                  </p>
+
+                  <p className="mt-3 text-xs italic text-[#A28479]">
+                    Souvenirs avec les mariés
+                  </p>
+
+                </div>
+
+              </div>
+
+              {/* 17H */}
+              <div className="relative mb-14 flex justify-center">
+
+                <div className="relative z-10 w-[88%] rounded-[28px] border border-[#E7CABB]/50 bg-[#FFF9F3] px-6 py-9 text-center shadow-[0_15px_40px_rgba(83,46,35,0.06)] md:w-[70%]">
+
+                  <div className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[#F8F1E8] bg-[#D77A57]" />
+
+                  <p className="font-serif text-4xl text-[#C54716]">
+                    17:00
+                  </p>
+
+                  <div className="mx-auto my-4 h-px w-12 bg-[#D77A57]" />
+
+                  <p className="text-xs uppercase tracking-[0.3em] text-[#755B54]">
+                    Apéro
                   </p>
 
                 </div>
@@ -241,7 +369,7 @@ export default function ProgrammePage() {
               </div>
 
 
-              {/* SOIRÉE */}
+              {/* 18H */}
               <div className="relative flex justify-center">
 
                 <div className="relative z-10 w-[88%] rounded-[28px] border border-[#E7CABB]/50 bg-[#FFF9F3] px-6 py-9 text-center shadow-[0_15px_40px_rgba(83,46,35,0.06)] md:w-[70%]">
@@ -255,7 +383,7 @@ export default function ProgrammePage() {
                   <div className="mx-auto my-4 h-px w-12 bg-[#D77A57]" />
 
                   <p className="text-xs uppercase tracking-[0.3em] text-[#755B54]">
-                    Place à la fête
+                    Cocktail dînatoire & soirée
                   </p>
 
                   <p className="mt-4 font-serif italic text-[#9F4728]">

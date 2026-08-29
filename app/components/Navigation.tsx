@@ -34,7 +34,7 @@ export default function Navigation() {
           <div className="hidden items-center gap-5 text-[9px] uppercase tracking-[0.2em] text-white/75 lg:flex">
 
             <Link
-              href="/"
+              href="/#countdown"
               className="transition hover:text-[#F4C58C]"
             >
               Accueil
@@ -180,12 +180,11 @@ export default function Navigation() {
           <div className="space-y-1">
 
             <Link
-              href="/"
+              href="/#countdown"
               onClick={closeMenu}
               className="flex items-center justify-between rounded-[18px] px-4 py-3 text-sm text-white/80 transition hover:bg-white/5 hover:text-[#F4C58C]"
             >
               <span>Accueil</span>
-              <span className="text-white/30">01</span>
             </Link>
 
             <Link
@@ -194,7 +193,6 @@ export default function Navigation() {
               className="flex items-center justify-between rounded-[18px] px-4 py-3 text-sm text-white/80 transition hover:bg-white/5 hover:text-[#F4C58C]"
             >
               <span>Notre histoire</span>
-              <span className="text-white/30">02</span>
             </Link>
 
             <Link
@@ -203,7 +201,6 @@ export default function Navigation() {
               className="flex items-center justify-between rounded-[18px] px-4 py-3 text-sm text-white/80 transition hover:bg-white/5 hover:text-[#F4C58C]"
             >
               <span>Programme</span>
-              <span className="text-white/30">03</span>
             </Link>
 
             <Link
@@ -212,7 +209,6 @@ export default function Navigation() {
               className="flex items-center justify-between rounded-[18px] px-4 py-3 text-sm text-white/80 transition hover:bg-white/5 hover:text-[#F4C58C]"
             >
               <span>Dress Code</span>
-              <span className="text-white/30">04</span>
             </Link>
 
             <Link
@@ -221,7 +217,6 @@ export default function Navigation() {
               className="flex items-center justify-between rounded-[18px] px-4 py-3 text-sm text-white/80 transition hover:bg-white/5 hover:text-[#F4C58C]"
             >
               <span>Confirmer ma présence</span>
-              <span className="text-white/30">05</span>
             </Link>
 
             <Link
@@ -230,7 +225,6 @@ export default function Navigation() {
               className="flex items-center justify-between rounded-[18px] px-4 py-3 text-sm text-white/80 transition hover:bg-white/5 hover:text-[#F4C58C]"
             >
               <span>Hébergements</span>
-              <span className="text-white/30">06</span>
             </Link>
 
             <Link
@@ -239,7 +233,6 @@ export default function Navigation() {
               className="flex items-center justify-between rounded-[18px] px-4 py-3 text-sm text-white/80 transition hover:bg-white/5 hover:text-[#F4C58C]"
             >
               <span>Lieux</span>
-              <span className="text-white/30">07</span>
             </Link>
 
             <Link
@@ -248,7 +241,6 @@ export default function Navigation() {
               className="flex items-center justify-between rounded-[18px] px-4 py-3 text-sm text-white/80 transition hover:bg-white/5 hover:text-[#F4C58C]"
             >
               <span>Cadeaux & attentions</span>
-              <span className="text-white/30">08</span>
             </Link>
 
             <Link
@@ -257,7 +249,6 @@ export default function Navigation() {
               className="flex items-center justify-between rounded-[18px] px-4 py-3 text-sm text-white/80 transition hover:bg-white/5 hover:text-[#F4C58C]"
             >
               <span>Filtre Snapchat</span>
-              <span className="text-white/30">09</span>
             </Link>
 
           </div>
