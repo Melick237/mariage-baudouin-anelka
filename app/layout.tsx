@@ -37,9 +37,7 @@ export const metadata: Metadata = {
     images: ["/images/og-mariage.jpg"],
   },
 
-  icons: {
-    apple: "/apple-touch-icon.png",
-  },
+  
 };
 
 export default function RootLayout({
