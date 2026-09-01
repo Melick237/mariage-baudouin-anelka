@@ -7,10 +7,11 @@ import Footer from "../components/Footer";
 export default function RsvpPage() {
   const [rsvpForm, setRsvpForm] = useState({
     name: "",
-    presence26: "",
-    presence28: "",
-    accommodation: "",
-    guests: "1",
+    presence: "",
+    traditional: false,
+    civil: false,
+    religious: false,
+    party: false,
     message: "",
   });
 
@@ -22,6 +23,19 @@ export default function RsvpPage() {
     event: React.FormEvent<HTMLFormElement>
   ) => {
     event.preventDefault();
+
+    // Si la personne vient, elle doit sélectionner
+    // au moins un moment du mariage.
+    if (
+      rsvpForm.presence === "oui" &&
+      !rsvpForm.traditional &&
+      !rsvpForm.civil &&
+      !rsvpForm.religious &&
+      !rsvpForm.party
+    ) {
+      alert("Merci de sélectionner au moins un moment du mariage.");
+      return;
+    }
 
     setRsvpStatus("sending");
 
@@ -44,10 +58,11 @@ export default function RsvpPage() {
 
       setRsvpForm({
         name: "",
-        presence26: "",
-        presence28: "",
-        accommodation: "",
-        guests: "1",
+        presence: "",
+        traditional: false,
+        civil: false,
+        religious: false,
+        party: false,
         message: "",
       });
 
@@ -65,9 +80,17 @@ export default function RsvpPage() {
     }
   };
 
+  const toggleMoment = (
+    moment: "traditional" | "civil" | "religious" | "party"
+  ) => {
+    setRsvpForm((current) => ({
+      ...current,
+      [moment]: !current[moment],
+    }));
+  };
+
   return (
     <main className="min-h-screen bg-[#FFF8F2]">
-
       <Navigation />
 
       {/* =========================================================
@@ -79,14 +102,11 @@ export default function RsvpPage() {
       >
         {/* Décorations */}
         <div className="pointer-events-none absolute -left-36 top-20 h-[420px] w-[420px] rounded-full bg-[#C54716]/5 blur-3xl" />
-
         <div className="pointer-events-none absolute -right-36 bottom-20 h-[420px] w-[420px] rounded-full bg-[#6D071A]/5 blur-3xl" />
 
         <div className="relative mx-auto max-w-5xl">
-
           {/* ================= TITRE ================= */}
           <div className="mx-auto max-w-3xl text-center">
-
             <p className="text-[11px] uppercase tracking-[0.45em] text-[#C54716]">
               Votre réponse
             </p>
@@ -101,24 +121,25 @@ export default function RsvpPage() {
               Nous serions heureux de partager ces moments avec vous.
               Merci de prendre quelques instants pour confirmer votre présence.
             </p>
-
           </div>
-
 
           {/* ================= FORMULAIRE ================= */}
           <form
             onSubmit={handleRsvpSubmit}
             className="mx-auto mt-16 max-w-3xl rounded-[36px] border border-[#E7D5CA] bg-white px-7 py-10 shadow-[0_25px_80px_rgba(98,47,31,0.08)] md:px-12 md:py-14"
           >
-
-            {/* NOM */}
+            {/* ================= NOM ================= */}
             <div>
               <label
                 htmlFor="name"
                 className="text-[10px] uppercase tracking-[0.35em] text-[#A65A43]"
               >
-                Nom & prénom
+                Notre charmant invité
               </label>
+
+              <h3 className="mt-2 font-serif text-2xl">
+                Lequel de nos charmants invités êtes-vous ?
+              </h3>
 
               <input
                 id="name"
@@ -131,46 +152,40 @@ export default function RsvpPage() {
                     name: e.target.value,
                   })
                 }
-                placeholder="Votre nom complet"
-                className="mt-3 w-full border-b border-[#D9B8A9] bg-transparent px-1 py-4 text-lg outline-none transition placeholder:text-[#B7A39A] focus:border-[#C54716]"
+                placeholder="Votre nom et prénom"
+                className="mt-5 w-full border-b border-[#D9B8A9] bg-transparent px-1 py-4 text-lg outline-none transition placeholder:text-[#B7A39A] focus:border-[#C54716]"
               />
             </div>
 
-
-            {/* ================= 26 NOVEMBRE ================= */}
+            {/* ================= PRÉSENCE ================= */}
             <div className="mt-12">
-
               <p className="text-[10px] uppercase tracking-[0.35em] text-[#A65A43]">
-                26 novembre 2026
+                Votre présence
               </p>
 
               <h3 className="mt-2 font-serif text-2xl">
-                Dote & Mairie
+                Pourrez-vous nous honorer de votre présence à notre mariage ?
               </h3>
 
-              <p className="mt-3 text-sm text-[#8A7067]">
-                Serez-vous présent(e) ?
-              </p>
-
-              <div className="mt-5 grid grid-cols-2 gap-4">
-
+              <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {/* OUI */}
                 <label
                   className={`cursor-pointer rounded-[20px] border px-5 py-4 text-center transition ${
-                    rsvpForm.presence26 === "oui"
+                    rsvpForm.presence === "oui"
                       ? "border-[#C54716] bg-[#C54716] text-white"
                       : "border-[#E4D0C4] bg-[#FFF9F5] hover:border-[#C54716]"
                   }`}
                 >
                   <input
                     type="radio"
-                    name="presence26"
+                    name="presence"
                     value="oui"
                     required
-                    checked={rsvpForm.presence26 === "oui"}
+                    checked={rsvpForm.presence === "oui"}
                     onChange={(e) =>
                       setRsvpForm({
                         ...rsvpForm,
-                        presence26: e.target.value,
+                        presence: e.target.value,
                       })
                     }
                     className="hidden"
@@ -179,22 +194,27 @@ export default function RsvpPage() {
                   Oui, avec plaisir
                 </label>
 
+                {/* NON */}
                 <label
                   className={`cursor-pointer rounded-[20px] border px-5 py-4 text-center transition ${
-                    rsvpForm.presence26 === "non"
+                    rsvpForm.presence === "non"
                       ? "border-[#6D071A] bg-[#6D071A] text-white"
                       : "border-[#E4D0C4] bg-[#FFF9F5] hover:border-[#6D071A]"
                   }`}
                 >
                   <input
                     type="radio"
-                    name="presence26"
+                    name="presence"
                     value="non"
-                    checked={rsvpForm.presence26 === "non"}
+                    checked={rsvpForm.presence === "non"}
                     onChange={(e) =>
                       setRsvpForm({
                         ...rsvpForm,
-                        presence26: e.target.value,
+                        presence: e.target.value,
+                        traditional: false,
+                        civil: false,
+                        religious: false,
+                        party: false,
                       })
                     }
                     className="hidden"
@@ -202,161 +222,206 @@ export default function RsvpPage() {
 
                   Je ne pourrai pas
                 </label>
-
               </div>
             </div>
 
+            {/* ================= MOMENTS ================= */}
+            {rsvpForm.presence === "oui" && (
+              <div className="mt-12">
+                <p className="text-[10px] uppercase tracking-[0.35em] text-[#A65A43]">
+                  Votre programme
+                </p>
 
-            {/* ================= 28 NOVEMBRE ================= */}
-            <div className="mt-12">
+                <h3 className="mt-2 font-serif text-2xl">
+                  À quel moment serez-vous présent(e) ?
+                </h3>
 
-              <p className="text-[10px] uppercase tracking-[0.35em] text-[#A65A43]">
-                28 novembre 2026
-              </p>
+                <p className="mt-3 text-sm leading-6 text-[#8A7067]">
+                  Vous pouvez sélectionner plusieurs moments.
+                </p>
 
-              <h3 className="mt-2 font-serif text-2xl">
-                Église & Soirée
-              </h3>
+                <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  {/* MARIAGE TRADITIONNEL */}
+                  <label
+                    className={`cursor-pointer rounded-[20px] border px-5 py-5 transition ${
+                      rsvpForm.traditional
+                        ? "border-[#C54716] bg-[#C54716] text-white"
+                        : "border-[#E4D0C4] bg-[#FFF9F5] hover:border-[#C54716]"
+                    }`}
+                  >
+                    <input
+                      type="checkbox"
+                      checked={rsvpForm.traditional}
+                      onChange={() => toggleMoment("traditional")}
+                      className="hidden"
+                    />
 
-              <p className="mt-3 text-sm text-[#8A7067]">
-                Serez-vous présent(e) ?
-              </p>
+                    <div className="flex items-center justify-between gap-4">
+                      <div>
+                        <p className="font-serif text-xl">
+                          Mariage traditionnel
+                        </p>
 
-              <div className="mt-5 grid grid-cols-2 gap-4">
+                        <p
+                          className={`mt-1 text-xs ${
+                            rsvpForm.traditional
+                              ? "text-white/75"
+                              : "text-[#9B8178]"
+                          }`}
+                        >
+                          26 novembre 2026
+                        </p>
+                      </div>
 
-                <label
-                  className={`cursor-pointer rounded-[20px] border px-5 py-4 text-center transition ${
-                    rsvpForm.presence28 === "oui"
-                      ? "border-[#C54716] bg-[#C54716] text-white"
-                      : "border-[#E4D0C4] bg-[#FFF9F5] hover:border-[#C54716]"
-                  }`}
-                >
-                  <input
-                    type="radio"
-                    name="presence28"
-                    value="oui"
-                    required
-                    checked={rsvpForm.presence28 === "oui"}
-                    onChange={(e) =>
-                      setRsvpForm({
-                        ...rsvpForm,
-                        presence28: e.target.value,
-                      })
-                    }
-                    className="hidden"
-                  />
+                      <span
+                        className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border ${
+                          rsvpForm.traditional
+                            ? "border-white bg-white text-[#C54716]"
+                            : "border-[#D9B8A9]"
+                        }`}
+                      >
+                        {rsvpForm.traditional ? "✓" : ""}
+                      </span>
+                    </div>
+                  </label>
 
-                  Oui, avec plaisir
-                </label>
+                  {/* MARIAGE CIVIL */}
+                  <label
+                    className={`cursor-pointer rounded-[20px] border px-5 py-5 transition ${
+                      rsvpForm.civil
+                        ? "border-[#C54716] bg-[#C54716] text-white"
+                        : "border-[#E4D0C4] bg-[#FFF9F5] hover:border-[#C54716]"
+                    }`}
+                  >
+                    <input
+                      type="checkbox"
+                      checked={rsvpForm.civil}
+                      onChange={() => toggleMoment("civil")}
+                      className="hidden"
+                    />
 
-                <label
-                  className={`cursor-pointer rounded-[20px] border px-5 py-4 text-center transition ${
-                    rsvpForm.presence28 === "non"
-                      ? "border-[#6D071A] bg-[#6D071A] text-white"
-                      : "border-[#E4D0C4] bg-[#FFF9F5] hover:border-[#6D071A]"
-                  }`}
-                >
-                  <input
-                    type="radio"
-                    name="presence28"
-                    value="non"
-                    checked={rsvpForm.presence28 === "non"}
-                    onChange={(e) =>
-                      setRsvpForm({
-                        ...rsvpForm,
-                        presence28: e.target.value,
-                      })
-                    }
-                    className="hidden"
-                  />
+                    <div className="flex items-center justify-between gap-4">
+                      <div>
+                        <p className="font-serif text-xl">
+                          Mariage civil
+                        </p>
 
-                  Je ne pourrai pas
-                </label>
+                        <p
+                          className={`mt-1 text-xs ${
+                            rsvpForm.civil
+                              ? "text-white/75"
+                              : "text-[#9B8178]"
+                          }`}
+                        >
+                          26 novembre 2026
+                        </p>
+                      </div>
 
+                      <span
+                        className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border ${
+                          rsvpForm.civil
+                            ? "border-white bg-white text-[#C54716]"
+                            : "border-[#D9B8A9]"
+                        }`}
+                      >
+                        {rsvpForm.civil ? "✓" : ""}
+                      </span>
+                    </div>
+                  </label>
+
+                  {/* MARIAGE RELIGIEUX */}
+                  <label
+                    className={`cursor-pointer rounded-[20px] border px-5 py-5 transition ${
+                      rsvpForm.religious
+                        ? "border-[#C54716] bg-[#C54716] text-white"
+                        : "border-[#E4D0C4] bg-[#FFF9F5] hover:border-[#C54716]"
+                    }`}
+                  >
+                    <input
+                      type="checkbox"
+                      checked={rsvpForm.religious}
+                      onChange={() => toggleMoment("religious")}
+                      className="hidden"
+                    />
+
+                    <div className="flex items-center justify-between gap-4">
+                      <div>
+                        <p className="font-serif text-xl">
+                          Mariage religieux
+                        </p>
+
+                        <p
+                          className={`mt-1 text-xs ${
+                            rsvpForm.religious
+                              ? "text-white/75"
+                              : "text-[#9B8178]"
+                          }`}
+                        >
+                          28 novembre 2026
+                        </p>
+                      </div>
+
+                      <span
+                        className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border ${
+                          rsvpForm.religious
+                            ? "border-white bg-white text-[#C54716]"
+                            : "border-[#D9B8A9]"
+                        }`}
+                      >
+                        {rsvpForm.religious ? "✓" : ""}
+                      </span>
+                    </div>
+                  </label>
+
+                  {/* SOIRÉE */}
+                  <label
+                    className={`cursor-pointer rounded-[20px] border px-5 py-5 transition ${
+                      rsvpForm.party
+                        ? "border-[#6D071A] bg-[#6D071A] text-white"
+                        : "border-[#E4D0C4] bg-[#FFF9F5] hover:border-[#6D071A]"
+                    }`}
+                  >
+                    <input
+                      type="checkbox"
+                      checked={rsvpForm.party}
+                      onChange={() => toggleMoment("party")}
+                      className="hidden"
+                    />
+
+                    <div className="flex items-center justify-between gap-4">
+                      <div>
+                        <p className="font-serif text-xl">
+                          Soirée
+                        </p>
+
+                        <p
+                          className={`mt-1 text-xs ${
+                            rsvpForm.party
+                              ? "text-white/75"
+                              : "text-[#9B8178]"
+                          }`}
+                        >
+                          28 novembre 2026
+                        </p>
+                      </div>
+
+                      <span
+                        className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border ${
+                          rsvpForm.party
+                            ? "border-white bg-white text-[#6D071A]"
+                            : "border-[#D9B8A9]"
+                        }`}
+                      >
+                        {rsvpForm.party ? "✓" : ""}
+                      </span>
+                    </div>
+                  </label>
+                </div>
               </div>
-            </div>
-
-
-            {/* ================= HÉBERGEMENT ================= */}
-            <div className="mt-12">
-
-              <label
-                htmlFor="accommodation"
-                className="text-[10px] uppercase tracking-[0.35em] text-[#A65A43]"
-              >
-                Hébergement
-              </label>
-
-              <p className="mt-2 font-serif text-2xl">
-                Souhaitez-vous dormir sur place ?
-              </p>
-
-              <select
-                id="accommodation"
-                required
-                value={rsvpForm.accommodation}
-                onChange={(e) =>
-                  setRsvpForm({
-                    ...rsvpForm,
-                    accommodation: e.target.value,
-                  })
-                }
-                className="mt-5 w-full rounded-[18px] border border-[#E4D0C4] bg-[#FFF9F5] px-5 py-4 outline-none focus:border-[#C54716]"
-              >
-                <option value="">
-                  Choisir une réponse
-                </option>
-
-                <option value="oui">
-                  Oui
-                </option>
-
-                <option value="non">
-                  Non
-                </option>
-
-                <option value="pas-encore">
-                  Je ne sais pas encore
-                </option>
-              </select>
-
-            </div>
-
-
-            {/* ================= NOMBRE DE PERSONNES ================= */}
-            <div className="mt-12">
-
-              <label
-                htmlFor="guests"
-                className="text-[10px] uppercase tracking-[0.35em] text-[#A65A43]"
-              >
-                Nombre de personnes
-              </label>
-
-              <select
-                id="guests"
-                value={rsvpForm.guests}
-                onChange={(e) =>
-                  setRsvpForm({
-                    ...rsvpForm,
-                    guests: e.target.value,
-                  })
-                }
-                className="mt-4 w-full rounded-[18px] border border-[#E4D0C4] bg-[#FFF9F5] px-5 py-4 outline-none focus:border-[#C54716]"
-              >
-                <option value="1">1 personne</option>
-                <option value="2">2 personnes</option>
-                <option value="3">3 personnes</option>
-                <option value="4">4 personnes</option>
-                <option value="5">5 personnes</option>
-              </select>
-
-            </div>
-
+            )}
 
             {/* ================= MESSAGE ================= */}
             <div className="mt-12">
-
               <label
                 htmlFor="message"
                 className="text-[10px] uppercase tracking-[0.35em] text-[#A65A43]"
@@ -377,13 +442,10 @@ export default function RsvpPage() {
                 placeholder="Laissez ici votre message, vos vœux ou une petite pensée..."
                 className="mt-4 w-full resize-none rounded-[20px] border border-[#E4D0C4] bg-[#FFF9F5] px-5 py-5 leading-7 outline-none placeholder:text-[#B7A39A] focus:border-[#C54716]"
               />
-
             </div>
-
 
             {/* ================= BOUTON ================= */}
             <div className="mt-12 text-center">
-
               <button
                 type="submit"
                 disabled={rsvpStatus === "sending"}
@@ -391,16 +453,13 @@ export default function RsvpPage() {
               >
                 {rsvpStatus === "sending"
                   ? "Envoi en cours..."
-                  : "Confirmer ma présence"}
+                  : "Envoyer ma réponse"}
               </button>
-
             </div>
-
 
             {/* ================= CONFIRMATION ================= */}
             {rsvpStatus === "success" && (
               <div className="mt-8 rounded-[20px] bg-[#274E13]/10 px-6 py-5 text-center">
-
                 <p className="font-serif text-xl text-[#274E13]">
                   Merci pour votre réponse ♡
                 </p>
@@ -408,28 +467,21 @@ export default function RsvpPage() {
                 <p className="mt-2 text-sm text-[#5D7153]">
                   Votre réponse a bien été prise en compte.
                 </p>
-
               </div>
             )}
 
             {rsvpStatus === "error" && (
               <div className="mt-8 rounded-[20px] bg-[#6D071A]/10 px-6 py-5 text-center">
-
                 <p className="text-[#6D071A]">
                   Une erreur est survenue. Merci de réessayer.
                 </p>
-
               </div>
             )}
-
           </form>
-
 
           {/* ================= BAS DE SECTION ================= */}
           <div className="mt-16 text-center">
-
             <div className="mx-auto flex items-center justify-center gap-4">
-
               <div className="h-px w-16 bg-[#D8A060]/50" />
 
               <span className="font-serif text-sm tracking-[0.15em] text-[#C54716]">
@@ -437,20 +489,16 @@ export default function RsvpPage() {
               </span>
 
               <div className="h-px w-16 bg-[#D8A060]/50" />
-
             </div>
 
             <p className="mt-6 font-serif text-lg italic text-[#9B6B59]">
               Merci de faire partie de notre histoire.
             </p>
-
           </div>
-
         </div>
       </section>
 
       <Footer />
-
     </main>
   );
 }
