@@ -216,7 +216,7 @@ export default function Navigation() {
               onClick={closeMenu}
               className="flex items-center justify-between rounded-[18px] px-4 py-3 text-sm text-white/80 transition hover:bg-white/5 hover:text-[#F4C58C]"
             >
-              <span>Confirmer ma présence</span>
+              <span>RSVP & Q&R</span>
             </Link>
 
             <Link
