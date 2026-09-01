@@ -1,20 +1,26 @@
+"use client";
+
 import Link from "next/link";
 
 export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <footer className="relative overflow-hidden bg-[#3A241E] px-6 py-20 text-[#FFF8F2] md:px-12">
-
       {/* décorations */}
       <div className="pointer-events-none absolute -left-28 -top-28 h-72 w-72 rounded-full border border-white/5" />
       <div className="pointer-events-none absolute -bottom-32 -right-32 h-80 w-80 rounded-full border border-white/5" />
 
       <div className="relative mx-auto max-w-6xl">
-
         {/* =========================
             HAUT DU FOOTER
         ========================== */}
         <div className="text-center">
-
           <p className="text-[10px] uppercase tracking-[0.45em] text-[#F4C58C]">
             Merci de faire partie de notre histoire
           </p>
@@ -38,16 +44,12 @@ export default function Footer() {
           <p className="mt-3 text-sm tracking-wide text-white/60">
             Dote • Mairie • Église • Soirée
           </p>
-
         </div>
-
 
         {/* =========================
             LIENS RAPIDES
         ========================== */}
         <div className="mx-auto mt-12 flex max-w-5xl flex-wrap justify-center gap-x-8 gap-y-4 text-[10px] uppercase tracking-[0.25em] text-white/65">
-
-
           <Link
             href="/#countdown"
             className="transition hover:text-[#F4C58C]"
@@ -80,7 +82,7 @@ export default function Footer() {
             href="/rsvp"
             className="transition hover:text-[#F4C58C]"
           >
-            RSVP
+            RSVP & Q&R
           </Link>
 
           <Link
@@ -110,17 +112,15 @@ export default function Footer() {
           >
             Snapchat
           </Link>
-
         </div>
 
-
         {/* =========================
-            RETOUR ACCUEIL
+            RETOUR EN HAUT
         ========================== */}
         <div className="mt-14 text-center">
-
-          <Link
-            href="/#countdown"
+          <button
+            type="button"
+            onClick={scrollToTop}
             className="group inline-flex flex-col items-center text-white/60 transition hover:text-[#F4C58C]"
           >
             <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 transition group-hover:border-[#F4C58C]/60">
@@ -128,12 +128,10 @@ export default function Footer() {
             </span>
 
             <span className="mt-3 text-[9px] uppercase tracking-[0.35em]">
-              Retour à l’accueil
+              Retour en haut
             </span>
-          </Link>
-
+          </button>
         </div>
-
 
         {/* =========================
             BAS DU FOOTER
@@ -141,7 +139,6 @@ export default function Footer() {
         <div className="mx-auto mt-14 h-px max-w-xl bg-white/10" />
 
         <div className="mt-7 flex flex-col items-center justify-between gap-4 text-center text-[10px] text-white/35 md:flex-row md:text-left">
-
           <p>
             Anelka & Baudouin · 2026
           </p>
@@ -149,9 +146,7 @@ export default function Footer() {
           <p className="font-serif italic">
             Deux cœurs, un même chemin.
           </p>
-
         </div>
-
       </div>
     </footer>
   );

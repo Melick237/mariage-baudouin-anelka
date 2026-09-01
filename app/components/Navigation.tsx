@@ -65,7 +65,7 @@ export default function Navigation() {
               href="/rsvp"
               className="transition hover:text-[#F4C58C]"
             >
-              RSVP
+              RSVP & Q&R
             </Link>
 
             <Link

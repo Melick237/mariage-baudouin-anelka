@@ -135,7 +135,7 @@ export default function HebergementsPage() {
                 <div className="mt-auto space-y-3 pt-8">
 
                   <a
-                    href="https://wa.me/237679190700?text=Bonjour%2C%20je%20vous%20contacte%20concernant%20un%20hébergement%20pour%20le%20mariage%20de%20Anelka%20et%20Baudouin.%20Pourriez-vous%20me%20communiquer%20vos%20disponibilités%20s'il%20vous%20plaît%20%3F"
+                    href="https://wa.me/237679190700?text=Bonjour%2C%20je%20souhaiterais%20avoir%20quelques%20renseignements%20concernant%20vos%20logements.%20Pourriez-vous%20me%20communiquer%20les%20disponibilités%20ainsi%20que%20les%20tarifs%2C%20s%27il%20vous%20plaît%20%3F%20Merci."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="
@@ -266,7 +266,7 @@ export default function HebergementsPage() {
                 <div className="mt-auto space-y-3 pt-8">
 
                   <a
-                    href="https://wa.me/237671298113?text=Bonjour%2C%20je%20vous%20contacte%20concernant%20un%20hébergement%20pour%20le%20mariage%20de%20Anelka%20et%20Baudouin.%20Pourriez-vous%20me%20communiquer%20vos%20disponibilités%20s'il%20vous%20plaît%20%3F"
+                    href="https://wa.me/237671298113?text=Bonjour%2C%20je%20souhaiterais%20avoir%20quelques%20renseignements%20concernant%20vos%20logements.%20Pourriez-vous%20me%20communiquer%20les%20disponibilités%20ainsi%20que%20les%20tarifs%2C%20s%27il%20vous%20plaît%20%3F%20Merci."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="
@@ -435,7 +435,7 @@ export default function HebergementsPage() {
                 <div className="mt-auto space-y-3 pt-8">
 
                   <a
-                    href="https://wa.me/237655080288?text=Bonjour%2C%20je%20vous%20contacte%20concernant%20un%20hébergement%20pour%20le%20mariage%20de%20Anelka%20et%20Baudouin.%20Pourriez-vous%20me%20communiquer%20vos%20disponibilités%20s'il%20vous%20plaît%20%3F"
+                    href="https://wa.me/237655080288?text=Bonjour%2C%20je%20souhaiterais%20avoir%20quelques%20renseignements%20concernant%20vos%20logements.%20Pourriez-vous%20me%20communiquer%20les%20disponibilités%20ainsi%20que%20les%20tarifs%2C%20s%27il%20vous%20plaît%20%3F%20Merci."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="

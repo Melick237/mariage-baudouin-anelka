@@ -232,7 +232,7 @@ export default function Home() {
     {
       year: "La suite",
       title: "De deux villes à une seule vie",
-      image: "/images/histoire5.jpeg",
+      image: "/images/histoire6.jpeg",
       imagePosition: "center",
       anelka: [
         `Ce qui avait commencé par des appels du soir est devenu une vraie relation. Nous avons appris à nous connaître autrement, avec nos qualités, nos défauts, nos ambitions et nos inquiétudes.`,
@@ -257,7 +257,7 @@ export default function Home() {
     {
       year: "2024",
       title: "Notre famille",
-      image: "/images/histoire6.jpeg",
+      image: "/images/histoire5.jpeg",
       imagePosition: "center",
       anelka: [
         `En février 2024, nous avons franchi une nouvelle étape en emménageant ensemble. C’était beau, mais aussi intense. Il fallait apprendre à partager le quotidien, gérer les dépenses, les responsabilités et tous les changements qui accompagnent une vraie vie à deux.`,

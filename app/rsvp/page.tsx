@@ -24,8 +24,6 @@ export default function RsvpPage() {
   ) => {
     event.preventDefault();
 
-    // Si la personne vient, elle doit sélectionner
-    // au moins un moment du mariage.
     if (
       rsvpForm.presence === "oui" &&
       !rsvpForm.traditional &&
@@ -104,7 +102,7 @@ export default function RsvpPage() {
         <div className="pointer-events-none absolute -left-36 top-20 h-[420px] w-[420px] rounded-full bg-[#C54716]/5 blur-3xl" />
         <div className="pointer-events-none absolute -right-36 bottom-20 h-[420px] w-[420px] rounded-full bg-[#6D071A]/5 blur-3xl" />
 
-        <div className="relative mx-auto max-w-5xl">
+        <div className="relative mx-auto max-w-6xl">
           {/* ================= TITRE ================= */}
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-[11px] uppercase tracking-[0.45em] text-[#C54716]">
@@ -126,7 +124,7 @@ export default function RsvpPage() {
           {/* ================= FORMULAIRE ================= */}
           <form
             onSubmit={handleRsvpSubmit}
-            className="mx-auto mt-16 max-w-3xl rounded-[36px] border border-[#E7D5CA] bg-white px-7 py-10 shadow-[0_25px_80px_rgba(98,47,31,0.08)] md:px-12 md:py-14"
+            className="mx-auto mt-16 max-w-4xl rounded-[36px] border border-[#E7D5CA] bg-white px-7 py-10 shadow-[0_25px_80px_rgba(98,47,31,0.08)] md:px-12 md:py-14"
           >
             {/* ================= NOM ================= */}
             <div>
@@ -163,7 +161,7 @@ export default function RsvpPage() {
                 Votre présence
               </p>
 
-              <h3 className="mt-2 font-serif text-2xl">
+              <h3 className="mt-2 font-serif text-[22px] leading-tight md:text-2xl lg:whitespace-nowrap">
                 Pourrez-vous nous honorer de votre présence à notre mariage ?
               </h3>
 
@@ -390,9 +388,7 @@ export default function RsvpPage() {
 
                     <div className="flex items-center justify-between gap-4">
                       <div>
-                        <p className="font-serif text-xl">
-                          Soirée
-                        </p>
+                        <p className="font-serif text-xl">Soirée</p>
 
                         <p
                           className={`mt-1 text-xs ${
@@ -479,8 +475,359 @@ export default function RsvpPage() {
             )}
           </form>
 
-          {/* ================= BAS DE SECTION ================= */}
-          <div className="mt-16 text-center">
+          {/* =========================================================
+              FAQ
+          ========================================================= */}
+          <section className="mx-auto mt-28 max-w-5xl">
+            {/* TITRE FAQ */}
+            <div className="mx-auto max-w-3xl text-center">
+              <p className="text-[11px] uppercase tracking-[0.45em] text-[#C54716]">
+                Bon à savoir
+              </p>
+
+              <h2 className="mt-4 font-serif text-4xl text-[#4A2924] md:text-6xl">
+                Quelques réponses
+              </h2>
+
+              <div className="mx-auto mt-6 h-px w-20 bg-[#D8A060]" />
+
+              <p className="mx-auto mt-6 max-w-xl leading-7 text-[#765B52]">
+                Tout ce qu’il faut savoir pour profiter pleinement de ces deux
+                journées à nos côtés.
+              </p>
+            </div>
+
+            {/* FAQ LIST */}
+            <div className="mt-14 space-y-4">
+              {/* 01 */}
+              <details className="group overflow-hidden rounded-[26px] border border-[#E7D5CA] bg-white shadow-[0_12px_40px_rgba(98,47,31,0.06)]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 px-6 py-6 md:px-8">
+                  <div className="flex items-center gap-5">
+                    <span className="font-serif text-sm text-[#C54716]">
+                      01
+                    </span>
+
+                    <h3 className="font-serif text-xl text-[#4A2924] md:text-2xl">
+                      Y a-t-il un dress code ?
+                    </h3>
+                  </div>
+
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#C54716]/20 text-xl text-[#C54716] transition group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+
+                <div className="border-t border-[#E7D5CA] px-6 py-6 md:px-8 md:pl-[76px]">
+                  <p className="leading-8 text-[#765B52]">
+                    Oui. Les couleurs de notre événement sont le{" "}
+                    <strong className="font-medium text-[#C54716]">
+                      terracotta
+                    </strong>
+                    , aussi appelé orange brûlé, le{" "}
+                    <strong className="font-medium text-[#6D071A]">
+                      rouge bordeaux
+                    </strong>{" "}
+                    et une touche de{" "}
+                    <strong className="font-medium text-[#274E13]">
+                      vert émeraude
+                    </strong>
+                    . Nous aimerions particulièrement voir nos invités en
+                    orange brûlé, accompagné d’une touche de vert émeraude.
+                  </p>
+
+                  <a
+                    href="/dress-code"
+                    className="mt-5 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-[#C54716] transition hover:opacity-70"
+                  >
+                    Voir le dress code
+                    <span>→</span>
+                  </a>
+                </div>
+              </details>
+
+              {/* 02 */}
+              <details className="group overflow-hidden rounded-[26px] border border-[#E7D5CA] bg-white shadow-[0_12px_40px_rgba(98,47,31,0.06)]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 px-6 py-6 md:px-8">
+                  <div className="flex items-center gap-5">
+                    <span className="font-serif text-sm text-[#C54716]">
+                      02
+                    </span>
+
+                    <h3 className="font-serif text-xl text-[#4A2924] md:text-2xl">
+                      Tout se passera-t-il au même endroit le 26 novembre ?
+                    </h3>
+                  </div>
+
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#C54716]/20 text-xl text-[#C54716] transition group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+
+                <div className="border-t border-[#E7D5CA] px-6 py-6 md:px-8 md:pl-[76px]">
+                  <p className="leading-8 text-[#765B52]">
+                    Oui. Le mariage traditionnel et le mariage civil auront
+                    lieu au même endroit, au domicile des parents d’Anelka à
+                    Bayangam.
+                  </p>
+                </div>
+              </details>
+
+              {/* 03 */}
+              <details className="group overflow-hidden rounded-[26px] border border-[#E7D5CA] bg-white shadow-[0_12px_40px_rgba(98,47,31,0.06)]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 px-6 py-6 md:px-8">
+                  <div className="flex items-center gap-5">
+                    <span className="font-serif text-sm text-[#C54716]">
+                      03
+                    </span>
+
+                    <h3 className="font-serif text-xl text-[#4A2924] md:text-2xl">
+                      Tout se passera-t-il au même endroit le 28 novembre ?
+                    </h3>
+                  </div>
+
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#C54716]/20 text-xl text-[#C54716] transition group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+
+                <div className="border-t border-[#E7D5CA] px-6 py-6 md:px-8 md:pl-[76px]">
+                  <p className="leading-8 text-[#765B52]">
+                    Oui. Le mariage religieux et la soirée auront lieu à la
+                    même adresse, à Green Garden à Yaoundé.
+                  </p>
+                </div>
+              </details>
+
+              {/* 04 */}
+              <details className="group overflow-hidden rounded-[26px] border border-[#E7D5CA] bg-white shadow-[0_12px_40px_rgba(98,47,31,0.06)]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 px-6 py-6 md:px-8">
+                  <div className="flex items-center gap-5">
+                    <span className="font-serif text-sm text-[#C54716]">
+                      04
+                    </span>
+
+                    <h3 className="font-serif text-xl text-[#4A2924] md:text-2xl">
+                      Que signifie réellement notre dress code ?
+                    </h3>
+                  </div>
+
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#C54716]/20 text-xl text-[#C54716] transition group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+
+                <div className="border-t border-[#E7D5CA] px-6 py-6 md:px-8 md:pl-[76px]">
+                  <div className="space-y-5 leading-8 text-[#765B52]">
+                    <p>
+                      <strong className="font-medium text-[#C54716]">
+                        Le terracotta
+                      </strong>{" "}
+                      évoque notre connexion à nos racines, mais aussi la
+                      chaleur et la stabilité. Nous sommes intimement
+                      convaincus que la puissance de nos racines nous aide à
+                      avancer tout en gardant un équilibre solide.
+                    </p>
+
+                    <p>
+                      <strong className="font-medium text-[#6D071A]">
+                        Le rouge bordeaux
+                      </strong>{" "}
+                      est porteur d’une sagesse ancestrale et d’une force
+                      tranquille qui invite à l’introspection.
+                    </p>
+
+                    <p>
+                      <strong className="font-medium text-[#274E13]">
+                        Le vert émeraude
+                      </strong>{" "}
+                      représente l’ouverture du cœur, la tranquillité de l’âme
+                      et la guérison émotionnelle.
+                    </p>
+
+                    <p className="font-serif text-lg italic text-[#9B6B59]">
+                      Ainsi, nous souhaitons commencer cette nouvelle étape de
+                      notre vie dans l’authenticité, la sagesse et la paix de
+                      l’âme.
+                    </p>
+                  </div>
+                </div>
+              </details>
+
+              {/* 05 */}
+              <details className="group overflow-hidden rounded-[26px] border border-[#E7D5CA] bg-white shadow-[0_12px_40px_rgba(98,47,31,0.06)]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 px-6 py-6 md:px-8">
+                  <div className="flex items-center gap-5">
+                    <span className="font-serif text-sm text-[#C54716]">
+                      05
+                    </span>
+
+                    <h3 className="font-serif text-xl text-[#4A2924] md:text-2xl">
+                      Combien de tenues prévoir pour le mariage ?
+                    </h3>
+                  </div>
+
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#C54716]/20 text-xl text-[#C54716] transition group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+
+                <div className="border-t border-[#E7D5CA] px-6 py-6 md:px-8 md:pl-[76px]">
+                  <p className="leading-8 text-[#765B52]">
+                    Deux tenues suffiront parfaitement pour les deux journées.
+                    À Bayangam, le mariage traditionnel sera directement suivi
+                    du mariage civil, sans véritable pause pour se changer. Le
+                    28 novembre à Yaoundé, le mariage religieux sera lui aussi
+                    directement suivi de la soirée.
+                  </p>
+                </div>
+              </details>
+
+              {/* 06 */}
+              <details className="group overflow-hidden rounded-[26px] border border-[#E7D5CA] bg-white shadow-[0_12px_40px_rgba(98,47,31,0.06)]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 px-6 py-6 md:px-8">
+                  <div className="flex items-center gap-5">
+                    <span className="font-serif text-sm text-[#C54716]">
+                      06
+                    </span>
+
+                    <h3 className="font-serif text-xl text-[#4A2924] md:text-2xl">
+                      Y a-t-il un parking ?
+                    </h3>
+                  </div>
+
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#C54716]/20 text-xl text-[#C54716] transition group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+
+                <div className="border-t border-[#E7D5CA] px-6 py-6 md:px-8 md:pl-[76px]">
+                  <p className="leading-8 text-[#765B52]">
+                    Oui. Des espaces de stationnement sont disponibles
+                    directement sur les deux sites de célébration.
+                  </p>
+                </div>
+              </details>
+
+              {/* 07 */}
+              <details className="group overflow-hidden rounded-[26px] border border-[#E7D5CA] bg-white shadow-[0_12px_40px_rgba(98,47,31,0.06)]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 px-6 py-6 md:px-8">
+                  <div className="flex items-center gap-5">
+                    <span className="font-serif text-sm text-[#C54716]">
+                      07
+                    </span>
+
+                    <h3 className="font-serif text-xl text-[#4A2924] md:text-2xl">
+                      Un transport est-il prévu entre les différents lieux ?
+                    </h3>
+                  </div>
+
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#C54716]/20 text-xl text-[#C54716] transition group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+
+                <div className="border-t border-[#E7D5CA] px-6 py-6 md:px-8 md:pl-[76px]">
+                  <p className="leading-8 text-[#765B52]">
+                    Non, car aucun déplacement entre deux lieux ne sera
+                    nécessaire pendant une même journée. Le 26 novembre, les
+                    deux cérémonies se déroulent au même endroit à Bayangam,
+                    et le 28 novembre, l’église et la soirée se déroulent au
+                    même endroit à Yaoundé.
+                  </p>
+                </div>
+              </details>
+
+              {/* 08 */}
+              <details className="group overflow-hidden rounded-[26px] border border-[#E7D5CA] bg-white shadow-[0_12px_40px_rgba(98,47,31,0.06)]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 px-6 py-6 md:px-8">
+                  <div className="flex items-center gap-5">
+                    <span className="font-serif text-sm text-[#C54716]">
+                      08
+                    </span>
+
+                    <h3 className="font-serif text-xl text-[#4A2924] md:text-2xl">
+                      Y a-t-il des hébergements conseillés à proximité ?
+                    </h3>
+                  </div>
+
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#C54716]/20 text-xl text-[#C54716] transition group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+
+                <div className="border-t border-[#E7D5CA] px-6 py-6 md:px-8 md:pl-[76px]">
+                  <p className="leading-8 text-[#765B52]">
+                    Oui. Nous avons sélectionné quelques hébergements à
+                    proximité afin de faciliter votre séjour.
+                  </p>
+
+                  <a
+                    href="/hebergements"
+                    className="mt-5 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-[#C54716] transition hover:opacity-70"
+                  >
+                    Voir les hébergements
+                    <span>→</span>
+                  </a>
+                </div>
+              </details>
+
+              {/* 09 */}
+              <details className="group overflow-hidden rounded-[26px] border border-[#E7D5CA] bg-white shadow-[0_12px_40px_rgba(98,47,31,0.06)]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 px-6 py-6 md:px-8">
+                  <div className="flex items-center gap-5">
+                    <span className="font-serif text-sm text-[#C54716]">
+                      09
+                    </span>
+
+                    <h3 className="font-serif text-xl text-[#4A2924] md:text-2xl">
+                      Une partie du mariage aura-t-elle lieu en extérieur ?
+                    </h3>
+                  </div>
+
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#C54716]/20 text-xl text-[#C54716] transition group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+
+                <div className="border-t border-[#E7D5CA] px-6 py-6 md:px-8 md:pl-[76px]">
+                  <p className="leading-8 text-[#765B52]">
+                    Oui. Les célébrations des deux journées se dérouleront dans
+                    des espaces verts. Pensez donc à choisir une tenue et des
+                    chaussures adaptées.
+                  </p>
+                </div>
+              </details>
+
+              {/* 10 */}
+              <details className="group overflow-hidden rounded-[26px] border border-[#E7D5CA] bg-white shadow-[0_12px_40px_rgba(98,47,31,0.06)]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 px-6 py-6 md:px-8">
+                  <div className="flex items-center gap-5">
+                    <span className="font-serif text-sm text-[#C54716]">
+                      10
+                    </span>
+
+                    <h3 className="font-serif text-xl text-[#4A2924] md:text-2xl">
+                      Qui contacter le jour J en cas de question ?
+                    </h3>
+                  </div>
+
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#C54716]/20 text-xl text-[#C54716] transition group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+
+                <div className="border-t border-[#E7D5CA] px-6 py-6 md:px-8 md:pl-[76px]">
+                  <p className="leading-8 text-[#765B52]">
+                    Les coordonnées de la personne à contacter le jour J seront
+                    ajoutées ici prochainement.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </section>
+
+          {/* ================= BAS DE PAGE ================= */}
+          <div className="mt-20 text-center">
             <div className="mx-auto flex items-center justify-center gap-4">
               <div className="h-px w-16 bg-[#D8A060]/50" />
 
