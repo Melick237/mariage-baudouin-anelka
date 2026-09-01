@@ -110,7 +110,7 @@ export default function Navigation() {
               onClick={closeMenu}
               className="rounded-full bg-[#C54716] px-4 py-2.5 text-[9px] uppercase tracking-[0.18em] text-white transition hover:bg-[#A83D13] md:px-5"
             >
-              Répondre
+              confirmer ma présence
             </Link>
 
 
