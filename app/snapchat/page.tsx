@@ -541,66 +541,125 @@ const handleFiles = async (
 
 
               {/* =================================================
-                  BOUTON UPLOAD GOOGLE DRIVE
+                  UPLOAD PHOTOS & VIDÉOS
               ================================================= */}
               <div className="mt-10 flex flex-col items-center justify-center">
 
-                {/* INPUT INVISIBLE */}
+                {/* =================================================
+                    INPUT INVISIBLE - PHOTOS
+                ================================================= */}
                 <input
                   ref={fileInputRef}
                   type="file"
-                  accept="image/*,video/*"
+                  accept="image/*"
                   multiple
                   className="hidden"
                   onChange={handleFiles}
                 />
 
-                {/* BOUTON */}
-                <button
-                  type="button"
-                  disabled={uploading}
-                  onClick={() => fileInputRef.current?.click()}
-                  className="group flex w-full max-w-[430px] items-center justify-center gap-3 rounded-full bg-[#C54716] px-7 py-5 text-center text-[10px] uppercase tracking-[0.22em] text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-[#A83D13] hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-60 sm:text-[11px]"
-                >
+                {/* =================================================
+                    BOUTONS
+                ================================================= */}
+                <div className="flex w-full max-w-[430px] flex-col gap-4">
 
-                  {uploading ? (
-                    <>
-                      <span className="h-5 w-5 shrink-0 animate-spin rounded-full border-2 border-white/40 border-t-white" />
+                  {/* =========================
+                      BOUTON PHOTOS
+                  ========================== */}
+                  <button
+                    type="button"
+                    disabled={uploading}
+                    onClick={() => fileInputRef.current?.click()}
+                    className="group flex w-full items-center justify-center gap-3 rounded-full bg-[#C54716] px-7 py-5 text-center text-[10px] uppercase tracking-[0.22em] text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-[#A83D13] hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-60 sm:text-[11px]"
+                  >
+                    {uploading ? (
+                      <>
+                        <span className="h-5 w-5 shrink-0 animate-spin rounded-full border-2 border-white/40 border-t-white" />
 
-                      <span>
-                        Envoi en cours...
-                      </span>
-                    </>
-                  ) : (
-                    <>
-                      {/* ICÔNE */}
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.7"
-                        className="h-5 w-5 shrink-0"
-                        aria-hidden="true"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M12 16V4m0 0-4 4m4-4 4 4M5 13v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"
-                        />
-                      </svg>
+                        <span>
+                          Envoi des photos...
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        {/* ICÔNE PHOTO */}
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.7"
+                          className="h-5 w-5 shrink-0"
+                          aria-hidden="true"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M3 7.5A2.5 2.5 0 0 1 5.5 5h2l1.2-1.5h6.6L16.5 5h2A2.5 2.5 0 0 1 21 7.5v9A2.5 2.5 0 0 1 18.5 19h-13A2.5 2.5 0 0 1 3 16.5v-9Z"
+                          />
 
-                      <span>
-                        Ajouter mes photos & vidéos
-                      </span>
-                    </>
-                  )}
+                          <circle
+                            cx="12"
+                            cy="12"
+                            r="3.5"
+                          />
+                        </svg>
 
-                </button>
+                        <span>
+                          Ajouter mes photos
+                        </span>
+                      </>
+                    )}
+                  </button>
 
+
+                  {/* =========================
+                      BOUTON VIDÉOS
+                  ========================== */}
+                  <a
+                    href="https://script.google.com/macros/s/AKfycbyOyVkGVKKdE-n3EcuaUwSR5Z_i0EnwEZL4Gdl5C9s6vxV5HyIw9vmhIq_IhvjjuPNxWg/exec"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex w-full items-center justify-center gap-3 rounded-full border border-[#C54716]/30 bg-[#FFF3EB] px-7 py-5 text-center text-[10px] uppercase tracking-[0.22em] text-[#C54716] shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#C54716] hover:bg-[#FCE7DA] hover:shadow-lg sm:text-[11px]"
+                  >
+                    {/* ICÔNE VIDÉO */}
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.7"
+                      className="h-5 w-5 shrink-0"
+                      aria-hidden="true"
+                    >
+                      <rect
+                        x="3"
+                        y="6"
+                        width="13"
+                        height="12"
+                        rx="2"
+                      />
+
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="m16 10 5-3v10l-5-3"
+                      />
+                    </svg>
+
+                    <span>
+                      Ajouter mes vidéos
+                    </span>
+                  </a>
+
+                </div>
+
+
+                {/* =================================================
+                    PROGRESSION UPLOAD PHOTOS
+                ================================================= */}
                 {uploading && (
                   <div className="mx-auto mt-6 w-full max-w-[430px]">
 
                     <div className="mb-2 flex items-center justify-between gap-4 text-xs text-[#755B54]">
+
                       <span className="max-w-[300px] truncate">
                         {currentFile}
                       </span>
@@ -608,6 +667,7 @@ const handleFiles = async (
                       <span className="shrink-0 font-medium text-[#C54716]">
                         {progress} %
                       </span>
+
                     </div>
 
                     <div className="h-2 w-full overflow-hidden rounded-full bg-[#F1DDD2]">
@@ -623,7 +683,9 @@ const handleFiles = async (
                 )}
 
 
-                {/* MESSAGE UPLOAD */}
+                {/* =================================================
+                    MESSAGE UPLOAD PHOTOS
+                ================================================= */}
                 {message && (
                   <div
                     className={`mx-auto mt-5 max-w-lg rounded-2xl px-5 py-3 text-sm leading-6 ${
@@ -645,8 +707,8 @@ const handleFiles = async (
               <div className="mx-auto mt-7 max-w-lg">
 
                 <p className="text-sm leading-7 text-[#8A6A60]">
-                  Cliquez sur le bouton puis sélectionnez simplement
-                  les photos et vidéos depuis votre téléphone.
+                  Choisissez simplement ce que vous souhaitez partager avec nous :
+                  vos photos ou vos vidéos.
                 </p>
 
               </div>

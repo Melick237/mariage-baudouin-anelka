@@ -132,7 +132,7 @@ export default function LieuxPage() {
 
                     {/* GOOGLE MAPS */}
                     <a
-                      href="https://maps.app.goo.gl/LrwPTYnAyqoMpGbi7?g_st=ic"
+                      href="https://goo.gl/maps/xvVi16r5ck2MCVVT8?g_st=ac"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex min-h-[52px] w-full items-center justify-center rounded-full bg-[#C54716] px-3 text-center text-[8px] uppercase tracking-[0.16em] text-white transition duration-300 hover:-translate-y-1 hover:bg-[#A83D13] hover:shadow-lg sm:text-[9px] sm:tracking-[0.18em]"
@@ -143,7 +143,7 @@ export default function LieuxPage() {
 
                     {/* ITINÉRAIRE */}
                     <a
-                      href="https://maps.app.goo.gl/LrwPTYnAyqoMpGbi7?g_st=ic"
+                      href="https://goo.gl/maps/xvVi16r5ck2MCVVT8?g_st=ac"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex min-h-[52px] w-full items-center justify-center rounded-full border border-white/35 bg-white/10 px-3 text-center text-[8px] uppercase tracking-[0.16em] text-white backdrop-blur transition duration-300 hover:-translate-y-1 hover:bg-white/20 sm:text-[9px] sm:tracking-[0.18em]"
@@ -213,15 +213,6 @@ export default function LieuxPage() {
                       className="flex min-h-[52px] w-full items-center justify-center rounded-full bg-[#C54716] px-3 text-center text-[8px] uppercase tracking-[0.16em] text-white transition duration-300 hover:-translate-y-1 hover:bg-[#A83D13] sm:text-[9px] sm:tracking-[0.18em]"
                     >
                       Voir le plan en grand
-                    </a>
-
-                    <a
-                      href="https://maps.app.goo.gl/LrwPTYnAyqoMpGbi7?g_st=ic"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex min-h-[52px] w-full items-center justify-center rounded-full border border-[#6D3828]/20 bg-transparent px-3 text-center text-[8px] uppercase tracking-[0.16em] text-[#6D3828] transition duration-300 hover:-translate-y-1 hover:border-[#C54716]/40 hover:text-[#C54716] sm:text-[9px] sm:tracking-[0.18em]"
-                    >
-                      Ouvrir Google Maps
                     </a>
 
                   </div>
@@ -339,17 +330,6 @@ export default function LieuxPage() {
                       className="flex min-h-[52px] w-full items-center justify-center rounded-full bg-[#C54716] px-3 text-center text-[8px] uppercase tracking-[0.16em] text-white transition duration-300 hover:-translate-y-1 hover:bg-[#A83D13] hover:shadow-lg sm:text-[9px] sm:tracking-[0.18em]"
                     >
                       Voir sur Google Maps
-                    </a>
-
-
-                    {/* ITINÉRAIRE */}
-                    <a
-                      href="https://www.google.com/maps/dir/?api=1&destination=3.811168,11.538854"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex min-h-[52px] w-full items-center justify-center rounded-full border border-white/35 bg-white/10 px-3 text-center text-[8px] uppercase tracking-[0.16em] text-white backdrop-blur transition duration-300 hover:-translate-y-1 hover:bg-white/20 sm:text-[9px] sm:tracking-[0.18em]"
-                    >
-                      Ouvrir l&apos;itinéraire
                     </a>
 
                   </div>
