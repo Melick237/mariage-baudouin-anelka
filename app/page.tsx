@@ -29,11 +29,8 @@ export default function Home() {
 
       const sectionId = hash.replace("#", "");
 
-      // Si on arrive directement sur une section,
-      // on entre dans le site sans afficher l'invitation.
       setEnteredSite(true);
 
-      // On attend que React affiche la section avant de scroller.
       setTimeout(() => {
         const section = document.getElementById(sectionId);
 
@@ -48,8 +45,6 @@ export default function Home() {
 
     const hash = window.location.hash;
 
-    // Si l'adresse contient #countdown ou #story,
-    // on entre directement dans le site.
     if (hash) {
       setEnteredSite(true);
 
@@ -68,8 +63,6 @@ export default function Home() {
 
     setSiteReady(true);
 
-    // Permet de passer de #story à #countdown
-    // et inversement sans recharger la page.
     window.addEventListener("hashchange", scrollToCurrentSection);
 
     return () => {
@@ -132,23 +125,20 @@ export default function Home() {
     return <main className="min-h-screen bg-[#7f4634]" />;
   }
 
+  /* =========================================================
+      HISTOIRE ANELKA & BAUDOUIN
+  ========================================================= */
   const storyMoments = [
     {
-      year: "En 2019",
+      year: "Bien avant 2019",
       title: "Ils s’étaient déjà croisés",
-      image: "/images/histoire1.jpeg",
+      image: "/images/histoires1.jpeg",
       imagePosition: "center 30%",
       anelka: [
-        `Bien avant que notre histoire ne commence vraiment, nos chemins s’étaient déjà croisés au Cameroun. Nous avions fréquenté le même lycée, sans imaginer une seule seconde que plusieurs années plus tard, la vie nous réunirait de nouveau, loin de chez nous.`,
-
-        `À cette époque, nous étions simplement deux jeunes parmi tant d’autres. Puis chacun a suivi son chemin, le lycée s’est terminé, les années sont passées et nous nous sommes perdus de vue.`,
+        `Bien avant que notre histoire ne commence réellement, nos chemins s’étaient déjà croisés au Cameroun 🇨🇲. Nous avions fréquenté le même lycée, sans vraiment être proches et surtout sans imaginer une seule seconde que plusieurs années plus tard, la vie allait nous réunir à nouveau, loin de chez nous. À cette époque, nous étions simplement deux jeunes qui vivaient leur vie, puis le temps a passé, chacun a pris son chemin et nous nous sommes complètement perdus de vue. Qui aurait cru que ce n’était finalement qu’un « à bientôt » ? 🥹❤️`,
       ],
       baudouin: [
-        `Ça, c’est vraiment une histoire digne d’un film. On se connaissait déjà depuis le Cameroun. Nous avions fait la classe de 5ème M4 ensemble au Lycée classique de Bafang.`,
-
-        `On ne se parlait pas vraiment. Elle était souvent assise loin devant et moi plutôt derrière avec mes amis. Je la trouvais déjà jolie, mais à cet âge-là je n’avais aucune intention particulière. On était jeunes, on vivait simplement notre vie de lycéens.`,
-
-        `Puis le lycée s’est terminé. Chacun est parti de son côté et nous nous sommes complètement perdus de vue.`,
+        `Ça, c’est une histoire digne d’un film 😃. On se connaissait déjà depuis le pays parce qu’on avait fait la 5ème M4 ensemble au Lycée classique de Bafang. On ne se parlait pas vraiment, mais moi je la trouvais déjà jolie hein 😆. Elle était souvent assise loin devant et moi j’étais derrière avec mes gars, on tuait le temps comme tous les jeunes de notre âge. À ce moment-là, je ne la regardais pas encore avec des intentions particulières. On était jeunes, le lycée s’est terminé, chacun est parti de son côté et finalement on s’est perdus de vue pendant plusieurs années.`,
       ],
     },
 
@@ -158,20 +148,10 @@ export default function Home() {
       image: "/images/histoire22.jpeg",
       imagePosition: "center",
       anelka: [
-        `Tout a véritablement commencé le jour où il m’a appelée en 2019. Ce simple appel a illuminé ma journée d’une manière que je n’avais pas prévue.`,
-
-        `Je ne l’ai pas vécu comme une tentative de séduction. C’était simplement une conversation sincère et légère qui m’a fait du bien. Nous avons parlé, ri, pris de nos nouvelles, et très vite ces échanges sont devenus une habitude.`,
-
-        `Chaque soir après mes cours, j’avais envie de rentrer pour pouvoir lui parler en vidéo. Il me faisait rire, il m’encourageait et, sans même que je m’en rende compte, il commençait déjà à prendre une place particulière dans mon quotidien.`,
+        `Tout a réellement commencé le jour où il m’a appelée en 2019 ❤️. Ce simple appel a illuminé ma journée d’une joie que je n’attendais pas. Je ne l’ai pas du tout perçu comme quelqu’un qui essayait de me séduire, j’ai simplement découvert une conversation sincère, légère et agréable. Nous avons parlé, ri et pris de nos nouvelles comme si toutes ces années n’avaient finalement pas créé autant de distance entre nous. Parler avec lui me faisait du bien et, sans que je m’en rende vraiment compte, quelque chose venait de commencer ✨.`,
       ],
       baudouin: [
-        `Un mardi matin, vers 8 heures, j’étais en route pour les cours et je regardais tranquillement mon téléphone. Un ami que nous avions en commun depuis le lycée avait publié une photo d’elle dans son statut WhatsApp.`,
-
-        `Je me suis dit : “Mais tiens, ça fait vraiment longtemps.” Et surtout, je me suis rendu compte qu’elle était toujours aussi belle. J’ai demandé son numéro à notre ami et je lui ai écrit directement.`,
-
-        `Au début, elle ne se rappelait pas très bien de moi. Alors j’ai lancé un appel vidéo. J’étais plutôt bien apprêté ce jour-là, donc ça tombait bien. Elle a décroché, on s’est salués et finalement elle s’est souvenue de moi.`,
-
-        `On a commencé à discuter et elle souriait beaucoup. Je devais aller en cours, alors je lui ai simplement dit que je la rappellerais le soir. Je ne savais pas encore que ce petit appel allait changer énormément de choses.`,
+        `Un mardi matin vers 8 heures, j’allais en cours et je manipulais tranquillement mon téléphone quand j’ai vu qu’un gars du lycée qu’on avait en commun avait mis sa photo en statut WhatsApp. Je me suis dit : « Mais tiens, ça fait bail ! » Et surtout, je voyais qu’elle était toujours bien debout comme avant 😃. J’ai directement demandé son contact au gars et je lui ai écrit. Elle ne se rappelait pas trop de moi, donc moi aussi je n’ai pas perdu le temps, j’ai lancé l’appel vidéo sur place. En plus ce jour-là j’étais sorti bien chaud hein 😆. Elle a décroché, on s’est salués, elle a fini par se rappeler de moi et on a commencé à causer. Elle souriait beaucoup, moi aussi j’étais bien à l’aise. Comme je devais aller en cours, je lui ai dit que j’allais la rappeler le soir. À ce moment-là, je ne savais pas encore que ce petit appel allait vraiment changer ma vie.`,
       ],
     },
 
@@ -181,24 +161,10 @@ export default function Home() {
       image: "/images/histoire33.jpeg",
       imagePosition: "center",
       anelka: [
-        `À cette période, je venais d’arriver en Allemagne et je suivais mes cours de langue dans une autre ville. Malgré la distance, nos soirées se ressemblaient de plus en plus : nous nous appelions, nous racontions nos journées et nous pouvions rester longtemps à parler de tout et de rien.`,
-
-        `J’aimais cette complicité qui s’installait naturellement. Avec lui, je pouvais rire, parler de mes inquiétudes, de mes projets et simplement être moi-même.`,
-
-        `Petit à petit, ces appels sont devenus l’un des moments que j’attendais le plus dans ma journée.`,
+        `À cette période, je venais d’arriver en Allemagne et je suivais mes cours de langue dans une autre ville. Très vite, nos appels du soir sont devenus une habitude ❤️. Après mes cours, je me dépêchais souvent de rentrer dans ma chambre juste pour pouvoir lui parler en vidéo. Il me faisait rire, m’encourageait et savait toujours comment rendre mes journées plus légères. Avec lui, je pouvais parler de tout, de mes inquiétudes, de mes projets, de mes études et même des choses les plus banales. Cette complicité s’est installée tellement naturellement que nos appels sont devenus les moments que j’attendais le plus dans ma journée 🥹. C’était une période vraiment magique, pleine de tendresse, de rires et de cette sensation d’être comprise et importante pour quelqu’un ✨.`,
       ],
       baudouin: [
-        `Après mes cours, je l’appelais souvent le soir juste pour prendre de ses nouvelles. Puis plus nous parlions, plus je ressentais quelque chose.`,
-
-        `On riait énormément. On plaisantait, on racontait nos journées et après chaque conversation je me sentais bien. C’était presque devenu une petite thérapie du soir.`,
-
-        `À un moment, je me suis dit : “Pourquoi ne pas essayer quelque chose avec elle ?” Je ne lui ai rien dit tout de suite, évidemment. Mais dans ma tête, les intentions avaient déjà changé.`,
-
-        `On parlait tellement qu’à l’approche de mes examens, au lieu de réviser sérieusement une matière que je pensais maîtriser, je posais mon cahier devant moi et je lançais notre appel vidéo. Elle me disait souvent d’aller travailler. Moi je répondais tranquillement que je maîtrisais.`,
-
-        `Résultat : j’ai bien échoué cette matière. C’était la première fois de ma vie et j’avais vraiment mal au cœur. Elle aussi culpabilisait et me disait : “Waaa, c’est à cause de moi que tu as échoué.” Moi, comme j’aime faire le dur, je répondais que ce n’était rien et que ça pouvait arriver.`,
-
-        `Avec le recul, je me suis dit que c’était peut-être simplement le prix à payer pour rencontrer l’étoile qui allait illuminer ma vie. Et après ça, nos soirées ont continué comme si de rien n’était.`,
+        `Après ce premier appel, j’ai commencé à l’appeler le soir juste pour saluer et prendre de ses nouvelles. Mais plus on causait, plus je sentais qu’il y avait un feeling. On riait beaucoup, on blaguait, on racontait nos journées et franchement, après nos causeries je me sentais toujours bien, genre c’était devenu ma petite thérapie du soir. À un moment je me suis dit : « Pourquoi ne pas essayer quelque chose avec elle ? » Mais bien sûr, je ne lui ai rien dit 😅. Dans ma tête seulement, les intentions avaient déjà commencé. Le problème c’est qu’on causait tellement qu’à l’approche de mes examens, au lieu de bien réviser une matière que j’aimais pourtant beaucoup, chaque soir je mettais le cahier devant moi et je lançais l’appel vidéo 😂. Elle me disait : « Va réviser », moi je répondais : « Aka, je maîtrise ». C’est comme ça que j’ai bien échoué cette matière, première fois de ma vie 🥲. J’avais mal dans mon cœur, elle me consolait et disait : « Waaa, c’est à cause de moi que tu as échoué. » Moi comme j’aime faire le dur, je répondais que non, ce n’était rien. Après je me suis même dit que c’était peut-être le prix à payer pour recevoir l’étoile qui allait illuminer ma vie. Et nos YelloNight ont continué tranquillement.`,
       ],
     },
 
@@ -208,24 +174,10 @@ export default function Home() {
       image: "/images/histoire4.jpeg",
       imagePosition: "center",
       anelka: [
-        `Après mes examens, il m’a proposé de venir dans sa ville. Je me souviens qu’il aurait aimé que je sois déjà là pour son anniversaire et qu’il avait été un peu déçu que nous n’ayons pas pu partager ce moment ensemble.`,
-
-        `Alors j’ai pris la route. Ce séjour a marqué quelque chose de nouveau entre nous. Pour la première fois, tout ce que nous avions construit derrière nos écrans devenait réel.`,
-
-        `En passant du temps avec lui, j’ai découvert encore davantage sa personnalité. J’ai aimé son humilité, sa façon de traiter les autres avec respect et cette stabilité qu’il dégageait.`,
-
-        `Ce voyage m’a permis de comprendre que derrière nos longues conversations, il y avait peut-être quelque chose de beaucoup plus grand qui était en train de naître.`,
+        `Après mes examens, il m’a invitée à venir dans sa ville. Je savais qu’il avait été un peu vexé que je ne sois pas là pour son anniversaire et qu’il aurait aimé partager ce moment avec moi 🥹. J’ai donc pris la route pour aller le voir, sans savoir que ce voyage allait devenir l’un des tournants les plus importants de notre histoire. En arrivant chez lui, j’ai découvert l’homme derrière toutes nos conversations. J’ai été touchée par son humilité, sa politesse et surtout par la façon dont il traitait les personnes autour de lui, pas seulement moi. J’ai découvert chez lui cette stabilité de cœur et cette vision de la vie que j’admirais déjà à travers nos appels. Tout ce que nous avions construit derrière nos écrans devenait enfin réel ❤️ et ce séjour m’a fait comprendre que quelque chose de beaucoup plus profond était en train de naître entre nous ✨.`,
       ],
       baudouin: [
-        `Elle cherchait une ville où poursuivre son parcours après ses cours de langue. Évidemment, moi j’avais déjà mon petit plan. Je lui conseillais de venir dans ma ville.`,
-
-        `Elle est finalement venue pour passer un examen de langue. Quand elle est arrivée et qu’elle a ouvert son sac, j’ai découvert qu’elle avait apporté beaucoup de cadeaux pour moi. Je ne m’y attendais vraiment pas et ça m’a énormément touché.`,
-
-        `Le séjour s’est très bien passé. C’était notre première vraie rencontre depuis toutes ces années et surtout la première fois que nous passions autant de temps ensemble. J’ai aimé sa douceur, son attention et tous ces petits gestes du quotidien. Elle cuisinait beaucoup aussi, et franchement, c’était bon.`,
-
-        `Malheureusement, elle a échoué l’examen qu’elle était venue passer. Peut-être que nous avions chacun besoin d’échouer une fois dans cette histoire. Je l’ai soutenue comme elle m’avait soutenu auparavant. Elle a repassé son examen plus tard et cette fois, elle l’a réussi.`,
-
-        `Après son séjour, je me suis dit qu’il fallait accélérer un peu les choses. J’avais beaucoup trop aimé le temps passé avec elle pour faire semblant de ne rien ressentir.`,
+        `À un moment, elle cherchait dans quelle ville continuer son parcours après les cours de langue. Moi aussi j’avais déjà mon petit plan derrière 😅, donc je lui conseillais doucement de venir dans ma ville. Elle est finalement venue pour passer un examen de langue et quand elle est arrivée, elle a ouvert son sac et là je vois beaucoup de cadeaux pour moi. Je ne m’attendais vraiment pas à ça 🥲. Le séjour s’est super bien passé. Pour une première vraie prise de contact après toutes ces années, c’était vraiment cool. J’ai beaucoup aimé sa douceur, ses petites attentions et surtout elle préparait à manger tout le temps, et c’était bon hein 🥲. Malheureusement, elle a échoué l’examen qu’elle était venue passer. Je me suis dit : « Peut-être elle aussi devait avoir son petit échec dans notre histoire » 😅. Je l’ai consolée comme elle m’avait consolé auparavant, puis elle a refait l’examen et elle l’a réussi. Après ce séjour, dans ma tête c’était clair : « Il faut que j’accélère 😁 ». J’avais trop aimé le temps passé avec elle pour maintenant faire semblant.`,
       ],
     },
 
@@ -235,22 +187,10 @@ export default function Home() {
       image: "/images/histoire6.jpeg",
       imagePosition: "center",
       anelka: [
-        `Ce qui avait commencé par des appels du soir est devenu une vraie relation. Nous avons appris à nous connaître autrement, avec nos qualités, nos défauts, nos ambitions et nos inquiétudes.`,
-
-        `Au fil du temps, j’ai découvert chez lui une force tranquille. Il trouvait toujours une manière de m’aider, que ce soit pour mes études, mes démarches ou simplement lorsque j’avais besoin d’être rassurée.`,
-
-        `Avec lui, j’ai compris qu’aimer quelqu’un pouvait aussi signifier construire. Pas seulement vivre de beaux moments, mais avancer ensemble, chercher des solutions ensemble et faire des projets qui deviennent peu à peu notre réalité.`,
-
-        `Finalement, je suis venue poursuivre mes études dans la ville où il vivait. Nos appels à distance ont laissé place à un quotidien partagé.`,
+        `À partir de là, notre relation a vraiment pris une autre dimension ❤️. Ce qui avait commencé par un appel puis par de longues soirées en vidéo est devenu une vraie histoire d’amour. Au fil du temps, j’ai découvert encore davantage sa force tranquille. Il trouve toujours une solution lorsque j’ai un problème, que ce soit pour mes études, mes démarches administratives ou simplement lorsque j’ai besoin d’être rassurée. Il m’accompagne, me soutient et me montre chaque jour qu’il a une vraie volonté de réussir et de construire. Avec lui, j’ai découvert un amour solide et apaisant, un amour qui ne cherche pas seulement à impressionner, mais qui cherche surtout à bâtir 🤍. J’ai finalement poursuivi mes études dans la ville où il vivait et nos appels à distance ont peu à peu laissé place à un véritable quotidien partagé ✨.`,
       ],
       baudouin: [
-        `Après ce séjour, pour moi les choses étaient devenues très claires. Je voulais être avec elle.`,
-
-        `J’ai continué à me rapprocher d’elle et nous avons fini par nous mettre ensemble. Elle est ensuite venue faire ses études dans la ville où je vivais.`,
-
-        `À partir de là, ce n’était plus seulement une histoire d’appels vidéo et de longues soirées au téléphone. Nous pouvions enfin construire quelque chose dans la vraie vie.`,
-
-        `Nous avons avancé ensemble, avec les bons moments, les difficultés, les projets, les décisions importantes et tout ce qui fait réellement une relation.`,
+        `Après son séjour, moi je savais déjà ce que je voulais. J’ai donc continué à accélérer 😁 et finalement nous nous sommes mis ensemble. Elle a fini par venir poursuivre ses études dans la ville où je vivais et là, notre histoire a vraiment quitté WhatsApp pour entrer dans la vraie vie. Ce n’était plus seulement les appels vidéo, les YelloNight et les longues causeries, maintenant il fallait apprendre à cheminer ensemble pour de vrai, avec les bons moments, les difficultés, les projets, les décisions et tout ce qui vient avec une relation sérieuse. On a avancé comme ça, petit à petit, et nous voilà encore ensemble aujourd’hui ❣️. Quand j’y pense, tout ça est parti d’un simple statut WhatsApp vu un mardi matin.`,
       ],
     },
 
@@ -260,38 +200,34 @@ export default function Home() {
       image: "/images/histoire5.jpeg",
       imagePosition: "center",
       anelka: [
-        `En février 2024, nous avons franchi une nouvelle étape en emménageant ensemble. C’était beau, mais aussi intense. Il fallait apprendre à partager le quotidien, gérer les dépenses, les responsabilités et tous les changements qui accompagnent une vraie vie à deux.`,
-
-        `Et au milieu de tout cela, j’étais enceinte.`,
-
-        `Puis en avril 2024, notre vie a changé à jamais avec l’arrivée de LONAAM. Notre petit bout de chou a bouleversé notre monde et lui a donné une nouvelle lumière.`,
-
-        `Sa naissance nous a demandé énormément d’énergie, mais elle nous a aussi donné une nouvelle raison d’avancer ensemble. Il est devenu notre petit soleil, notre force et une partie immense de notre histoire.`,
-
-        `Quelques mois plus tard, une autre étape importante est arrivée : la rencontre de nos familles. Voir nos deux univers se rapprocher a donné encore plus de sens au chemin que nous avions parcouru.`,
+        `En février 2024, nous avons franchi une nouvelle grande étape en emménageant ensemble ❤️. Cette période a été belle, mais aussi bouleversante, parce qu’il fallait apprendre à vivre réellement à deux, gérer le quotidien, les dépenses, les responsabilités et tous les ajustements que cela demande, d’autant plus que j’étais enceinte 🥹. Puis en avril 2024, notre vie a changé à jamais avec l’arrivée de notre petit bout de chou, mon chéri d’amour comme j’aime l’appeler 👶🏽❤️. Sa venue a été un véritable tourbillon, un bouleversement psychologique et émotionnel, mais comme l’arc-en-ciel qui apparaît après la pluie, il a illuminé nos vies ✨. Chaque jour depuis sa naissance, LONAAM est notre lever de soleil 🌅, fidèle à la signification de son prénom : il s’est levé pour illuminer nos vies. Notre guerrier, notre lion 🦁, notre symbole de force et de courage nous a donné une nouvelle raison de nous dépasser, de nous battre et de nous unir encore davantage.`,
       ],
       baudouin: [
-        `Quand je repense à tout le chemin parcouru depuis cette photo aperçue un matin sur WhatsApp, j’ai parfois du mal à croire à tout ce qui s’est passé ensuite.`,
+        `Quand je regarde tout ce chemin aujourd’hui, parfois même moi je me dis : « Donc tout ça a commencé comme ça ? » 😃. La fille que j’avais connue en 5ème, que j’avais retrouvée des années plus tard grâce à un statut WhatsApp et avec qui je pouvais passer toute une soirée au téléphone, est devenue ma compagne, puis la mère de notre enfant. En février 2024, on a emménagé ensemble et là c’était encore une autre école, parce que vivre ensemble ce n’est plus seulement raccrocher l’appel quand chacun veut dormir 😅. Il fallait apprendre à gérer le quotidien, les responsabilités et tout ce qui venait avec la grossesse. Puis en avril, LONAAM est arrivé et il a complètement changé notre vie. Devenir parents nous a beaucoup fait grandir et nous a donné encore plus de raisons de nous battre pour ce qu’on construisait ❤️.`,
+      ],
+    },
 
-        `La fille avec qui je passais mes soirées au téléphone est devenue ma compagne. Puis nous avons commencé à construire notre foyer et nous sommes devenus parents.`,
-
-        `Il y a eu beaucoup de moments heureux, mais aussi des périodes où il fallait être solides, s’adapter, prendre des décisions et continuer à avancer ensemble.`,
-
-        `Aujourd’hui, quand je regarde notre famille et tout ce que nous avons construit, je comprends encore mieux pourquoi cette histoire méritait que l’on prenne le risque de la vivre jusqu’au bout.`,
-
-        `Et maintenant, après toutes ces étapes, nous sommes prêts à écrire la suivante.`,
+    {
+      year: "Novembre 2024",
+      title: "La rencontre de nos familles",
+      image: "",
+      imagePosition: "center",
+      anelka: [
+        `Puis en novembre 2024, mon chéri a pris une belle initiative ❤️ : il a décidé qu’il était temps que nos familles se rencontrent. Pour moi, ce moment avait une valeur particulière, parce qu’il ne s’agissait plus seulement de notre couple, mais de deux familles qui allaient désormais apprendre à se connaître et à avancer ensemble. La rencontre s’est déroulée dans une atmosphère douce, respectueuse et pleine de joie 🤍. J’ai eu l’impression que nos deux univers se rejoignaient enfin pour former un seul horizon ✨. En regardant tout le chemin parcouru depuis ce premier appel de 2019, je me suis dit une fois de plus que le destin avait vraiment bien fait les choses 🥹❤️.`,
+      ],
+      baudouin: [
+        `En novembre 2024, je me suis dit qu’il était temps de faire les choses encore plus sérieusement. Après tout ce qu’on avait déjà vécu ensemble, je voulais que nos familles se rencontrent. Pour moi, c’était une manière de montrer clairement que notre histoire n’était plus seulement celle de deux personnes qui s’aiment, mais celle de deux familles qui allaient désormais être liées. La rencontre s’est bien passée, dans le respect, la bonne humeur et cette ambiance-là qu’on aime chez nous. Je regardais tout ça et je me disais quand même : depuis mon fameux statut WhatsApp jusqu’ici, on a vraiment fait du chemin 😃. Et maintenant, après toutes ces étapes, on est prêts pour la suivante ❣️.`,
       ],
     },
   ];
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#7f4634]">
-
       {enteredSite && <Navigation />}
 
-      {/* =========================
+      {/* =========================================================
           PAGE D'ACCUEIL
-      ========================== */}
+      ========================================================= */}
       {!enteredSite && (
         <section className="relative min-h-screen overflow-hidden text-white">
           <Image
@@ -303,13 +239,10 @@ export default function Home() {
             className="object-cover object-[center_25%] md:object-[center_30%]"
           />
 
-          {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-[#6D071A]/10 to-[#3A1F1A]/80" />
 
-          {/* Contenu */}
           <div className="relative z-10 flex min-h-screen items-center justify-center px-6">
             <div className="w-full max-w-2xl text-center">
-
               <p className="text-[10px] uppercase tracking-[0.4em] text-[#F3D0AD] md:text-xs">
                 Ensemble avec leurs familles
               </p>
@@ -318,11 +251,7 @@ export default function Home() {
 
               <h1 className="mt-7 font-serif text-5xl leading-[0.95] md:text-7xl">
                 Anelka
-
-                <span className="my-2 block text-[#E2A066]">
-                  &
-                </span>
-
+                <span className="my-2 block text-[#E2A066]">&</span>
                 Baudouin
               </h1>
 
@@ -358,15 +287,14 @@ export default function Home() {
               <div className="mt-6 animate-bounce text-xl text-[#F3D0AD]">
                 ↓
               </div>
-
             </div>
           </div>
         </section>
       )}
 
-      {/* =========================
+      {/* =========================================================
           COMPTE À REBOURS
-      ========================== */}
+      ========================================================= */}
       {enteredSite && (
         <section
           id="countdown"
@@ -410,12 +338,10 @@ export default function Home() {
             </p>
 
             <div className="mx-auto mt-14 grid max-w-5xl grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-
               <div className="rounded-[28px] border border-white/20 bg-[#FFF8F0]/95 px-4 py-8 shadow-xl backdrop-blur md:py-10">
                 <p className="font-serif text-5xl text-[#8F4633] md:text-6xl">
                   {String(timeLeft.days).padStart(2, "0")}
                 </p>
-
                 <p className="mt-3 text-[10px] uppercase tracking-[0.3em] text-[#B84A20]">
                   Jours
                 </p>
@@ -425,7 +351,6 @@ export default function Home() {
                 <p className="font-serif text-5xl text-[#8F4633] md:text-6xl">
                   {String(timeLeft.hours).padStart(2, "0")}
                 </p>
-
                 <p className="mt-3 text-[10px] uppercase tracking-[0.3em] text-[#B84A20]">
                   Heures
                 </p>
@@ -435,7 +360,6 @@ export default function Home() {
                 <p className="font-serif text-5xl text-[#8F4633] md:text-6xl">
                   {String(timeLeft.minutes).padStart(2, "0")}
                 </p>
-
                 <p className="mt-3 text-[10px] uppercase tracking-[0.3em] text-[#B84A20]">
                   Minutes
                 </p>
@@ -445,12 +369,10 @@ export default function Home() {
                 <p className="font-serif text-5xl text-[#8F4633] md:text-6xl">
                   {String(timeLeft.seconds).padStart(2, "0")}
                 </p>
-
                 <p className="mt-3 text-[10px] uppercase tracking-[0.3em] text-[#B84A20]">
                   Secondes
                 </p>
               </div>
-
             </div>
 
             <p className="mt-12 font-serif text-lg italic text-[#FFEBDD] md:text-xl">
@@ -483,7 +405,6 @@ export default function Home() {
           className="relative overflow-hidden bg-[#F8EFE9] px-6 py-24 text-[#6D3828] md:px-12 md:py-28"
         >
           <div className="pointer-events-none absolute -left-24 top-32 h-72 w-72 rounded-full bg-[#D99573]/10 blur-3xl" />
-
           <div className="pointer-events-none absolute -right-24 bottom-32 h-80 w-80 rounded-full bg-[#C54716]/10 blur-3xl" />
 
           <div className="pointer-events-none absolute left-8 top-24 hidden font-serif text-[130px] text-[#C54716]/5 md:block">
@@ -495,9 +416,8 @@ export default function Home() {
           </div>
 
           <div className="relative z-10 mx-auto max-w-6xl">
-
+            {/* ================= TITRE HISTOIRE ================= */}
             <div className="mx-auto max-w-3xl text-center">
-
               <p className="text-xs uppercase tracking-[0.4em] text-[#A93D17]">
                 Notre histoire
               </p>
@@ -517,11 +437,10 @@ export default function Home() {
                 <br className="hidden sm:block" />
                 Et quelque part entre les deux, il y a leur histoire.
               </p>
-
             </div>
 
+            {/* ================= CHAPITRES ================= */}
             <div className="mt-24 space-y-32 md:mt-28 md:space-y-40">
-
               {storyMoments.map((moment, index) => {
                 const imageOnLeft = index % 2 === 0;
 
@@ -530,167 +449,249 @@ export default function Home() {
                     key={`${moment.year}-${moment.title}`}
                     className="relative"
                   >
-
                     <div
                       className={`pointer-events-none absolute -top-16 hidden font-serif text-[120px] leading-none text-[#C54716]/[0.045] lg:block ${
-                        imageOnLeft
-                          ? "right-0"
-                          : "left-0"
+                        imageOnLeft ? "right-0" : "left-0"
                       }`}
                     >
                       {String(index + 1).padStart(2, "0")}
                     </div>
 
-                    <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+                    {/* =================================================
+                        CHAPITRES AVEC PHOTO
+                    ================================================= */}
+                    {moment.image ? (
+                      <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+                        {/* ================= IMAGE ================= */}
+                        <div
+                          className={
+                            imageOnLeft ? "lg:order-1" : "lg:order-2"
+                          }
+                        >
+                          <div className="relative h-[430px] overflow-hidden rounded-[34px] shadow-[0_25px_70px_rgba(95,45,30,0.16)] md:h-[560px]">
+                            <Image
+                              src={moment.image}
+                              alt={`${moment.title} - Anelka et Baudouin`}
+                              fill
+                              sizes="(max-width: 1024px) 100vw, 50vw"
+                              className="object-cover"
+                              style={{
+                                objectPosition: moment.imagePosition,
+                              }}
+                            />
 
-                      <div
-                        className={`${
-                          imageOnLeft
-                            ? "lg:order-1"
-                            : "lg:order-2"
-                        }`}
-                      >
-                        <div className="relative h-[430px] overflow-hidden rounded-[34px] shadow-[0_25px_70px_rgba(95,45,30,0.16)] md:h-[560px]">
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#3A1F1A]/55 via-transparent to-transparent" />
 
-                          <Image
-                            src={moment.image}
-                            alt={`${moment.title} - Anelka et Baudouin`}
-                            fill
-                            sizes="(max-width: 1024px) 100vw, 50vw"
-                            className="object-cover"
-                            style={{
-                              objectPosition: moment.imagePosition,
-                            }}
-                          />
+                            <div className="absolute bottom-6 left-6 right-6">
+                              <p className="text-[9px] uppercase tracking-[0.35em] text-[#F4C58C]">
+                                Anelka & Baudouin
+                              </p>
 
-                          <div className="absolute inset-0 bg-gradient-to-t from-[#3A1F1A]/55 via-transparent to-transparent" />
+                              <p className="mt-2 font-serif text-2xl text-white md:text-3xl">
+                                {moment.year}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
 
-                          <div className="absolute bottom-6 left-6 right-6">
+                        {/* ================= TEXTES ================= */}
+                        <div
+                          className={
+                            imageOnLeft ? "lg:order-2" : "lg:order-1"
+                          }
+                        >
+                          <p className="text-[10px] uppercase tracking-[0.4em] text-[#B84A20]">
+                            {moment.year}
+                          </p>
 
-                            <p className="text-[9px] uppercase tracking-[0.35em] text-[#F4C58C]">
-                              Anelka & Baudouin
-                            </p>
+                          <h3 className="mt-4 font-serif text-3xl leading-tight text-[#5A3026] md:text-4xl">
+                            {moment.title}
+                          </h3>
 
-                            <p className="mt-2 font-serif text-2xl text-white md:text-3xl">
-                              {moment.year}
-                            </p>
+                          <div className="mt-6 h-px w-16 bg-[#D77A57]" />
 
+                          {/* ================= ANELKA ================= */}
+                          <div className="mt-8">
+                            <div className="flex items-center gap-3">
+                              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#C54716] text-xs font-medium text-white">
+                                A
+                              </div>
+
+                              <div>
+                                <p className="text-[9px] uppercase tracking-[0.32em] text-[#C54716]">
+                                  Du côté d’Anelka
+                                </p>
+
+                                <p className="mt-1 font-serif text-sm italic text-[#9B6B59]">
+                                  Ce qu’elle a vécu
+                                </p>
+                              </div>
+                            </div>
+
+                            <div className="mt-5">
+                              {moment.anelka.map(
+                                (paragraph, paragraphIndex) => (
+                                  <p
+                                    key={paragraphIndex}
+                                    className="leading-8 text-[#765247]"
+                                  >
+                                    {paragraph}
+                                  </p>
+                                )
+                              )}
+                            </div>
                           </div>
 
+                          <div className="my-9 flex items-center gap-4">
+                            <div className="h-px flex-1 bg-[#D77A57]/25" />
+
+                            <span className="font-serif text-sm text-[#D77A57]">
+                              ♡
+                            </span>
+
+                            <div className="h-px flex-1 bg-[#D77A57]/25" />
+                          </div>
+
+                          {/* ================= BAUDOUIN ================= */}
+                          <div className="rounded-[26px] border border-[#274E13]/10 bg-[#F1F4EC]/65 p-6 md:p-7">
+                            <div className="flex items-center gap-3">
+                              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#274E13] text-xs font-medium text-white">
+                                B
+                              </div>
+
+                              <div>
+                                <p className="text-[9px] uppercase tracking-[0.32em] text-[#274E13]">
+                                  Du côté de Baudouin
+                                </p>
+
+                                <p className="mt-1 font-serif text-sm italic text-[#68805B]">
+                                  Ce qu’il a vécu
+                                </p>
+                              </div>
+                            </div>
+
+                            <div className="mt-5">
+                              {moment.baudouin.map(
+                                (paragraph, paragraphIndex) => (
+                                  <p
+                                    key={paragraphIndex}
+                                    className="leading-8 text-[#56604D]"
+                                  >
+                                    {paragraph}
+                                  </p>
+                                )
+                              )}
+                            </div>
+                          </div>
                         </div>
                       </div>
+                    ) : (
+                      /* =================================================
+                          DERNIER CHAPITRE SANS PHOTO NI CARTE
+                      ================================================= */
+                      <div className="mx-auto max-w-6xl py-6 md:py-14">
+                        {/* TITRE PLEINE LARGEUR */}
+                        <div className="mx-auto max-w-4xl text-center">
+                          <p className="text-[10px] uppercase tracking-[0.45em] text-[#B84A20]">
+                            {moment.year}
+                          </p>
 
-                      <div
-                        className={`${
-                          imageOnLeft
-                            ? "lg:order-2"
-                            : "lg:order-1"
-                        }`}
-                      >
+                          <h3 className="mt-5 font-serif text-4xl leading-tight text-[#5A3026] md:text-6xl">
+                            {moment.title}
+                          </h3>
 
-                        <p className="text-[10px] uppercase tracking-[0.4em] text-[#B84A20]">
-                          {moment.year}
-                        </p>
+                          <div className="mx-auto mt-7 h-px w-24 bg-[#D77A57]" />
 
-                        <h3 className="mt-4 font-serif text-3xl leading-tight text-[#5A3026] md:text-4xl">
-                          {moment.title}
-                        </h3>
-
-                        <div className="mt-6 h-px w-16 bg-[#D77A57]" />
-
-                        <div className="mt-8">
-
-                          <div className="flex items-center gap-3">
-
-                            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#C54716] text-xs font-medium text-white">
-                              A
-                            </div>
-
-                            <div>
-
-                              <p className="text-[9px] uppercase tracking-[0.32em] text-[#C54716]">
-                                Du côté d’Anelka
-                              </p>
-
-                              <p className="mt-1 font-serif text-sm italic text-[#9B6B59]">
-                                Ce qu’elle a vécu
-                              </p>
-
-                            </div>
-
-                          </div>
-
-                          <div className="mt-5 space-y-4">
-
-                            {moment.anelka.map((paragraph, paragraphIndex) => (
-                              <p
-                                key={paragraphIndex}
-                                className="leading-8 text-[#765247]"
-                              >
-                                {paragraph}
-                              </p>
-                            ))}
-
-                          </div>
-
+                          <p className="mx-auto mt-7 max-w-2xl font-serif text-lg italic leading-8 text-[#9B6B59] md:text-xl">
+                            Deux familles qui se rencontrent.
+                            <br className="hidden sm:block" />
+                            Une nouvelle étape dans leur histoire.
+                          </p>
                         </div>
 
-                        <div className="my-9 flex items-center gap-4">
+                        {/* ================= DEUX RÉCITS ================= */}
+                        <div className="mt-16 grid gap-12 md:grid-cols-2 md:gap-16 lg:gap-20">
+                          {/* ================= ANELKA ================= */}
+                          <div>
+                            <div className="flex items-center gap-3">
+                              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#C54716] text-xs font-medium text-white">
+                                A
+                              </div>
 
+                              <div>
+                                <p className="text-[9px] uppercase tracking-[0.32em] text-[#C54716]">
+                                  Du côté d’Anelka
+                                </p>
+
+                                <p className="mt-1 font-serif text-sm italic text-[#9B6B59]">
+                                  Ce qu’elle a vécu
+                                </p>
+                              </div>
+                            </div>
+
+                            <div className="mt-6">
+                              {moment.anelka.map(
+                                (paragraph, paragraphIndex) => (
+                                  <p
+                                    key={paragraphIndex}
+                                    className="text-[16px] leading-8 text-[#765247] md:text-[17px]"
+                                  >
+                                    {paragraph}
+                                  </p>
+                                )
+                              )}
+                            </div>
+                          </div>
+
+                          {/* ================= BAUDOUIN ================= */}
+                          <div className="border-t border-[#D77A57]/20 pt-10 md:border-l md:border-t-0 md:pl-16 md:pt-0 lg:pl-20">
+                            <div className="flex items-center gap-3">
+                              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#274E13] text-xs font-medium text-white">
+                                B
+                              </div>
+
+                              <div>
+                                <p className="text-[9px] uppercase tracking-[0.32em] text-[#274E13]">
+                                  Du côté de Baudouin
+                                </p>
+
+                                <p className="mt-1 font-serif text-sm italic text-[#68805B]">
+                                  Ce qu’il a vécu
+                                </p>
+                              </div>
+                            </div>
+
+                            <div className="mt-6">
+                              {moment.baudouin.map(
+                                (paragraph, paragraphIndex) => (
+                                  <p
+                                    key={paragraphIndex}
+                                    className="text-[16px] leading-8 text-[#56604D] md:text-[17px]"
+                                  >
+                                    {paragraph}
+                                  </p>
+                                )
+                              )}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* SIGNATURE */}
+                        <div className="mx-auto mt-16 flex max-w-xl items-center justify-center gap-5">
                           <div className="h-px flex-1 bg-[#D77A57]/25" />
 
-                          <span className="font-serif text-sm text-[#D77A57]">
-                            ♡
+                          <span className="font-serif text-lg tracking-[0.15em] text-[#A93D17]">
+                            A | B
                           </span>
 
                           <div className="h-px flex-1 bg-[#D77A57]/25" />
-
                         </div>
-
-                        <div className="rounded-[26px] border border-[#274E13]/10 bg-[#F1F4EC]/65 p-6 md:p-7">
-
-                          <div className="flex items-center gap-3">
-
-                            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#274E13] text-xs font-medium text-white">
-                              B
-                            </div>
-
-                            <div>
-
-                              <p className="text-[9px] uppercase tracking-[0.32em] text-[#274E13]">
-                                Du côté de Baudouin
-                              </p>
-
-                              <p className="mt-1 font-serif text-sm italic text-[#68805B]">
-                                Ce qu’il a vécu
-                              </p>
-
-                            </div>
-
-                          </div>
-
-                          <div className="mt-5 space-y-4">
-
-                            {moment.baudouin.map((paragraph, paragraphIndex) => (
-                              <p
-                                key={paragraphIndex}
-                                className="leading-8 text-[#56604D]"
-                              >
-                                {paragraph}
-                              </p>
-                            ))}
-
-                          </div>
-
-                        </div>
-
                       </div>
+                    )}
 
-                    </div>
-
+                    {/* ================= SÉPARATEUR ================= */}
                     {index !== storyMoments.length - 1 && (
                       <div className="mx-auto mt-24 flex max-w-xl items-center gap-5 md:mt-28">
-
                         <div className="h-px flex-1 bg-[#D77A57]/25" />
 
                         <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#D77A57]/35 bg-[#F8EFE9]">
@@ -700,25 +701,21 @@ export default function Home() {
                         </div>
 
                         <div className="h-px flex-1 bg-[#D77A57]/25" />
-
                       </div>
                     )}
-
                   </article>
                 );
               })}
-
             </div>
 
-            {/* CONCLUSION */}
+            {/* =========================================================
+                CONCLUSION
+            ========================================================= */}
             <div className="mx-auto mt-32 max-w-4xl text-center md:mt-40">
-
               <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full border border-[#D77A57]/50 bg-white/30">
-
                 <span className="font-serif text-lg tracking-[0.15em] text-[#A93D17]">
                   A | B
                 </span>
-
               </div>
 
               <div className="mx-auto mt-8 h-px w-24 bg-[#D77A57]" />
@@ -736,7 +733,8 @@ export default function Home() {
                 d’un appel vidéo lancé presque spontanément
                 et de quelques longues soirées à refaire le monde
                 pour que deux anciens camarades de classe
-                commencent à écrire l’histoire qui les mène aujourd’hui jusqu’au mariage.
+                commencent à écrire l’histoire qui les mène aujourd’hui
+                jusqu’au mariage.
               </p>
 
               <p className="mt-9 text-[10px] uppercase tracking-[0.4em] text-[#A93D17]">
@@ -746,18 +744,16 @@ export default function Home() {
               <p className="mt-6 font-serif text-2xl italic text-[#9B6B59] md:text-3xl">
                 La suite s’écrira ensemble.
               </p>
-
             </div>
-
           </div>
         </section>
       )}
 
       {enteredSite && <Footer />}
 
-      {/* =========================
+      {/* =========================================================
           TRANSITION HISTOIRE → PROGRAMME
-      ========================== */}
+      ========================================================= */}
       {enteredSite && (
         <div className="bg-[#C54716] py-12 md:py-14">
           <div className="mx-auto flex max-w-4xl items-center justify-center gap-6 px-6">
@@ -778,12 +774,11 @@ export default function Home() {
         </div>
       )}
 
-      {/* =========================
+      {/* =========================================================
           POPUP ENVELOPPE
-      ========================== */}
+      ========================================================= */}
       {showEnvelope && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#24110c]/75 px-4 backdrop-blur-md">
-
           <button
             type="button"
             onClick={closeInvitation}
@@ -795,7 +790,6 @@ export default function Home() {
 
           <div className="relative flex h-[610px] w-full max-w-[430px] items-end justify-center">
             <div className="relative h-[270px] w-[370px] max-w-[90vw]">
-
               <div className="absolute inset-0 rounded-[18px] bg-[#B84A20] shadow-[0_30px_80px_rgba(0,0,0,0.4)]" />
 
               <div
@@ -861,7 +855,6 @@ export default function Home() {
                       setShowEnvelope(false);
                       setEnteredSite(true);
 
-                      // On entre directement sur le compte à rebours.
                       setTimeout(() => {
                         const countdown =
                           document.getElementById("countdown");
@@ -928,7 +921,6 @@ export default function Home() {
           </div>
         </div>
       )}
-
     </main>
   );
 }
