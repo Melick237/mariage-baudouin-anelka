@@ -135,7 +135,7 @@ export default function Home() {
       image: "/images/histoires1.jpeg",
       imagePosition: "center 30%",
       anelka: [
-        `Bien avant que notre histoire ne commence réellement, nos chemins s’étaient déjà croisés au Cameroun 🇨🇲. Nous avions fréquenté le même lycée, sans vraiment être proches et surtout sans imaginer une seule seconde que plusieurs années plus tard, la vie allait nous réunir à nouveau, loin de chez nous. À cette époque, nous étions simplement deux jeunes qui vivaient leur vie, puis le temps a passé, chacun a pris son chemin et nous nous sommes complètement perdus de vue. Qui aurait cru que ce n’était finalement qu’un « à bientôt » ? 🥹❤️`,
+        `Avant que nous nous retrouvions en Allemagne, je me rappelle d'une fois ou il m'a seduit par son charme, le dernier jour d'une formation en langage C++ qu'on avait fait au Lycee. Le gar etait, je crois le meilleur de la formation et avait un petit charisme que j'aimais beaucoup. Bon après la formation, nous nous sommes perdu de vue.`,
       ],
       baudouin: [
         `Ça, c’est une histoire digne d’un film 😃. On se connaissait déjà depuis le pays parce qu’on avait fait la 5ème M4 ensemble au Lycée classique de Bafang. On ne se parlait pas vraiment, mais moi je la trouvais déjà jolie hein 😆. Elle était souvent assise loin devant et moi j’étais derrière avec mes gars, on tuait le temps comme tous les jeunes de notre âge. À ce moment-là, je ne la regardais pas encore avec des intentions particulières. On était jeunes, le lycée s’est terminé, chacun est parti de son côté et finalement on s’est perdus de vue pendant plusieurs années.`,
@@ -148,7 +148,7 @@ export default function Home() {
       image: "/images/histoire22.jpeg",
       imagePosition: "center",
       anelka: [
-        `Tout a réellement commencé le jour où il m’a appelée en 2019 ❤️. Ce simple appel a illuminé ma journée d’une joie que je n’attendais pas. Je ne l’ai pas du tout perçu comme quelqu’un qui essayait de me séduire, j’ai simplement découvert une conversation sincère, légère et agréable. Nous avons parlé, ri et pris de nos nouvelles comme si toutes ces années n’avaient finalement pas créé autant de distance entre nous. Parler avec lui me faisait du bien et, sans que je m’en rende vraiment compte, quelque chose venait de commencer ✨.`,
+        `Une fois en Allemagne il m'a appelé, Un appel qui a rendu ma journee particuliere et joyeuse. Je ne l’avais pas apprehendé comme un appel pour draguer mais un appel qui me faisait plaisir, causer avec lui, me rendait heureuse.`,
       ],
       baudouin: [
         `Un mardi matin vers 8 heures, j’allais en cours et je manipulais tranquillement mon téléphone quand j’ai vu qu’un gars du lycée qu’on avait en commun avait mis sa photo en statut WhatsApp. Je me suis dit : « Mais tiens, ça fait bail ! » Et surtout, je voyais qu’elle était toujours bien debout comme avant 😃. J’ai directement demandé son contact au gars et je lui ai écrit. Elle ne se rappelait pas trop de moi, donc moi aussi je n’ai pas perdu le temps, j’ai lancé l’appel vidéo sur place. En plus ce jour-là j’étais sorti bien chaud hein 😆. Elle a décroché, on s’est salués, elle a fini par se rappeler de moi et on a commencé à causer. Elle souriait beaucoup, moi aussi j’étais bien à l’aise. Comme je devais aller en cours, je lui ai dit que j’allais la rappeler le soir. À ce moment-là, je ne savais pas encore que ce petit appel allait vraiment changer ma vie.`,
@@ -161,7 +161,7 @@ export default function Home() {
       image: "/images/histoire33.jpeg",
       imagePosition: "center",
       anelka: [
-        `À cette période, je venais d’arriver en Allemagne et je suivais mes cours de langue dans une autre ville. Très vite, nos appels du soir sont devenus une habitude ❤️. Après mes cours, je me dépêchais souvent de rentrer dans ma chambre juste pour pouvoir lui parler en vidéo. Il me faisait rire, m’encourageait et savait toujours comment rendre mes journées plus légères. Avec lui, je pouvais parler de tout, de mes inquiétudes, de mes projets, de mes études et même des choses les plus banales. Cette complicité s’est installée tellement naturellement que nos appels sont devenus les moments que j’attendais le plus dans ma journée 🥹. C’était une période vraiment magique, pleine de tendresse, de rires et de cette sensation d’être comprise et importante pour quelqu’un ✨.`,
+        `Après ce jour on s’appelait tous les jours, quand je finissais mes cours, je courais directement pour m’asseoir dans ma chambre et pouvoir discuter avec lui en appel video sur Skype. Je me rappelle qu’il me faisait toujours rire, qu’il m’encourageais beaucoup et qu’il me faisait me sentir importante. Ça a été pour moi la periode la plus belle de notre relation jusqu’a aujourd’hui.`,
       ],
       baudouin: [
         `Après ce premier appel, j’ai commencé à l’appeler le soir juste pour saluer et prendre de ses nouvelles. Mais plus on causait, plus je sentais qu’il y avait un feeling. On riait beaucoup, on blaguait, on racontait nos journées et franchement, après nos causeries je me sentais toujours bien, genre c’était devenu ma petite thérapie du soir. À un moment je me suis dit : « Pourquoi ne pas essayer quelque chose avec elle ? » Mais bien sûr, je ne lui ai rien dit 😅. Dans ma tête seulement, les intentions avaient déjà commencé. Le problème c’est qu’on causait tellement qu’à l’approche de mes examens, au lieu de bien réviser une matière que j’aimais pourtant beaucoup, chaque soir je mettais le cahier devant moi et je lançais l’appel vidéo 😂. Elle me disait : « Va réviser », moi je répondais : « Aka, je maîtrise ». C’est comme ça que j’ai bien échoué cette matière, première fois de ma vie 🥲. J’avais mal dans mon cœur, elle me consolait et disait : « Waaa, c’est à cause de moi que tu as échoué. » Moi comme j’aime faire le dur, je répondais que non, ce n’était rien. Après je me suis même dit que c’était peut-être le prix à payer pour recevoir l’étoile qui allait illuminer ma vie. Et nos YelloNight ont continué tranquillement.`,
@@ -174,7 +174,7 @@ export default function Home() {
       image: "/images/histoire4.jpeg",
       imagePosition: "center",
       anelka: [
-        `Après mes examens, il m’a invitée à venir dans sa ville. Je savais qu’il avait été un peu vexé que je ne sois pas là pour son anniversaire et qu’il aurait aimé partager ce moment avec moi 🥹. J’ai donc pris la route pour aller le voir, sans savoir que ce voyage allait devenir l’un des tournants les plus importants de notre histoire. En arrivant chez lui, j’ai découvert l’homme derrière toutes nos conversations. J’ai été touchée par son humilité, sa politesse et surtout par la façon dont il traitait les personnes autour de lui, pas seulement moi. J’ai découvert chez lui cette stabilité de cœur et cette vision de la vie que j’admirais déjà à travers nos appels. Tout ce que nous avions construit derrière nos écrans devenait enfin réel ❤️ et ce séjour m’a fait comprendre que quelque chose de beaucoup plus profond était en train de naître entre nous ✨.`,
+        `Puis quand j’ai fini de composer, il m’a invité dans sa ville, je pense à l’occasion de son anniversaire, non en fait son anniversaire était déjà passé et puis il s’est fâché que je n’étais pas là et que il aurait aimé que je soit la. J’ai donc fait un voyage et nous nous sommes retrouvé dans sa ville et c’est la que notre relation a vraiment debute.`,
       ],
       baudouin: [
         `À un moment, elle cherchait dans quelle ville continuer son parcours après les cours de langue. Moi aussi j’avais déjà mon petit plan derrière 😅, donc je lui conseillais doucement de venir dans ma ville. Elle est finalement venue pour passer un examen de langue et quand elle est arrivée, elle a ouvert son sac et là je vois beaucoup de cadeaux pour moi. Je ne m’attendais vraiment pas à ça 🥲. Le séjour s’est super bien passé. Pour une première vraie prise de contact après toutes ces années, c’était vraiment cool. J’ai beaucoup aimé sa douceur, ses petites attentions et surtout elle préparait à manger tout le temps, et c’était bon hein 🥲. Malheureusement, elle a échoué l’examen qu’elle était venue passer. Je me suis dit : « Peut-être elle aussi devait avoir son petit échec dans notre histoire » 😅. Je l’ai consolée comme elle m’avait consolé auparavant, puis elle a refait l’examen et elle l’a réussi. Après ce séjour, dans ma tête c’était clair : « Il faut que j’accélère 😁 ». J’avais trop aimé le temps passé avec elle pour maintenant faire semblant.`,
@@ -187,7 +187,7 @@ export default function Home() {
       image: "/images/histoire6.jpeg",
       imagePosition: "center",
       anelka: [
-        `À partir de là, notre relation a vraiment pris une autre dimension ❤️. Ce qui avait commencé par un appel puis par de longues soirées en vidéo est devenu une vraie histoire d’amour. Au fil du temps, j’ai découvert encore davantage sa force tranquille. Il trouve toujours une solution lorsque j’ai un problème, que ce soit pour mes études, mes démarches administratives ou simplement lorsque j’ai besoin d’être rassurée. Il m’accompagne, me soutient et me montre chaque jour qu’il a une vraie volonté de réussir et de construire. Avec lui, j’ai découvert un amour solide et apaisant, un amour qui ne cherche pas seulement à impressionner, mais qui cherche surtout à bâtir 🤍. J’ai finalement poursuivi mes études dans la ville où il vivait et nos appels à distance ont peu à peu laissé place à un véritable quotidien partagé ✨.`,
+        `Ce qui m’a marqué quand je suis arrivé chez lui, c’est sa personnalité. Il était très humble, très poli, pas juste avec moi mais aussi avec son entourage. Il m’offrait une stabilité de coeur et une perspective de vie que j’admirait beaucoup, il etait travailleur et ce que j’apprecie le plus sur lui, c’est qu’il trouvait solution a tous mes problemes, dans mes études, dans mes procédures administratives, il m’accompagnait. Il m’a montre qu’il avait une volonté de reussir et surtout qu’il s’en donne les moyens.`,
       ],
       baudouin: [
         `Après son séjour, moi je savais déjà ce que je voulais. J’ai donc continué à accélérer 😁 et finalement nous nous sommes mis ensemble. Elle a fini par venir poursuivre ses études dans la ville où je vivais et là, notre histoire a vraiment quitté WhatsApp pour entrer dans la vraie vie. Ce n’était plus seulement les appels vidéo, les YelloNight et les longues causeries, maintenant il fallait apprendre à cheminer ensemble pour de vrai, avec les bons moments, les difficultés, les projets, les décisions et tout ce qui vient avec une relation sérieuse. On a avancé comme ça, petit à petit, et nous voilà encore ensemble aujourd’hui ❣️. Quand j’y pense, tout ça est parti d’un simple statut WhatsApp vu un mardi matin.`,
@@ -200,7 +200,7 @@ export default function Home() {
       image: "/images/histoire5.jpeg",
       imagePosition: "center",
       anelka: [
-        `En février 2024, nous avons franchi une nouvelle grande étape en emménageant ensemble ❤️. Cette période a été belle, mais aussi bouleversante, parce qu’il fallait apprendre à vivre réellement à deux, gérer le quotidien, les dépenses, les responsabilités et tous les ajustements que cela demande, d’autant plus que j’étais enceinte 🥹. Puis en avril 2024, notre vie a changé à jamais avec l’arrivée de notre petit bout de chou, mon chéri d’amour comme j’aime l’appeler 👶🏽❤️. Sa venue a été un véritable tourbillon, un bouleversement psychologique et émotionnel, mais comme l’arc-en-ciel qui apparaît après la pluie, il a illuminé nos vies ✨. Chaque jour depuis sa naissance, LONAAM est notre lever de soleil 🌅, fidèle à la signification de son prénom : il s’est levé pour illuminer nos vies. Notre guerrier, notre lion 🦁, notre symbole de force et de courage nous a donné une nouvelle raison de nous dépasser, de nous battre et de nous unir encore davantage.`,
+        `En Fevrier 2024 on a aménagé ensemble, ce fut une periode très boulversante compte tenu de tout le stresse et les depenses que ca entrainait, d’autant plus que j’etais enceinte. En Avril 2024 est venu au monde notre petit bout de choux, mon cheri d’amour, comme j’aime l’appeler, il est venu comme un torrent ce qui nous a bouleversé psychologiquement , mais comme le beau temps vient après la pluie, il a rayonné notre vie, et continue de le faire tous les jours, c’est notre levée du soleil, comme son prénom LONAAM l'indique. Il est né pour illuminer nos vies. Notre guerrier, notre lion, sa venue était comme un tremblement de terre, il venait avec puissance.`,
       ],
       baudouin: [
         `Quand je regarde tout ce chemin aujourd’hui, parfois même moi je me dis : « Donc tout ça a commencé comme ça ? » 😃. La fille que j’avais connue en 5ème, que j’avais retrouvée des années plus tard grâce à un statut WhatsApp et avec qui je pouvais passer toute une soirée au téléphone, est devenue ma compagne, puis la mère de notre enfant. En février 2024, on a emménagé ensemble et là c’était encore une autre école, parce que vivre ensemble ce n’est plus seulement raccrocher l’appel quand chacun veut dormir 😅. Il fallait apprendre à gérer le quotidien, les responsabilités et tout ce qui venait avec la grossesse. Puis en avril, LONAAM est arrivé et il a complètement changé notre vie. Devenir parents nous a beaucoup fait grandir et nous a donné encore plus de raisons de nous battre pour ce qu’on construisait ❤️.`,
@@ -213,7 +213,7 @@ export default function Home() {
       image: "",
       imagePosition: "center",
       anelka: [
-        `Puis en novembre 2024, mon chéri a pris une belle initiative ❤️ : il a décidé qu’il était temps que nos familles se rencontrent. Pour moi, ce moment avait une valeur particulière, parce qu’il ne s’agissait plus seulement de notre couple, mais de deux familles qui allaient désormais apprendre à se connaître et à avancer ensemble. La rencontre s’est déroulée dans une atmosphère douce, respectueuse et pleine de joie 🤍. J’ai eu l’impression que nos deux univers se rejoignaient enfin pour former un seul horizon ✨. En regardant tout le chemin parcouru depuis ce premier appel de 2019, je me suis dit une fois de plus que le destin avait vraiment bien fait les choses 🥹❤️.`,
+        `Mon chéri a pris une belle initiative : il a décidé qu’il était temps que nos familles se rencontrent. Pour moi, ce moment avait une valeur particulière, parce qu’il ne s’agissait plus seulement de notre couple, mais de deux familles qui allaient désormais apprendre à se connaître et à avancer ensemble. La rencontre s’est déroulée dans une atmosphère douce, respectueuse et pleine de joie . En regardant tout le chemin parcouru depuis ce premier appel de 2019, je me suis dit une fois de plus que le destin avait vraiment bien fait les choses. ❣️❣️❣️ De la formation C++ au premier appel. Du premier appel à nos nuits sur Skype. De sa ville à notre maison. De nous deux... à nous trois. Merci d’avoir été la solution à mes problèmes mon chéri. Merci d’avoir cru en nous. Merci d’aimer si fort. Et merci à LONAAM de nous avoir choisis pour briller. MERCI🙏❣️`,
       ],
       baudouin: [
         `En novembre 2024, je me suis dit qu’il était temps de faire les choses encore plus sérieusement. Après tout ce qu’on avait déjà vécu ensemble, je voulais que nos familles se rencontrent. Pour moi, c’était une manière de montrer clairement que notre histoire n’était plus seulement celle de deux personnes qui s’aiment, mais celle de deux familles qui allaient désormais être liées. La rencontre s’est bien passée, dans le respect, la bonne humeur et cette ambiance-là qu’on aime chez nous. Je regardais tout ça et je me disais quand même : depuis mon fameux statut WhatsApp jusqu’ici, on a vraiment fait du chemin 😃. Et maintenant, après toutes ces étapes, on est prêts pour la suivante ❣️.`,
@@ -298,7 +298,7 @@ export default function Home() {
       {enteredSite && (
         <section
           id="countdown"
-          className="relative flex min-h-screen items-center overflow-hidden bg-[#6D071A] px-6 py-24 text-center"
+          className="relative overflow-hidden bg-[#6D071A] px-6 pb-14 pt-28 text-center md:pb-16 md:pt-32"
         >
           <div className="pointer-events-none absolute -left-32 -top-32 h-[420px] w-[420px] rounded-full border border-[#F4D8C7]/20" />
           <div className="pointer-events-none absolute -left-20 -top-20 h-[300px] w-[300px] rounded-full border border-[#F4D8C7]/20" />
@@ -317,80 +317,93 @@ export default function Home() {
           </div>
 
           <div className="relative z-10 mx-auto w-full max-w-6xl">
-            <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full border border-[#F6DFC8]/60">
-              <span className="font-serif text-xl tracking-[0.15em] text-[#FFF8F0]">
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-[#F6DFC8]/55 md:h-20 md:w-20">
+              <span className="font-serif text-base tracking-[0.15em] text-[#FFF8F0] md:text-xl">
                 A | B
               </span>
             </div>
 
-            <p className="mt-8 text-[11px] uppercase tracking-[0.45em] text-[#F4D6C5] md:text-xs">
-              Le grand jour approche
-            </p>
-
-            <h2 className="mt-5 font-serif text-5xl leading-none text-[#FFF8F0] md:text-7xl">
-              Compte à rebours
-            </h2>
-
-            <div className="mx-auto mt-7 h-px w-24 bg-[#F1C3AE]" />
-
-            <p className="mt-6 text-sm text-[#F7DDD0] md:text-base">
-              Jusqu’au 26 novembre 2026
-            </p>
-
-            <div className="mx-auto mt-14 grid max-w-5xl grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-              <div className="rounded-[28px] border border-white/20 bg-[#FFF8F0]/95 px-4 py-8 shadow-xl backdrop-blur md:py-10">
-                <p className="font-serif text-5xl text-[#8F4633] md:text-6xl">
-                  {String(timeLeft.days).padStart(2, "0")}
-                </p>
-                <p className="mt-3 text-[10px] uppercase tracking-[0.3em] text-[#B84A20]">
-                  Jours
-                </p>
-              </div>
-
-              <div className="rounded-[28px] border border-white/20 bg-[#FFF8F0]/95 px-4 py-8 shadow-xl backdrop-blur md:py-10">
-                <p className="font-serif text-5xl text-[#8F4633] md:text-6xl">
-                  {String(timeLeft.hours).padStart(2, "0")}
-                </p>
-                <p className="mt-3 text-[10px] uppercase tracking-[0.3em] text-[#B84A20]">
-                  Heures
-                </p>
-              </div>
-
-              <div className="rounded-[28px] border border-white/20 bg-[#FFF8F0]/95 px-4 py-8 shadow-xl backdrop-blur md:py-10">
-                <p className="font-serif text-5xl text-[#8F4633] md:text-6xl">
-                  {String(timeLeft.minutes).padStart(2, "0")}
-                </p>
-                <p className="mt-3 text-[10px] uppercase tracking-[0.3em] text-[#B84A20]">
-                  Minutes
-                </p>
-              </div>
-
-              <div className="rounded-[28px] border border-white/20 bg-[#FFF8F0]/95 px-4 py-8 shadow-xl backdrop-blur md:py-10">
-                <p className="font-serif text-5xl text-[#8F4633] md:text-6xl">
-                  {String(timeLeft.seconds).padStart(2, "0")}
-                </p>
-                <p className="mt-3 text-[10px] uppercase tracking-[0.3em] text-[#B84A20]">
-                  Secondes
-                </p>
-              </div>
-            </div>
-
-            <p className="mt-12 font-serif text-lg italic text-[#FFEBDD] md:text-xl">
-              Encore un peu de patience avant de célébrer l’amour…
-            </p>
-
-            <div className="mt-8 flex items-center justify-center gap-4">
-              <div className="h-px w-16 bg-[#F2D0B3]/40" />
-              <span className="text-[#F1C3AE]">♥</span>
-              <div className="h-px w-16 bg-[#F2D0B3]/40" />
-            </div>
-
-            <div className="mt-12">
-              <p className="text-[9px] uppercase tracking-[0.35em] text-[#F1CDBB]">
-                Notre histoire
+            <div className="mx-auto mt-7 max-w-3xl md:mt-8">
+              <p className="font-serif text-xl leading-relaxed text-[#FFF8F0] sm:text-2xl md:text-3xl md:leading-relaxed">
+                Ensemble avec leurs familles, Anelka et Baudouin vont s&apos;unir pour la vie.
               </p>
 
-              <div className="mx-auto mt-3 h-10 w-px bg-gradient-to-b from-[#F1C3AE] to-transparent" />
+              <div className="mx-auto mt-5 h-px w-20 bg-[#F1C3AE]/80 md:mt-6 md:w-24" />
+            </div>
+
+            {/* =====================================================
+                COMPTE À REBOURS — STYLE ÉPURÉ
+            ===================================================== */}
+            <div className="mx-auto mt-9 max-w-4xl md:mt-10">
+              <div className="flex items-start justify-center">
+
+                {/* JOURS */}
+                <div className="flex min-w-0 flex-1 flex-col items-center">
+                  <p className="font-serif text-[31px] font-light leading-none tracking-[0.04em] text-[#FFF8F0] sm:text-[38px] md:text-[46px]">
+                    {String(timeLeft.days).padStart(2, "0")}
+                  </p>
+                  <p className="mt-4 text-[7px] uppercase tracking-[0.22em] text-[#F4D6C5] sm:text-[8px] md:text-[9px] md:tracking-[0.3em]">
+                    Jours
+                  </p>
+                </div>
+
+                <span className="mt-0.5 font-serif text-[23px] font-light leading-none text-[#F1C3AE] sm:text-[28px] md:mt-1 md:text-[34px]">
+                  :
+                </span>
+
+                {/* HEURES */}
+                <div className="flex min-w-0 flex-1 flex-col items-center">
+                  <p className="font-serif text-[31px] font-light leading-none tracking-[0.04em] text-[#FFF8F0] sm:text-[38px] md:text-[46px]">
+                    {String(timeLeft.hours).padStart(2, "0")}
+                  </p>
+                  <p className="mt-4 text-[7px] uppercase tracking-[0.22em] text-[#F4D6C5] sm:text-[8px] md:text-[9px] md:tracking-[0.3em]">
+                    Heures
+                  </p>
+                </div>
+
+                <span className="mt-0.5 font-serif text-[23px] font-light leading-none text-[#F1C3AE] sm:text-[28px] md:mt-1 md:text-[34px]">
+                  :
+                </span>
+
+                {/* MINUTES */}
+                <div className="flex min-w-0 flex-1 flex-col items-center">
+                  <p className="font-serif text-[31px] font-light leading-none tracking-[0.04em] text-[#FFF8F0] sm:text-[38px] md:text-[46px]">
+                    {String(timeLeft.minutes).padStart(2, "0")}
+                  </p>
+                  <p className="mt-4 text-[7px] uppercase tracking-[0.13em] text-[#F4D6C5] sm:text-[8px] sm:tracking-[0.2em] md:text-[9px] md:tracking-[0.27em]">
+                    Minutes
+                  </p>
+                </div>
+
+                <span className="mt-0.5 font-serif text-[23px] font-light leading-none text-[#F1C3AE] sm:text-[28px] md:mt-1 md:text-[34px]">
+                  :
+                </span>
+
+                {/* SECONDES */}
+                <div className="flex min-w-0 flex-1 flex-col items-center">
+                  <p className="font-serif text-[31px] font-light leading-none tracking-[0.04em] text-[#FFF8F0] sm:text-[38px] md:text-[46px]">
+                    {String(timeLeft.seconds).padStart(2, "0")}
+                  </p>
+                  <p className="mt-4 text-[7px] uppercase tracking-[0.09em] text-[#F4D6C5] sm:text-[8px] sm:tracking-[0.16em] md:text-[9px] md:tracking-[0.24em]">
+                    Secondes
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* =====================================================
+                FIN DU COUNTDOWN
+            ===================================================== */}
+            <div className="mt-9 md:mt-10">
+              <div className="flex items-center justify-center gap-4">
+                <div className="h-px w-12 bg-[#F2D0B3]/35" />
+                <span className="text-xs text-[#F1C3AE]">♥</span>
+                <div className="h-px w-12 bg-[#F2D0B3]/35" />
+              </div>
+
+              <p className="mx-auto mt-5 max-w-xl font-serif text-base italic leading-7 text-[#FFEBDD] sm:text-lg md:text-xl">
+                Le plus beau reste à célébrer, avec vous.
+              </p>
             </div>
           </div>
         </section>
@@ -440,7 +453,7 @@ export default function Home() {
             </div>
 
             {/* ================= CHAPITRES ================= */}
-            <div className="mt-24 space-y-32 md:mt-28 md:space-y-40">
+            <div className="mt-16 space-y-10 md:mt-20 md:space-y-12">
               {storyMoments.map((moment, index) => {
                 const imageOnLeft = index % 2 === 0;
 
@@ -691,7 +704,7 @@ export default function Home() {
 
                     {/* ================= SÉPARATEUR ================= */}
                     {index !== storyMoments.length - 1 && (
-                      <div className="mx-auto mt-24 flex max-w-xl items-center gap-5 md:mt-28">
+                      <div className="mx-auto mt-10 flex max-w-xl items-center gap-5 md:mt-12">
                         <div className="h-px flex-1 bg-[#D77A57]/25" />
 
                         <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#D77A57]/35 bg-[#F8EFE9]">

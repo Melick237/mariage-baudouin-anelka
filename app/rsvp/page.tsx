@@ -375,8 +375,8 @@ export default function RsvpPage() {
                   <label
                     className={`cursor-pointer rounded-[20px] border px-5 py-5 transition ${
                       rsvpForm.party
-                        ? "border-[#6D071A] bg-[#6D071A] text-white"
-                        : "border-[#E4D0C4] bg-[#FFF9F5] hover:border-[#6D071A]"
+                        ? "border-[#C54716] bg-[#C54716] text-white"
+                        : "border-[#E4D0C4] bg-[#FFF9F5] hover:border-[#C54716]"
                     }`}
                   >
                     <input
@@ -404,7 +404,7 @@ export default function RsvpPage() {
                       <span
                         className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border ${
                           rsvpForm.party
-                            ? "border-white bg-white text-[#6D071A]"
+                            ? "border-white bg-white text-[#C54716]"
                             : "border-[#D9B8A9]"
                         }`}
                       >

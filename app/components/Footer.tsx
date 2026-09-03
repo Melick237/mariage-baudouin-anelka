@@ -11,7 +11,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative overflow-hidden bg-[#3A241E] px-6 py-20 text-[#FFF8F2] md:px-12">
+    <footer className="relative overflow-hidden bg-[#7B1F1F] px-6 py-20 text-[#FFF8F2] md:px-12">
       {/* décorations */}
       <div className="pointer-events-none absolute -left-28 -top-28 h-72 w-72 rounded-full border border-white/5" />
       <div className="pointer-events-none absolute -bottom-32 -right-32 h-80 w-80 rounded-full border border-white/5" />

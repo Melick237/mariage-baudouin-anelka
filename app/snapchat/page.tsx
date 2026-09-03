@@ -12,267 +12,260 @@ export default function SnapchatPage() {
   const [progress, setProgress] = useState(0);
   const [currentFile, setCurrentFile] = useState("");
 
+  const CHUNK_SIZE = 4 * 1024 * 1024; // 4 Mo
 
+  const uploadChunkWithProgress = (
+    chunk: Blob,
+    uploadUrl: string,
+    contentRange: string,
+    fileType: string,
+    alreadyUploaded: number,
+    totalSize: number
+  ): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
 
-const CHUNK_SIZE = 4 * 1024 * 1024; // 4 Mo
+      xhr.open("POST", "/api/google-drive/chunk");
 
-const uploadChunkWithProgress = (
-  chunk: Blob,
-  uploadUrl: string,
-  contentRange: string,
-  fileType: string,
-  alreadyUploaded: number,
-  totalSize: number
-): Promise<any> => {
-  return new Promise((resolve, reject) => {
-    const xhr = new XMLHttpRequest();
-
-    xhr.open("POST", "/api/google-drive/chunk");
-
-    xhr.setRequestHeader(
-      "Content-Type",
-      "application/octet-stream"
-    );
-
-    xhr.setRequestHeader(
-      "x-upload-url",
-      uploadUrl
-    );
-
-    xhr.setRequestHeader(
-      "x-content-range",
-      contentRange
-    );
-
-    xhr.setRequestHeader(
-      "x-file-type",
-      fileType
-    );
-
-    xhr.upload.onprogress = (event) => {
-      if (!event.lengthComputable) return;
-
-      const currentUploaded =
-        alreadyUploaded + event.loaded;
-
-      const percentage = Math.min(
-        99,
-        Math.round(
-          (currentUploaded / totalSize) * 100
-        )
+      xhr.setRequestHeader(
+        "Content-Type",
+        "application/octet-stream"
       );
 
-      setProgress(percentage);
-    };
+      xhr.setRequestHeader(
+        "x-upload-url",
+        uploadUrl
+      );
 
-    xhr.onload = () => {
-      try {
-        const data = JSON.parse(xhr.responseText);
+      xhr.setRequestHeader(
+        "x-content-range",
+        contentRange
+      );
 
-        if (
-          xhr.status >= 200 &&
-          xhr.status < 300 &&
-          data.success
-        ) {
-          resolve(data);
-        } else {
+      xhr.setRequestHeader(
+        "x-file-type",
+        fileType
+      );
+
+      xhr.upload.onprogress = (event) => {
+        if (!event.lengthComputable) return;
+
+        const currentUploaded =
+          alreadyUploaded + event.loaded;
+
+        const percentage = Math.min(
+          99,
+          Math.round(
+            (currentUploaded / totalSize) * 100
+          )
+        );
+
+        setProgress(percentage);
+      };
+
+      xhr.onload = () => {
+        try {
+          const data = JSON.parse(xhr.responseText);
+
+          if (
+            xhr.status >= 200 &&
+            xhr.status < 300 &&
+            data.success
+          ) {
+            resolve(data);
+          } else {
+            reject(
+              new Error(
+                data.error ||
+                  "Erreur pendant l'envoi."
+              )
+            );
+          }
+        } catch {
           reject(
             new Error(
-              data.error ||
-                "Erreur pendant l'envoi."
+              "Réponse invalide pendant l'envoi."
             )
           );
         }
-      } catch {
+      };
+
+      xhr.onerror = () => {
         reject(
           new Error(
-            "Réponse invalide pendant l'envoi."
+            "Connexion interrompue pendant l'envoi."
           )
         );
-      }
-    };
+      };
 
-    xhr.onerror = () => {
-      reject(
-        new Error(
-          "Connexion interrompue pendant l'envoi."
-        )
-      );
-    };
+      xhr.send(chunk);
+    });
+  };
 
-    xhr.send(chunk);
-  });
-};
+  const uploadFileInChunks = async (
+    file: File,
+    uploadUrl: string
+  ) => {
+    let start = 0;
 
-
-const uploadFileInChunks = async (
-  file: File,
-  uploadUrl: string
-) => {
-  let start = 0;
-
-  while (start < file.size) {
-    const endExclusive = Math.min(
-      start + CHUNK_SIZE,
-      file.size
-    );
-
-    const endInclusive =
-      endExclusive - 1;
-
-    const chunk = file.slice(
-      start,
-      endExclusive
-    );
-
-    const contentRange =
-      `bytes ${start}-${endInclusive}/${file.size}`;
-
-    const data =
-      await uploadChunkWithProgress(
-        chunk,
-        uploadUrl,
-        contentRange,
-        file.type ||
-          "application/octet-stream",
-        start,
+    while (start < file.size) {
+      const endExclusive = Math.min(
+        start + CHUNK_SIZE,
         file.size
       );
 
-    start = endExclusive;
+      const endInclusive =
+        endExclusive - 1;
 
-    const percentage = Math.round(
-      (start / file.size) * 100
-    );
+      const chunk = file.slice(
+        start,
+        endExclusive
+      );
 
-    setProgress(
-      data.complete
-        ? 100
-        : Math.min(99, percentage)
-    );
+      const contentRange =
+        `bytes ${start}-${endInclusive}/${file.size}`;
 
-    if (data.complete) {
-      break;
+      const data =
+        await uploadChunkWithProgress(
+          chunk,
+          uploadUrl,
+          contentRange,
+          file.type ||
+            "application/octet-stream",
+          start,
+          file.size
+        );
+
+      start = endExclusive;
+
+      const percentage = Math.round(
+        (start / file.size) * 100
+      );
+
+      setProgress(
+        data.complete
+          ? 100
+          : Math.min(99, percentage)
+      );
+
+      if (data.complete) {
+        break;
+      }
     }
-  }
 
-  setProgress(100);
-};
+    setProgress(100);
+  };
 
+  const handleFiles = async (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const files = event.target.files;
 
-const handleFiles = async (
-  event: React.ChangeEvent<HTMLInputElement>
-) => {
-  const files = event.target.files;
+    if (!files || files.length === 0) {
+      return;
+    }
 
-  if (!files || files.length === 0) {
-    return;
-  }
+    const selectedFiles = Array.from(files);
 
-  const selectedFiles = Array.from(files);
+    setUploading(true);
+    setMessage("");
+    setProgress(0);
 
-  setUploading(true);
-  setMessage("");
-  setProgress(0);
-
-  try {
-    for (
-      let i = 0;
-      i < selectedFiles.length;
-      i++
-    ) {
-      const file = selectedFiles[i];
-
-      setCurrentFile(file.name);
-      setProgress(0);
-
-      setMessage(
-        `Envoi ${i + 1} sur ${selectedFiles.length}`
-      );
-
-      /*
-        ==========================================
-        1. CRÉER LA SESSION GOOGLE DRIVE
-        ==========================================
-      */
-      const sessionResponse = await fetch(
-        "/api/google-drive/resumable",
-        {
-          method: "POST",
-
-          headers: {
-            "Content-Type": "application/json",
-          },
-
-          body: JSON.stringify({
-            name: file.name,
-
-            type:
-              file.type ||
-              "application/octet-stream",
-
-            size: file.size,
-          }),
-        }
-      );
-
-      const sessionData =
-        await sessionResponse.json();
-
-      if (
-        !sessionResponse.ok ||
-        !sessionData.success ||
-        !sessionData.uploadUrl
+    try {
+      for (
+        let i = 0;
+        i < selectedFiles.length;
+        i++
       ) {
-        throw new Error(
-          sessionData.error ||
-            "Impossible de préparer l'envoi."
+        const file = selectedFiles[i];
+
+        setCurrentFile(file.name);
+        setProgress(0);
+
+        setMessage(
+          `Envoi ${i + 1} sur ${selectedFiles.length}`
+        );
+
+        /*
+          ==========================================
+          1. CRÉER LA SESSION GOOGLE DRIVE
+          ==========================================
+        */
+        const sessionResponse = await fetch(
+          "/api/google-drive/resumable",
+          {
+            method: "POST",
+
+            headers: {
+              "Content-Type": "application/json",
+            },
+
+            body: JSON.stringify({
+              name: file.name,
+
+              type:
+                file.type ||
+                "application/octet-stream",
+
+              size: file.size,
+            }),
+          }
+        );
+
+        const sessionData =
+          await sessionResponse.json();
+
+        if (
+          !sessionResponse.ok ||
+          !sessionData.success ||
+          !sessionData.uploadUrl
+        ) {
+          throw new Error(
+            sessionData.error ||
+              "Impossible de préparer l'envoi."
+          );
+        }
+
+        /*
+          ==========================================
+          2. ENVOYER LE FICHIER PAR MORCEAUX
+          ==========================================
+        */
+        await uploadFileInChunks(
+          file,
+          sessionData.uploadUrl
         );
       }
 
-      /*
-        ==========================================
-        2. ENVOYER LE FICHIER PAR MORCEAUX
-        ==========================================
-      */
-      await uploadFileInChunks(
-        file,
-        sessionData.uploadUrl
+      setCurrentFile("");
+      setProgress(100);
+
+      setMessage(
+        `Merci ❤️ ${selectedFiles.length} fichier(s) envoyé(s) avec succès !`
       );
+    } catch (error) {
+      console.error(
+        "Erreur upload :",
+        error
+      );
+
+      setCurrentFile("");
+      setProgress(0);
+
+      setMessage(
+        "Une erreur est survenue pendant l'envoi. Veuillez réessayer."
+      );
+    } finally {
+      setUploading(false);
+
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
     }
-
-    setCurrentFile("");
-    setProgress(100);
-
-    setMessage(
-      `Merci ❤️ ${selectedFiles.length} fichier(s) envoyé(s) avec succès !`
-    );
-  } catch (error) {
-    console.error(
-      "Erreur upload :",
-      error
-    );
-
-    setCurrentFile("");
-    setProgress(0);
-
-    setMessage(
-      "Une erreur est survenue pendant l'envoi. Veuillez réessayer."
-    );
-  } finally {
-    setUploading(false);
-
-    if (fileInputRef.current) {
-      fileInputRef.current.value = "";
-    }
-  }
-};
-
-
-  
+  };
 
   return (
-    <main className="min-h-screen bg-[#6D071A]">
+    <main className="min-h-screen bg-[#F8F1E8]">
 
       <Navigation />
 
@@ -281,13 +274,12 @@ const handleFiles = async (
       ========================================================= */}
       <section
         id="snapchat"
-        className="relative overflow-hidden bg-[#6D071A] px-6 pb-24 pt-32 text-[#FFF8F2] md:px-12 md:pb-28 md:pt-36"
+        className="relative overflow-hidden bg-[#F8F1E8] px-6 pb-24 pt-32 text-[#4A2924] md:px-12 md:pb-28 md:pt-36"
       >
         {/* Décorations */}
-        <div className="pointer-events-none absolute -left-32 -top-32 h-[420px] w-[420px] rounded-full border border-white/10" />
+        <div className="pointer-events-none absolute -left-32 -top-32 h-[420px] w-[420px] rounded-full border border-[#C54716]/10" />
 
-        <div className="pointer-events-none absolute -bottom-36 -right-28 h-[420px] w-[420px] rounded-full border border-white/10" />
-
+        <div className="pointer-events-none absolute -bottom-36 -right-28 h-[420px] w-[420px] rounded-full border border-[#C54716]/10" />
 
         <div className="relative mx-auto max-w-6xl">
 
@@ -296,17 +288,17 @@ const handleFiles = async (
           ====================================================== */}
           <div className="mx-auto max-w-3xl text-center">
 
-            <p className="text-[11px] uppercase tracking-[0.45em] text-[#F4C58C]">
+            <p className="text-[11px] uppercase tracking-[0.45em] text-[#C54716]">
               Partagez vos souvenirs
             </p>
 
-            <h1 className="mt-4 font-serif text-5xl md:text-7xl">
+            <h1 className="mt-4 font-serif text-5xl text-[#4A2924] md:text-7xl">
               Notre filtre Snapchat
             </h1>
 
-            <div className="mx-auto mt-6 h-px w-20 bg-[#F4C58C]" />
+            <div className="mx-auto mt-6 h-px w-20 bg-[#C54716]" />
 
-            <p className="mx-auto mt-7 max-w-2xl leading-8 text-white/80">
+            <p className="mx-auto mt-7 max-w-2xl leading-8 text-[#755B54]">
               Immortalisez vos plus beaux moments avec notre filtre personnalisé
               Anelka & Baudouin.
             </p>
@@ -322,7 +314,7 @@ const handleFiles = async (
             {/* ===================================================
                 PREVIEW VIDEO SNAPCHAT
             =================================================== */}
-            <div className="relative mx-auto w-full max-w-[380px] overflow-hidden rounded-[34px] border border-white/15 bg-black shadow-2xl">
+            <div className="relative mx-auto w-full max-w-[380px] overflow-hidden rounded-[34px] border border-[#6D071A]/10 bg-black shadow-2xl">
 
               <video
                 className="aspect-[9/16] w-full object-cover"
@@ -346,19 +338,19 @@ const handleFiles = async (
             {/* ===================================================
                 INFORMATIONS
             =================================================== */}
-            <div className="rounded-[34px] border border-white/15 bg-white/10 p-8 backdrop-blur md:p-10">
+            <div className="rounded-[34px] border border-[#E7CABB]/50 bg-[#FFF9F3] p-8 shadow-[0_15px_40px_rgba(83,46,35,0.06)] md:p-10">
 
-              <p className="text-[10px] uppercase tracking-[0.35em] text-[#F4C58C]">
+              <p className="text-[10px] uppercase tracking-[0.35em] text-[#C54716]">
                 Anelka & Baudouin
               </p>
 
-              <h2 className="mt-4 font-serif text-4xl">
+              <h2 className="mt-4 font-serif text-4xl text-[#4A2924]">
                 Ajoutez une touche de notre mariage à vos photos
               </h2>
 
-              <div className="mt-6 h-px w-16 bg-[#F4C58C]" />
+              <div className="mt-6 h-px w-16 bg-[#C54716]" />
 
-              <p className="mt-7 leading-8 text-white/80">
+              <p className="mt-7 leading-8 text-[#755B54]">
                 Ouvrez le filtre directement dans Snapchat et partagez vos photos
                 et vidéos de la célébration avec nous.
               </p>
@@ -376,13 +368,13 @@ const handleFiles = async (
 
 
               {/* CONSEIL */}
-              <div className="mt-10 rounded-[24px] border border-white/15 bg-black/10 p-6 text-center">
+              <div className="mt-10 rounded-[24px] border border-[#DDBFAF]/50 bg-[#FFF3EB] p-6 text-center">
 
-                <p className="text-[10px] uppercase tracking-[0.35em] text-[#F4C58C]">
+                <p className="text-[10px] uppercase tracking-[0.35em] text-[#C54716]">
                   Conseil
                 </p>
 
-                <p className="mt-3 text-sm leading-7 text-white/75">
+                <p className="mt-3 text-sm leading-7 text-[#755B54]">
                   Sur téléphone, utilisez directement le bouton ci-dessus.
                   Sur ordinateur, ouvrez cette page avec votre téléphone
                   pour accéder facilement au filtre.
@@ -402,17 +394,17 @@ const handleFiles = async (
 
             <div className="mx-auto flex items-center justify-center gap-4">
 
-              <div className="h-px w-16 bg-[#F4C58C]/40" />
+              <div className="h-px w-16 bg-[#C54716]/30" />
 
-              <span className="font-serif text-sm text-[#F4C58C]">
+              <span className="font-serif text-sm text-[#C54716]">
                 A | B
               </span>
 
-              <div className="h-px w-16 bg-[#F4C58C]/40" />
+              <div className="h-px w-16 bg-[#C54716]/30" />
 
             </div>
 
-            <p className="mt-6 font-serif text-lg italic text-white/75">
+            <p className="mt-6 font-serif text-lg italic text-[#755B54]">
               Capturez. Partagez. Souvenez-vous.
             </p>
 
@@ -488,7 +480,7 @@ const handleFiles = async (
 
           {/* =====================================================
               DEUX EXPÉRIENCES DE PARTAGE
-          ===================================================== */}
+          ====================================================== */}
           <div className="mx-auto mt-14 max-w-5xl">
 
             {/* INTRODUCTION */}
@@ -615,43 +607,43 @@ const handleFiles = async (
 
                     <div className="mt-auto pt-9">
 
-                    <a
-                      href="https://script.google.com/macros/s/AKfycbyOyVkGVKKdE-n3EcuaUwSR5Z_i0EnwEZL4Gdl5C9s6vxV5HyIw9vmhIq_IhvjjuPNxWg/exec"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex w-full items-center justify-center gap-3 rounded-full bg-[#6D071A] px-7 py-5 text-center text-[10px] uppercase tracking-[0.22em] text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-[#520515] hover:shadow-xl sm:text-[11px]"
-                    >
-
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.7"
-                        className="h-5 w-5 shrink-0 text-[#F4C58C]"
-                        aria-hidden="true"
+                      <a
+                        href="https://script.google.com/macros/s/AKfycbyOyVkGVKKdE-n3EcuaUwSR5Z_i0EnwEZL4Gdl5C9s6vxV5HyIw9vmhIq_IhvjjuPNxWg/exec"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex w-full items-center justify-center gap-3 rounded-full bg-[#6D071A] px-7 py-5 text-center text-[10px] uppercase tracking-[0.22em] text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-[#520515] hover:shadow-xl sm:text-[11px]"
                       >
-                        <rect
-                          x="3"
-                          y="6"
-                          width="13"
-                          height="12"
-                          rx="2"
-                        />
 
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="m16 10 5-3v10l-5-3"
-                        />
-                      </svg>
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.7"
+                          className="h-5 w-5 shrink-0 text-[#F4C58C]"
+                          aria-hidden="true"
+                        >
+                          <rect
+                            x="3"
+                            y="6"
+                            width="13"
+                            height="12"
+                            rx="2"
+                          />
 
-                      <span>
-                        Partager mes photos/videos
-                      </span>
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m16 10 5-3v10l-5-3"
+                          />
+                        </svg>
 
-                    </a>
+                        <span>
+                          Partager mes photos/videos
+                        </span>
 
-                  </div>
+                      </a>
+
+                    </div>
 
 
                     {/* PROGRESSION */}
@@ -813,46 +805,45 @@ const handleFiles = async (
                   {/* =================================================
                       BOUTON MESSAGE VIDÉO
                   ================================================= */}
-                 
                   <button
-                      type="button"
-                      disabled={uploading}
-                      onClick={() => fileInputRef.current?.click()}
-                      className="flex w-full items-center justify-center gap-3 rounded-full bg-[#C54716] px-7 py-5 text-center text-[10px] uppercase tracking-[0.22em] text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-[#A83D13] hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-60 sm:text-[11px]"
-                    >
+                    type="button"
+                    disabled={uploading}
+                    onClick={() => fileInputRef.current?.click()}
+                    className="flex w-full items-center justify-center gap-3 rounded-full bg-[#C54716] px-7 py-5 text-center text-[10px] uppercase tracking-[0.22em] text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-[#A83D13] hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-60 sm:text-[11px]"
+                  >
 
-                      {uploading ? (
-                        <>
-                          <span className="h-5 w-5 shrink-0 animate-spin rounded-full border-2 border-white/40 border-t-white" />
+                    {uploading ? (
+                      <>
+                        <span className="h-5 w-5 shrink-0 animate-spin rounded-full border-2 border-white/40 border-t-white" />
 
-                          <span>
-                            Envoi en cours...
-                          </span>
-                        </>
-                      ) : (
-                        <>
-                          <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="1.7"
-                            className="h-5 w-5 shrink-0"
-                            aria-hidden="true"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M12 16V4m0 0-4 4m4-4 4 4M5 13v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"
-                            />
-                          </svg>
+                        <span>
+                          Envoi en cours...
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.7"
+                          className="h-5 w-5 shrink-0"
+                          aria-hidden="true"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M12 16V4m0 0-4 4m4-4 4 4M5 13v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"
+                          />
+                        </svg>
 
-                          <span>
-                            Laisser un message
-                          </span>
-                        </>
-                      )}
+                        <span>
+                          Laisser un message
+                        </span>
+                      </>
+                    )}
 
-                    </button>
+                  </button>
 
                 </div>
 

@@ -16,7 +16,7 @@ export default function Navigation() {
           NAVIGATION FIXE
       ========================================================= */}
       <nav className="fixed left-1/2 top-4 z-[90] w-[calc(100%-2rem)] max-w-6xl -translate-x-1/2">
-        <div className="flex items-center justify-between rounded-full border border-white/20 bg-[#3A241E]/90 px-4 py-3 shadow-2xl backdrop-blur-xl md:px-6">
+        <div className="flex items-center justify-between rounded-full border border-white/20 bg-[#6D071A]/95 px-4 py-3 shadow-2xl backdrop-blur-xl md:px-6">
 
           {/* MONOGRAMME */}
           <Link
@@ -166,15 +166,7 @@ export default function Navigation() {
             : "pointer-events-none -translate-y-3 opacity-0"
         }`}
       >
-        <div className="overflow-hidden rounded-[28px] border border-white/15 bg-[#3A241E]/95 p-3 shadow-2xl backdrop-blur-xl">
-
-          {/* PETIT TITRE */}
-          <div className="px-4 pb-3 pt-2">
-            <p className="text-[8px] uppercase tracking-[0.4em] text-[#F4C58C]/70">
-              Anelka & Baudouin
-            </p>
-          </div>
-
+        <div className="overflow-hidden rounded-[28px] border border-white/15 bg-[#6D071A]/95 p-3 shadow-2xl backdrop-blur-xl">
 
           {/* LIENS */}
           <div className="space-y-1">
@@ -259,10 +251,6 @@ export default function Navigation() {
 
             <p className="font-serif text-sm italic text-[#F4C58C]">
               26 & 28 novembre 2026
-            </p>
-
-            <p className="mt-1 text-[8px] uppercase tracking-[0.3em] text-white/40">
-              Yaoundé
             </p>
 
           </div>

@@ -145,7 +145,7 @@ export default function CadeauxPage() {
                   </p>
 
                   <p className="mx-auto mt-3 max-w-[250px] text-xs leading-5 text-white/55">
-                    Ou utilisez directement le bouton à gauche.
+                    Ou utilisez directement le bouton "Découvrir notre liste de cadeaux".
                   </p>
 
                 </div>
@@ -355,11 +355,11 @@ export default function CadeauxPage() {
                     </p>
 
                     <p className="mt-2 text-sm font-medium text-[#C54716]">
-                      +237 698 229 501
+                      +237 686 831 560
                     </p>
 
                     <p className="mt-2 text-[11px] text-[#8A6D63]">
-                      Anelka Meppo Tchuente
+                      Baudouin Keunne Manfouo
                     </p>
 
                   </div>

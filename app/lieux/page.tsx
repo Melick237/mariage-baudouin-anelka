@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 export default function LieuxPage() {
   return (
-    <main className="min-h-screen bg-[#6D071A]">
+    <main className="min-h-screen bg-[#F8F1E8]">
 
       {/* NAVIGATION COMMUNE */}
       <Navigation />
@@ -14,18 +14,18 @@ export default function LieuxPage() {
       ========================================================= */}
       <section
         id="localisation"
-        className="relative overflow-hidden bg-[#6D071A] px-6 pb-24 pt-32 text-[#FFF8F2] md:px-12 md:pb-28 md:pt-36"
+        className="relative overflow-hidden bg-[#F8F1E8] px-6 pb-24 pt-32 text-[#4A2924] md:px-12 md:pb-28 md:pt-36"
       >
         {/* Décorations */}
-        <div className="pointer-events-none absolute -left-32 -top-32 h-[420px] w-[420px] rounded-full border border-white/10" />
+        <div className="pointer-events-none absolute -left-32 -top-32 h-[420px] w-[420px] rounded-full border border-[#C54716]/10" />
 
-        <div className="pointer-events-none absolute -bottom-36 -right-28 h-[420px] w-[420px] rounded-full border border-white/10" />
+        <div className="pointer-events-none absolute -bottom-36 -right-28 h-[420px] w-[420px] rounded-full border border-[#C54716]/10" />
 
-        <div className="pointer-events-none absolute left-8 top-24 hidden font-serif text-[150px] text-white/[0.025] lg:block">
+        <div className="pointer-events-none absolute left-8 top-24 hidden font-serif text-[150px] text-[#6D071A]/[0.025] lg:block">
           A
         </div>
 
-        <div className="pointer-events-none absolute bottom-24 right-8 hidden font-serif text-[150px] text-white/[0.025] lg:block">
+        <div className="pointer-events-none absolute bottom-24 right-8 hidden font-serif text-[150px] text-[#6D071A]/[0.025] lg:block">
           B
         </div>
 
@@ -36,17 +36,17 @@ export default function LieuxPage() {
           ====================================================== */}
           <div className="mx-auto max-w-3xl text-center">
 
-            <p className="text-[11px] uppercase tracking-[0.45em] text-[#F4C58C]">
+            <p className="text-[11px] uppercase tracking-[0.45em] text-[#C54716]">
               Où nous retrouver
             </p>
 
-            <h1 className="mt-4 font-serif text-5xl md:text-7xl">
+            <h1 className="mt-4 font-serif text-5xl text-[#4A2924] md:text-7xl">
               Localisation
             </h1>
 
-            <div className="mx-auto mt-6 h-px w-20 bg-[#F4C58C]" />
+            <div className="mx-auto mt-6 h-px w-20 bg-[#C54716]" />
 
-            <p className="mx-auto mt-7 max-w-2xl leading-8 text-white/80">
+            <p className="mx-auto mt-7 max-w-2xl leading-8 text-[#755B54]">
               Retrouvez ici les informations nécessaires pour rejoindre
               les différents lieux de célébration à Bayangam et à Yaoundé.
             </p>
@@ -62,17 +62,17 @@ export default function LieuxPage() {
             {/* TITRE BAYANGAM */}
             <div className="mx-auto max-w-3xl text-center">
 
-              <p className="text-[10px] uppercase tracking-[0.4em] text-[#F4C58C]">
+              <p className="text-[10px] uppercase tracking-[0.4em] text-[#C54716]">
                 26 novembre 2026
               </p>
 
-              <h2 className="mt-4 font-serif text-4xl text-white md:text-5xl">
+              <h2 className="mt-4 font-serif text-4xl text-[#4A2924] md:text-5xl">
                 Bayangam
               </h2>
 
-              <div className="mx-auto mt-5 h-px w-16 bg-[#F4C58C]/70" />
+              <div className="mx-auto mt-5 h-px w-16 bg-[#C54716]/60" />
 
-              <p className="mx-auto mt-6 max-w-2xl leading-7 text-white/75">
+              <p className="mx-auto mt-6 max-w-2xl leading-7 text-[#755B54]">
                 La dote et le mariage civil se dérouleront au domicile
                 des parents d&apos;Anelka à Bayangam.
               </p>
@@ -88,7 +88,7 @@ export default function LieuxPage() {
               {/* ===================================================
                   PHOTO DU DOMICILE + INFORMATIONS
               =================================================== */}
-              <div className="relative min-h-[560px] overflow-hidden rounded-[34px] border border-white/15 shadow-2xl lg:h-[560px]">
+              <div className="relative min-h-[560px] overflow-hidden rounded-[34px] border border-[#6D071A]/10 shadow-2xl lg:h-[560px]">
 
                 {/* PHOTO DU DOMICILE */}
                 <Image
@@ -101,7 +101,6 @@ export default function LieuxPage() {
 
                 {/* VOILE */}
                 <div className="absolute inset-0 bg-gradient-to-b from-[#3A1218]/45 via-[#4B151D]/70 to-[#250A0F]/95" />
-
 
                 {/* CONTENU */}
                 <div className="relative z-10 flex h-full min-h-[560px] flex-col justify-end p-7 md:p-9">
@@ -126,7 +125,6 @@ export default function LieuxPage() {
                     ou le plan indiqué à côté pour rejoindre facilement le lieu.
                   </p>
 
-
                   {/* BOUTONS */}
                   <div className="mt-7 grid grid-cols-2 gap-3">
 
@@ -139,7 +137,6 @@ export default function LieuxPage() {
                     >
                       Voir sur Google Maps
                     </a>
-
 
                     {/* ITINÉRAIRE */}
                     <a
@@ -161,7 +158,7 @@ export default function LieuxPage() {
               {/* ===================================================
                   PLAN DE LOCALISATION
               =================================================== */}
-              <div className="flex min-h-[560px] flex-col overflow-hidden rounded-[34px] border border-white/15 bg-[#FFF8F2] shadow-2xl lg:h-[560px]">
+              <div className="flex min-h-[560px] flex-col overflow-hidden rounded-[34px] border border-[#6D071A]/10 bg-[#FFF8F2] shadow-2xl lg:h-[560px]">
 
                 {/* TITRE DU PLAN */}
                 <div className="shrink-0 bg-[#FFF8F2] px-7 pb-4 pt-6 text-[#6D3828] md:px-9">
@@ -202,7 +199,6 @@ export default function LieuxPage() {
                     jusqu&apos;au domicile.
                   </p>
 
-
                   {/* BOUTONS PLAN */}
                   <div className="mt-4 grid grid-cols-2 gap-3">
 
@@ -231,15 +227,15 @@ export default function LieuxPage() {
           ====================================================== */}
           <div className="mx-auto my-20 flex max-w-xl items-center gap-5">
 
-            <div className="h-px flex-1 bg-[#F4C58C]/25" />
+            <div className="h-px flex-1 bg-[#C54716]/20" />
 
-            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#F4C58C]/35">
-              <span className="font-serif text-xs text-[#F4C58C]">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#C54716]/30">
+              <span className="font-serif text-xs text-[#C54716]">
                 A | B
               </span>
             </div>
 
-            <div className="h-px flex-1 bg-[#F4C58C]/25" />
+            <div className="h-px flex-1 bg-[#C54716]/20" />
 
           </div>
 
@@ -252,17 +248,17 @@ export default function LieuxPage() {
             {/* TITRE */}
             <div className="mx-auto mb-10 max-w-3xl text-center">
 
-              <p className="text-[10px] uppercase tracking-[0.4em] text-[#F4C58C]">
+              <p className="text-[10px] uppercase tracking-[0.4em] text-[#C54716]">
                 28 novembre 2026
               </p>
 
-              <h2 className="mt-4 font-serif text-4xl text-white md:text-5xl">
+              <h2 className="mt-4 font-serif text-4xl text-[#4A2924] md:text-5xl">
                 Yaoundé
               </h2>
 
-              <div className="mx-auto mt-5 h-px w-16 bg-[#F4C58C]/70" />
+              <div className="mx-auto mt-5 h-px w-16 bg-[#C54716]/60" />
 
-              <p className="mx-auto mt-6 max-w-2xl leading-7 text-white/75">
+              <p className="mx-auto mt-6 max-w-2xl leading-7 text-[#755B54]">
                 La cérémonie à l&apos;église et la soirée se dérouleront
                 au même endroit, au Green Garden.
               </p>
@@ -276,7 +272,7 @@ export default function LieuxPage() {
               {/* ===================================================
                   PHOTO + INFORMATIONS
               =================================================== */}
-              <div className="relative min-h-[560px] overflow-hidden rounded-[34px] border border-white/15 shadow-2xl lg:h-[560px]">
+              <div className="relative min-h-[560px] overflow-hidden rounded-[34px] border border-[#6D071A]/10 shadow-2xl lg:h-[560px]">
 
                 {/* PHOTO */}
                 <Image
@@ -289,7 +285,6 @@ export default function LieuxPage() {
 
                 {/* VOILE */}
                 <div className="absolute inset-0 bg-gradient-to-b from-[#3A1218]/60 via-[#4B151D]/75 to-[#250A0F]/95" />
-
 
                 {/* CONTENU */}
                 <div className="relative z-10 flex h-full min-h-[560px] flex-col justify-end p-7 md:p-9">
@@ -318,7 +313,6 @@ export default function LieuxPage() {
                     journée sans avoir à changer de lieu.
                   </p>
 
-
                   {/* BOUTONS */}
                   <div className="mt-7 grid grid-cols-2 gap-3">
 
@@ -342,7 +336,7 @@ export default function LieuxPage() {
               {/* ===================================================
                   GOOGLE MAP
               =================================================== */}
-              <div className="min-h-[560px] overflow-hidden rounded-[34px] border border-white/15 bg-white/10 shadow-2xl lg:h-[560px]">
+              <div className="min-h-[560px] overflow-hidden rounded-[34px] border border-[#6D071A]/10 bg-white/50 shadow-2xl lg:h-[560px]">
 
                 <iframe
                   title="Green Garden Yaoundé"
@@ -366,17 +360,17 @@ export default function LieuxPage() {
 
             <div className="mx-auto flex items-center justify-center gap-4">
 
-              <div className="h-px w-16 bg-[#F4C58C]/40" />
+              <div className="h-px w-16 bg-[#C54716]/25" />
 
-              <span className="font-serif text-sm text-[#F4C58C]">
+              <span className="font-serif text-sm text-[#C54716]">
                 A | B
               </span>
 
-              <div className="h-px w-16 bg-[#F4C58C]/40" />
+              <div className="h-px w-16 bg-[#C54716]/25" />
 
             </div>
 
-            <p className="mt-6 font-serif text-lg italic text-white/75">
+            <p className="mt-6 font-serif text-lg italic text-[#755B54]">
               Nous vous attendons avec impatience.
             </p>
 
