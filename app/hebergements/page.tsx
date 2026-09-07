@@ -378,45 +378,7 @@ export default function HebergementsPage() {
                 </div>
 
 
-                <div className="mt-5 rounded-[20px] bg-[#FFF8F2] p-4">
-
-                  <p className="text-[9px] uppercase tracking-[0.3em] text-[#C54716]">
-                    Tarifs indicatifs
-                  </p>
-
-                  <div className="mt-3 space-y-2 text-sm text-[#765B52]">
-
-                    <div className="flex items-center justify-between gap-4">
-                      <span>Chambres</span>
-
-                      <span className="text-right font-medium text-[#4A2924]">
-                        dès 15 000 FCFA
-                      </span>
-                    </div>
-
-                    <div className="h-px bg-[#6D071A]/10" />
-
-                    <div className="flex items-center justify-between gap-4">
-                      <span>Studios</span>
-
-                      <span className="text-right font-medium text-[#4A2924]">
-                        20 000 – 35 000
-                      </span>
-                    </div>
-
-                    <div className="h-px bg-[#6D071A]/10" />
-
-                    <div className="flex items-center justify-between gap-4">
-                      <span>Appartement</span>
-
-                      <span className="text-right font-medium text-[#4A2924]">
-                        50 000 FCFA / 24h
-                      </span>
-                    </div>
-
-                  </div>
-
-                </div>
+                
 
 
                 <div className="mt-4 rounded-[20px] bg-[#FFF8F2] p-4">

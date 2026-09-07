@@ -156,66 +156,45 @@ export default function LieuxPage() {
 
 
               {/* ===================================================
-                  PLAN DE LOCALISATION
-              =================================================== */}
-              <div className="flex min-h-[560px] flex-col overflow-hidden rounded-[34px] border border-[#6D071A]/10 bg-[#FFF8F2] shadow-2xl lg:h-[560px]">
+    PLAN DE LOCALISATION
+=================================================== */}
+<div className="relative min-h-[560px] overflow-hidden rounded-[34px] border border-[#6D071A]/10 bg-white shadow-2xl lg:h-[560px]">
 
-                {/* TITRE DU PLAN */}
-                <div className="shrink-0 bg-[#FFF8F2] px-7 pb-4 pt-6 text-[#6D3828] md:px-9">
+  {/* PDF — PREND TOUTE LA CARTE */}
+  <iframe
+    src="/documents/plan-bayangam.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+    title="Plan de localisation Bayangam"
+    className="absolute inset-0 h-full w-full border-0"
+  />
 
-                  <p className="text-[9px] uppercase tracking-[0.35em] text-[#C54716]">
-                    Pour vous guider
-                  </p>
+  {/* BOUTONS EN BAS */}
+  <div className="relative min-h-[560px] overflow-hidden rounded-[34px] border border-[#6D071A]/10 bg-white shadow-2xl lg:h-[560px]">
 
-                  <h3 className="mt-2 font-serif text-2xl md:text-3xl">
-                    Plan de localisation
-                  </h3>
+  <iframe
+    src="/documents/plan-bayangam.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+    title="Plan de localisation Bayangam"
+    className="absolute inset-0 h-full w-full border-0"
+  />
 
-                </div>
+  <a
+    href="/documents/plan-bayangam.pdf"
+    download="plan-localisation-bayangam.pdf"
+    className="
+      absolute bottom-5 right-5 z-20
+      flex min-h-[48px] items-center justify-center
+      rounded-full bg-[#C54716]
+      px-6 text-[9px] uppercase tracking-[0.18em]
+      text-white shadow-xl
+      transition duration-300
+      hover:-translate-y-1 hover:bg-[#A83D13]
+    "
+  >
+    Télécharger le plan
+  </a>
 
+</div>
 
-                {/* IMAGE DU PLAN */}
-                <a
-                  href="/images/bayangam-plan.jpeg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative min-h-0 flex-1 bg-white"
-                >
-                  <Image
-                    src="/images/bayangam-plan.jpeg"
-                    alt="Plan de localisation du domicile à Bayangam"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-contain p-2 transition duration-500 group-hover:scale-[1.015] md:p-3"
-                  />
-                </a>
-
-
-                {/* BAS DU PLAN */}
-                <div className="shrink-0 border-t border-[#6D3828]/10 bg-[#FFF8F2] px-7 py-5 text-[#6D3828] md:px-9">
-
-                  <p className="text-sm leading-6 text-[#805B4E]">
-                    Consultez ce plan pour suivre les différents points de repère
-                    jusqu&apos;au domicile.
-                  </p>
-
-                  {/* BOUTONS PLAN */}
-                  <div className="mt-4 grid grid-cols-2 gap-3">
-
-                    <a
-                      href="/images/bayangam-plan.jpeg"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex min-h-[52px] w-full items-center justify-center rounded-full bg-[#C54716] px-3 text-center text-[8px] uppercase tracking-[0.16em] text-white transition duration-300 hover:-translate-y-1 hover:bg-[#A83D13] sm:text-[9px] sm:tracking-[0.18em]"
-                    >
-                      Voir le plan en grand
-                    </a>
-
-                  </div>
-
-                </div>
-
-              </div>
+</div>
 
             </div>
 

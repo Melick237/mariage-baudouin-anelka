@@ -3,7 +3,20 @@
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Image from "next/image";
+import { Cormorant_Garamond, Pinyon_Script } from "next/font/google";
 import { useEffect, useState } from "react";
+
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+});
+
+const pinyon = Pinyon_Script({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default function Home() {
   const [showEnvelope, setShowEnvelope] = useState(false);
@@ -126,71 +139,45 @@ export default function Home() {
   }
 
   /* =========================================================
-      HISTOIRE ANELKA & BAUDOUIN
+      HISTOIRE ANELKA & BAUDOUIN — 4 CHAPITRES
   ========================================================= */
   const storyMoments = [
     {
-      year: "Bien avant 2019",
-      title: "Ils s’étaient déjà croisés",
+      year: "Avant 2019",
+      title: "L'aube de notre histoire",
       image: "/images/histoires1.jpeg",
       imagePosition: "center 30%",
       anelka: [
-        `Avant que nous nous retrouvions en Allemagne, je me rappelle d'une fois ou il m'a seduit par son charme, le dernier jour d'une formation en langage C++ qu'on avait fait au Lycee. Le gar etait, je crois le meilleur de la formation et avait un petit charisme que j'aimais beaucoup. Bon après la formation, nous nous sommes perdu de vue.`,
+        `Avant que nous nous retrouvions en Allemagne, je me rappelle une fois où il m'a séduit par son charme, le dernier jour d'une formation en langage C++ qu'on avait fait au Lycée. Le gar était, je crois le meilleur de la formation et avait un petit charisme que j'aimais beaucoup. Bon après la formation, nous nous sommes perdus de vue.`,
       ],
       baudouin: [
-        `Ça, c’est une histoire digne d’un film 😃. On se connaissait déjà depuis le pays parce qu’on avait fait la 5ème M4 ensemble au Lycée classique de Bafang. On ne se parlait pas vraiment, mais moi je la trouvais déjà jolie hein 😆. Elle était souvent assise loin devant et moi j’étais derrière avec mes gars, on tuait le temps comme tous les jeunes de notre âge. À ce moment-là, je ne la regardais pas encore avec des intentions particulières. On était jeunes, le lycée s’est terminé, chacun est parti de son côté et finalement on s’est perdus de vue pendant plusieurs années.`,
+        `On se connaissait depuis le pays car nous avons fait la classe de 5ème M4 au Lycée classique de Bafang ensemble. On ne parlait pas vraiment mais je la trouvais jolie alors hein, en classe elle s'asseyait loin devant et moi derrière et j'avais mes amis avec qui je tuais (passais 😆) le temps. On était tous jeunes du coup je ne la regardais pas avec des intentions... Le temps est passé, on a fini le Lycée, on s'est perdus de vue. Moi je suis allé en Allemagne avant elle, j'ai commencé les études.`,
       ],
     },
 
     {
-      year: "2019",
-      title: "Le premier appel",
+      year: "2021",
+      title: "Notre Histoire d'amour",
+      image: "/images/histoire222.JPG",
+      imagePosition: "center",
+      anelka: [
+        `Une fois en Allemagne il m'a appelé, un appel qui a rendu ma journée particulière et joyeuse. Je ne l’avais pas appréhendé comme un appel pour draguer mais un appel qui me faisait plaisir, causer avec lui, me rendait heureuse. Après ce jour on s’appelait tous les jours, quand je finissais mes cours, je courais directement pour m’asseoir dans ma chambre et pouvoir discuter avec lui en appel vidéo sur Skype. Je me rappelle qu’il me faisait toujours rire, qu’il m’encourageait beaucoup et qu’il me faisait me sentir importante. Ça a été pour moi la période la plus belle de notre relation jusqu’à aujourd’hui.`,
+      ],
+      baudouin: [
+        `Un jour, un mardi matin à 8hr en allant faire cours je manipulais mon téléphone et j'ai vue qu'un ami du lycée qu'on avait en commun l'a mis en statuts WhatsApp je me suis dit mais tient ça fait bail et elle est restée toujours debout comme avant. J'ai pris son contact au gar et j'ai écrit directement. Elle ne se rappelait pas trop de moi j'ai donc lancé l'appel vidéo sur place (en plus j'étais sorti le jour-là bien chaud) elle a décroché on s'est salué elle s'est rappelée de moi. On a commencé à converser elle souriait beaucoup (j'étais quand même débout hein). J'ai dit que je vais actuellement en cours et je vais la rappeler le soir. En ce moment elle venait d'arriver en Allemagne et faisait les cours de langue dans une autre ville. J'ai donc commencé après les cours en soirée à l'appeler pour saluer, prendre des nouvelles. Plus on s'appelait plus je ressentais un feeling car on riait et blaguait aussi beaucoup et là je commençais à m'intéresser à elle car après nos causeries je me sentais toujours bien genre c'était comme une thérapie. À un moment je me suis dit pourquoi pas essayer quelque chose ? (Sans lui dire). On continuait donc à causer presque chaque soir mais j'avais déjà mes intentions en tête. Tellement on causait qu'à l'approche des examens je préparais une matière que j'aimais tellement et que je pratiquais chaque jour. Au lieu de donc de me concentrer et préparer ma matière, chaque soir je mettais le cahier devant moi, je lançais l'appel vidéo on causait 😂 elle me disait d'aller réviser je lui répondais aka je maîtrise. C'est là alors que j'ai bien échoué cette matière et c'était ma première fois dans ma vie d'échouer. J'avais tellement mal dans mon cœur, elle me consolait beaucoup et elle disait aussi « waaa c'est à cause de moi que tu as échoué » moi alors comme j'aime faire le dur je lui disais non t'inquiète ce n’est pas toi, ça peut arriver mais j'avais bien mal 🥲. Après je me suis dit « peut-être c'était le prix à payer pour recevoir l’étoile qui va illuminer ma vie » c'est donc passé, on a continué nos YelloNight tranquillement.`,
+      ],
+    },
+
+    {
+      year: "2022",
+      title: "Notre rencontre",
       image: "/images/histoire22.jpeg",
       imagePosition: "center",
       anelka: [
-        `Une fois en Allemagne il m'a appelé, Un appel qui a rendu ma journee particuliere et joyeuse. Je ne l’avais pas apprehendé comme un appel pour draguer mais un appel qui me faisait plaisir, causer avec lui, me rendait heureuse.`,
+        `Puis quand j’ai fini de composer, il m’a invité dans sa ville, je pense à l’occasion de son anniversaire, non en fait son anniversaire était déjà passé et puis il s’est fâché que je n’étais pas là et qu’il aurait aimé que je sois là. J’ai donc fait un voyage et nous nous sommes retrouvés dans sa ville et c’est là que notre relation a vraiment débuté. Ce qui m’a marqué quand je suis arrivé chez lui, c’est sa personnalité. Il était très humble, très poli, pas juste avec moi mais aussi avec son entourage. Il m’offrait une stabilité de cœur et une perspective de vie que j’admirait beaucoup, il était travailleur et ce que j’apprécie le plus sur lui, c’est qu’il trouvait solution à tous mes problèmes, dans mes études, dans mes procédures administratives, il m’accompagnait. Il m’a montré qu’il avait une volonté de réussir et surtout qu’il s’en donne les moyens.`,
       ],
       baudouin: [
-        `Un mardi matin vers 8 heures, j’allais en cours et je manipulais tranquillement mon téléphone quand j’ai vu qu’un gars du lycée qu’on avait en commun avait mis sa photo en statut WhatsApp. Je me suis dit : « Mais tiens, ça fait bail ! » Et surtout, je voyais qu’elle était toujours bien debout comme avant 😃. J’ai directement demandé son contact au gars et je lui ai écrit. Elle ne se rappelait pas trop de moi, donc moi aussi je n’ai pas perdu le temps, j’ai lancé l’appel vidéo sur place. En plus ce jour-là j’étais sorti bien chaud hein 😆. Elle a décroché, on s’est salués, elle a fini par se rappeler de moi et on a commencé à causer. Elle souriait beaucoup, moi aussi j’étais bien à l’aise. Comme je devais aller en cours, je lui ai dit que j’allais la rappeler le soir. À ce moment-là, je ne savais pas encore que ce petit appel allait vraiment changer ma vie.`,
-      ],
-    },
-
-    {
-      year: "Les mois suivants",
-      title: "Nos soirées sont devenues notre rendez-vous",
-      image: "/images/histoire33.jpeg",
-      imagePosition: "center",
-      anelka: [
-        `Après ce jour on s’appelait tous les jours, quand je finissais mes cours, je courais directement pour m’asseoir dans ma chambre et pouvoir discuter avec lui en appel video sur Skype. Je me rappelle qu’il me faisait toujours rire, qu’il m’encourageais beaucoup et qu’il me faisait me sentir importante. Ça a été pour moi la periode la plus belle de notre relation jusqu’a aujourd’hui.`,
-      ],
-      baudouin: [
-        `Après ce premier appel, j’ai commencé à l’appeler le soir juste pour saluer et prendre de ses nouvelles. Mais plus on causait, plus je sentais qu’il y avait un feeling. On riait beaucoup, on blaguait, on racontait nos journées et franchement, après nos causeries je me sentais toujours bien, genre c’était devenu ma petite thérapie du soir. À un moment je me suis dit : « Pourquoi ne pas essayer quelque chose avec elle ? » Mais bien sûr, je ne lui ai rien dit 😅. Dans ma tête seulement, les intentions avaient déjà commencé. Le problème c’est qu’on causait tellement qu’à l’approche de mes examens, au lieu de bien réviser une matière que j’aimais pourtant beaucoup, chaque soir je mettais le cahier devant moi et je lançais l’appel vidéo 😂. Elle me disait : « Va réviser », moi je répondais : « Aka, je maîtrise ». C’est comme ça que j’ai bien échoué cette matière, première fois de ma vie 🥲. J’avais mal dans mon cœur, elle me consolait et disait : « Waaa, c’est à cause de moi que tu as échoué. » Moi comme j’aime faire le dur, je répondais que non, ce n’était rien. Après je me suis même dit que c’était peut-être le prix à payer pour recevoir l’étoile qui allait illuminer ma vie. Et nos YelloNight ont continué tranquillement.`,
-      ],
-    },
-
-    {
-      year: "Quelques mois plus tard",
-      title: "Le voyage qui a tout changé",
-      image: "/images/histoire4.jpeg",
-      imagePosition: "center",
-      anelka: [
-        `Puis quand j’ai fini de composer, il m’a invité dans sa ville, je pense à l’occasion de son anniversaire, non en fait son anniversaire était déjà passé et puis il s’est fâché que je n’étais pas là et que il aurait aimé que je soit la. J’ai donc fait un voyage et nous nous sommes retrouvé dans sa ville et c’est la que notre relation a vraiment debute.`,
-      ],
-      baudouin: [
-        `À un moment, elle cherchait dans quelle ville continuer son parcours après les cours de langue. Moi aussi j’avais déjà mon petit plan derrière 😅, donc je lui conseillais doucement de venir dans ma ville. Elle est finalement venue pour passer un examen de langue et quand elle est arrivée, elle a ouvert son sac et là je vois beaucoup de cadeaux pour moi. Je ne m’attendais vraiment pas à ça 🥲. Le séjour s’est super bien passé. Pour une première vraie prise de contact après toutes ces années, c’était vraiment cool. J’ai beaucoup aimé sa douceur, ses petites attentions et surtout elle préparait à manger tout le temps, et c’était bon hein 🥲. Malheureusement, elle a échoué l’examen qu’elle était venue passer. Je me suis dit : « Peut-être elle aussi devait avoir son petit échec dans notre histoire » 😅. Je l’ai consolée comme elle m’avait consolé auparavant, puis elle a refait l’examen et elle l’a réussi. Après ce séjour, dans ma tête c’était clair : « Il faut que j’accélère 😁 ». J’avais trop aimé le temps passé avec elle pour maintenant faire semblant.`,
-      ],
-    },
-
-    {
-      year: "La suite",
-      title: "De deux villes à une seule vie",
-      image: "/images/histoire6.jpeg",
-      imagePosition: "center",
-      anelka: [
-        `Ce qui m’a marqué quand je suis arrivé chez lui, c’est sa personnalité. Il était très humble, très poli, pas juste avec moi mais aussi avec son entourage. Il m’offrait une stabilité de coeur et une perspective de vie que j’admirait beaucoup, il etait travailleur et ce que j’apprecie le plus sur lui, c’est qu’il trouvait solution a tous mes problemes, dans mes études, dans mes procédures administratives, il m’accompagnait. Il m’a montre qu’il avait une volonté de reussir et surtout qu’il s’en donne les moyens.`,
-      ],
-      baudouin: [
-        `Après son séjour, moi je savais déjà ce que je voulais. J’ai donc continué à accélérer 😁 et finalement nous nous sommes mis ensemble. Elle a fini par venir poursuivre ses études dans la ville où je vivais et là, notre histoire a vraiment quitté WhatsApp pour entrer dans la vraie vie. Ce n’était plus seulement les appels vidéo, les YelloNight et les longues causeries, maintenant il fallait apprendre à cheminer ensemble pour de vrai, avec les bons moments, les difficultés, les projets, les décisions et tout ce qui vient avec une relation sérieuse. On a avancé comme ça, petit à petit, et nous voilà encore ensemble aujourd’hui ❣️. Quand j’y pense, tout ça est parti d’un simple statut WhatsApp vu un mardi matin.`,
+        `À un moment elle cherchait dans quelle ville continuer après les cours de langue, pour l'attirer vers moi je lui conseillais de venir dans ma ville. Elle est donc venue là-bas pour faire un examen de langue et arrivée chez moi elle a déballé le sac et il y'avait beaucoup de cadeaux pour moi je ne m’y attendais vraiment pas 🥲. Le séjour s'est bien passé, pour une première prise de contact physique c'était très cool j'ai beaucoup apprécié surtout la douceur, elle préparait tout le temps et c'était bon 🥲. Malheureusement elle a échoué l'examen qu'elle était venue faire (peut-être c'était aussi un signe 😅). Je l'ai aussi consolée et après elle a refait, elle a réussi. Après ce séjour ensemble je me suis dit « il faut que j'accélère 😁 » car j'avais aimé le temps passé avec elle.`,
       ],
     },
 
@@ -200,23 +187,14 @@ export default function Home() {
       image: "/images/histoire5.jpeg",
       imagePosition: "center",
       anelka: [
-        `En Fevrier 2024 on a aménagé ensemble, ce fut une periode très boulversante compte tenu de tout le stresse et les depenses que ca entrainait, d’autant plus que j’etais enceinte. En Avril 2024 est venu au monde notre petit bout de choux, mon cheri d’amour, comme j’aime l’appeler, il est venu comme un torrent ce qui nous a bouleversé psychologiquement , mais comme le beau temps vient après la pluie, il a rayonné notre vie, et continue de le faire tous les jours, c’est notre levée du soleil, comme son prénom LONAAM l'indique. Il est né pour illuminer nos vies. Notre guerrier, notre lion, sa venue était comme un tremblement de terre, il venait avec puissance.`,
+        `En février 2024 on a aménagé ensemble, ce fut une période très bouleversante compte tenu de tout le stress et les dépenses que ça entrainait, d’autant plus que j’étais enceinte. En avril 2024 est venu au monde notre petit bout de choux, mon chéri d’amour, comme j’aime l’appeler, il est venu comme un torrent ce qui nous a bouleversé psychologiquement, mais comme le beau temps vient après la pluie, il a rayonné notre vie, et continue de le faire tous les jours, c’est notre levée du soleil, comme son prénom LONAAM l'indique. Il est né pour illuminer nos vies. Notre guerrier, notre lion, sa venue était comme un tremblement de terre, il venait avec puissance.`,
+        `Merci d’avoir été la solution à mes problèmes mon chéri.`,
+        `Merci d’avoir cru en nous.`,
+        `Merci d’aimer si fort.`,
+        `Et merci à LONAAM de nous avoir choisis pour briller.`,
       ],
       baudouin: [
-        `Quand je regarde tout ce chemin aujourd’hui, parfois même moi je me dis : « Donc tout ça a commencé comme ça ? » 😃. La fille que j’avais connue en 5ème, que j’avais retrouvée des années plus tard grâce à un statut WhatsApp et avec qui je pouvais passer toute une soirée au téléphone, est devenue ma compagne, puis la mère de notre enfant. En février 2024, on a emménagé ensemble et là c’était encore une autre école, parce que vivre ensemble ce n’est plus seulement raccrocher l’appel quand chacun veut dormir 😅. Il fallait apprendre à gérer le quotidien, les responsabilités et tout ce qui venait avec la grossesse. Puis en avril, LONAAM est arrivé et il a complètement changé notre vie. Devenir parents nous a beaucoup fait grandir et nous a donné encore plus de raisons de nous battre pour ce qu’on construisait ❤️.`,
-      ],
-    },
-
-    {
-      year: "Novembre 2024",
-      title: "La rencontre de nos familles",
-      image: "",
-      imagePosition: "center",
-      anelka: [
-        `Mon chéri a pris une belle initiative : il a décidé qu’il était temps que nos familles se rencontrent. Pour moi, ce moment avait une valeur particulière, parce qu’il ne s’agissait plus seulement de notre couple, mais de deux familles qui allaient désormais apprendre à se connaître et à avancer ensemble. La rencontre s’est déroulée dans une atmosphère douce, respectueuse et pleine de joie . En regardant tout le chemin parcouru depuis ce premier appel de 2019, je me suis dit une fois de plus que le destin avait vraiment bien fait les choses. ❣️❣️❣️ De la formation C++ au premier appel. Du premier appel à nos nuits sur Skype. De sa ville à notre maison. De nous deux... à nous trois. Merci d’avoir été la solution à mes problèmes mon chéri. Merci d’avoir cru en nous. Merci d’aimer si fort. Et merci à LONAAM de nous avoir choisis pour briller. MERCI🙏❣️`,
-      ],
-      baudouin: [
-        `En novembre 2024, je me suis dit qu’il était temps de faire les choses encore plus sérieusement. Après tout ce qu’on avait déjà vécu ensemble, je voulais que nos familles se rencontrent. Pour moi, c’était une manière de montrer clairement que notre histoire n’était plus seulement celle de deux personnes qui s’aiment, mais celle de deux familles qui allaient désormais être liées. La rencontre s’est bien passée, dans le respect, la bonne humeur et cette ambiance-là qu’on aime chez nous. Je regardais tout ça et je me disais quand même : depuis mon fameux statut WhatsApp jusqu’ici, on a vraiment fait du chemin 😃. Et maintenant, après toutes ces étapes, on est prêts pour la suivante ❣️.`,
+        `J'ai continué à l'accélérer et nous nous sommes mis ensemble, elle a fini par venir faire ses études dans la ville où je vivais et nous avons cheminé ensemble jusqu'à aujourd'hui ❣️.`,
       ],
     },
   ];
@@ -236,7 +214,15 @@ export default function Home() {
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[center_25%] md:object-[center_30%]"
+            className="
+              object-cover
+
+              object-[50%_center]
+
+              sm:object-[50%_center]
+
+              md:object-[center_30%]
+            "
           />
 
           <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-[#6D071A]/10 to-[#3A1F1A]/80" />
@@ -248,20 +234,45 @@ export default function Home() {
               </p>
 
               <div className="mx-auto mt-5 h-px w-28 bg-[#E8C79D]/70" />
+                <h1
+                  className="
+                    mt-7
+                    font-serif
+                    text-5xl leading-[0.95]
+                    text-white
+                    drop-shadow-[0_2px_4px_rgba(109,7,26,0.95)]
+                    md:text-7xl
+                  "
+                >
+                  Anelka
 
-              <h1 className="mt-7 font-serif text-5xl leading-[0.95] md:text-7xl">
-                Anelka
-                <span className="my-2 block text-[#E2A066]">&</span>
-                Baudouin
-              </h1>
+                  <span
+                    className="
+                      my-2 block
+                      text-[#E2A066]
+                      drop-shadow-[0_2px_4px_rgba(109,7,26,0.95)]
+                    "
+                  >
+                    &
+                  </span>
 
-              <div className="mx-auto mt-8 w-fit rounded-2xl border border-white/10 bg-[#3A1F1A]/15 px-7 py-4 shadow-lg backdrop-blur-[3px]">
-                <p className="font-serif text-lg leading-7 text-[#FFF7F0] md:text-xl md:leading-8">
-                  ont la joie de vous inviter
-                  <br />
-                  à célébrer leur mariage
-                </p>
-              </div>
+                  Baudouin
+                </h1>
+
+              <p
+                className="
+                  mx-auto mt-8
+                  font-serif
+                  text-[20px] font-semibold leading-8
+                  text-white
+                  drop-shadow-[0_2px_4px_rgba(109,7,26,0.95)]
+                  md:text-[22px] md:leading-9
+                "
+              >
+                ont la joie de vous inviter
+                <br />
+                à célébrer leur mariage
+              </p>
 
               <div className="mx-auto mt-8 flex max-w-md items-center justify-center gap-4">
                 <div className="h-px flex-1 bg-[#E8C79D]/45" />
@@ -273,7 +284,16 @@ export default function Home() {
                 <div className="h-px flex-1 bg-[#E8C79D]/45" />
               </div>
 
-              <p className="mt-4 text-xs uppercase tracking-[0.2em] text-white/80 md:text-sm">
+              <p
+                className="
+                  mt-4
+                  text-xs font-medium uppercase
+                  tracking-[0.2em]
+                  text-white
+                  drop-shadow-[0_2px_4px_rgba(109,7,26,0.95)]
+                  md:text-sm
+                "
+              >
                 Dote • Mairie • Église • Soirée
               </p>
 
@@ -293,121 +313,174 @@ export default function Home() {
       )}
 
       {/* =========================================================
-          COMPTE À REBOURS
-      ========================================================= */}
-      {enteredSite && (
-        <section
-          id="countdown"
-          className="relative overflow-hidden bg-[#6D071A] px-6 pb-14 pt-28 text-center md:pb-16 md:pt-32"
+    COMPTE À REBOURS — PHOTO ENTIÈRE + TEXTE CENTRAL LISIBLE
+========================================================= */}
+{enteredSite && (
+  <section
+    id="countdown"
+    className="relative flex min-h-[780px] items-center overflow-hidden px-5 pb-20 pt-32 text-center sm:min-h-[820px] sm:px-6 md:min-h-screen md:pb-24 md:pt-36"
+  >
+ {/* PHOTO DE FOND */}
+  <div className="absolute inset-0 overflow-hidden">
+    <Image
+      src="/images/countdown-bg.jpg"
+      alt="Anelka et Baudouin"
+      fill
+      priority
+      sizes="100vw"
+      className="
+        object-cover
+
+        scale-[1.10]
+        translate-y-[12%]
+        object-center
+
+        sm:scale-[1.07]
+        sm:translate-y-[3%]
+
+        md:scale-100
+        md:translate-y-0
+        md:object-[center_4%]
+
+        lg:object-[center_2%]
+      "
+    />
+  </div>
+
+    {/* Voile élégant : améliore fortement la lisibilité sans cacher la photo */}
+    <div className="pointer-events-none absolute inset-0 bg-[#2A120D]/30 md:bg-[#2A120D]/24" />
+
+    {/* Léger vignettage pour garder le regard au centre */}
+    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(24,9,5,0.18)_100%)]" />
+
+    {/* CONTENU */}
+    <div className="relative z-10 mx-auto w-full max-w-5xl">
+
+      {/* MONOGRAMME */}
+      <div
+        className="
+          mx-auto flex
+          h-[100px] w-[100px]
+          items-center justify-center
+          rounded-full
+          border border-white/85
+          bg-[#6D071A]/18
+          shadow-[0_8px_28px_rgba(109,7,26,0.28)]
+          backdrop-blur-[1px]
+
+          sm:h-[120px] sm:w-[120px]
+          md:h-[145px] md:w-[145px]
+          lg:h-[160px] lg:w-[160px]
+        "
+      >
+        <span
+          className={`${pinyon.className}
+            whitespace-nowrap
+            translate-y-1
+            text-[31px] leading-none
+            text-white
+            drop-shadow-[0_2px_3px_rgba(109,7,26,0.95)]
+
+            sm:text-[35px]
+            md:text-[42px]
+            lg:text-[48px]
+          `}
         >
-          <div className="pointer-events-none absolute -left-32 -top-32 h-[420px] w-[420px] rounded-full border border-[#F4D8C7]/20" />
-          <div className="pointer-events-none absolute -left-20 -top-20 h-[300px] w-[300px] rounded-full border border-[#F4D8C7]/20" />
+          A | B
+        </span>
+      </div>
 
-          <div className="pointer-events-none absolute -bottom-40 -right-32 h-[480px] w-[480px] rounded-full border border-[#F4D8C7]/20" />
-          <div className="pointer-events-none absolute -bottom-24 -right-20 h-[330px] w-[330px] rounded-full border border-[#F4D8C7]/20" />
+      {/* TEXTE PRINCIPAL */}
+      <div className="mx-auto mt-10 max-w-4xl sm:mt-12 md:mt-14">
+        <p
+          className="
+            text-[13px] font-medium uppercase
+            tracking-[0.38em]
+            text-white
+            drop-shadow-[0_2px_3px_rgba(109,7,26,0.95)]
+            sm:text-[15px]
+            md:text-[17px]
+          "
+        >
+          Ensemble avec leurs familles
+        </p>
 
-          <div className="pointer-events-none absolute left-8 top-1/2 hidden -translate-y-1/2 md:block">
-            <div className="h-32 w-px bg-[#F5D5B5]/30" />
-            <div className="mt-3 h-2 w-2 -translate-x-[3px] rounded-full bg-[#F1C3AE]" />
-          </div>
+        <h1
+          className={`${cormorant.className}
+            mt-5
+            text-[38px] font-medium leading-[0.95]
+            text-white
+            drop-shadow-[0_2px_4px_rgba(109,7,26,0.95)]
+            sm:text-[46px]
+            md:text-[58px]
+            lg:text-[68px]
+          `}
+        >
+          Anelka et Baudouin
+        </h1>
 
-          <div className="pointer-events-none absolute right-8 top-1/2 hidden -translate-y-1/2 md:block">
-            <div className="mb-3 h-2 w-2 -translate-x-[3px] rounded-full bg-[#F1C3AE]" />
-            <div className="h-32 w-px bg-[#F5D5B5]/30" />
-          </div>
+        <p
+          className="
+            mt-5 text-[11px] font-medium uppercase
+            tracking-[0.38em]
+            text-white
+            drop-shadow-[0_2px_3px_rgba(109,7,26,0.95)]
+            sm:text-[15px]
+            md:text-[17px]
+          "
+        >
+          vont s&apos;unir pour la vie
+        </p>
 
-          <div className="relative z-10 mx-auto w-full max-w-6xl">
-            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-[#F6DFC8]/55 md:h-20 md:w-20">
-              <span className="font-serif text-base tracking-[0.15em] text-[#FFF8F0] md:text-xl">
-                A | B
-              </span>
-            </div>
+        <div className="mx-auto mt-8 h-px w-24 bg-white/80 md:w-32" />
+      </div>
 
-            <div className="mx-auto mt-7 max-w-3xl md:mt-8">
-              <p className="font-serif text-xl leading-relaxed text-[#FFF8F0] sm:text-2xl md:text-3xl md:leading-relaxed">
-                Ensemble avec leurs familles, Anelka et Baudouin vont s&apos;unir pour la vie.
+      {/* COMPTE À REBOURS */}
+      <div className="mx-auto mt-10 w-full max-w-4xl sm:mt-12 md:mt-14">
+        <div className="grid grid-cols-4">
+          {[
+            ["days", "Jours"],
+            ["hours", "Heures"],
+            ["minutes", "Minutes"],
+            ["seconds", "Secondes"],
+          ].map(([key, label], index) => (
+            <div
+              key={key}
+              className={`relative flex min-w-0 flex-col items-center ${
+                index !== 3 ? "after:absolute after:right-0 after:top-1/2 after:h-10 after:w-px after:-translate-y-1/2 after:bg-white/55 md:after:h-14" : ""
+              }`}
+            >
+              <p
+                className={`${cormorant.className} text-[34px] font-light leading-none tracking-[0.03em] text-white drop-shadow-[0_2px_4px_rgba(109,7,26,0.95)] sm:text-[44px] md:text-[56px]`}
+              >
+                {String(timeLeft[key as keyof typeof timeLeft]).padStart(2, "0")}
               </p>
 
-              <div className="mx-auto mt-5 h-px w-20 bg-[#F1C3AE]/80 md:mt-6 md:w-24" />
-            </div>
-
-            {/* =====================================================
-                COMPTE À REBOURS — STYLE ÉPURÉ
-            ===================================================== */}
-            <div className="mx-auto mt-9 max-w-4xl md:mt-10">
-              <div className="flex items-start justify-center">
-
-                {/* JOURS */}
-                <div className="flex min-w-0 flex-1 flex-col items-center">
-                  <p className="font-serif text-[31px] font-light leading-none tracking-[0.04em] text-[#FFF8F0] sm:text-[38px] md:text-[46px]">
-                    {String(timeLeft.days).padStart(2, "0")}
-                  </p>
-                  <p className="mt-4 text-[7px] uppercase tracking-[0.22em] text-[#F4D6C5] sm:text-[8px] md:text-[9px] md:tracking-[0.3em]">
-                    Jours
-                  </p>
-                </div>
-
-                <span className="mt-0.5 font-serif text-[23px] font-light leading-none text-[#F1C3AE] sm:text-[28px] md:mt-1 md:text-[34px]">
-                  :
-                </span>
-
-                {/* HEURES */}
-                <div className="flex min-w-0 flex-1 flex-col items-center">
-                  <p className="font-serif text-[31px] font-light leading-none tracking-[0.04em] text-[#FFF8F0] sm:text-[38px] md:text-[46px]">
-                    {String(timeLeft.hours).padStart(2, "0")}
-                  </p>
-                  <p className="mt-4 text-[7px] uppercase tracking-[0.22em] text-[#F4D6C5] sm:text-[8px] md:text-[9px] md:tracking-[0.3em]">
-                    Heures
-                  </p>
-                </div>
-
-                <span className="mt-0.5 font-serif text-[23px] font-light leading-none text-[#F1C3AE] sm:text-[28px] md:mt-1 md:text-[34px]">
-                  :
-                </span>
-
-                {/* MINUTES */}
-                <div className="flex min-w-0 flex-1 flex-col items-center">
-                  <p className="font-serif text-[31px] font-light leading-none tracking-[0.04em] text-[#FFF8F0] sm:text-[38px] md:text-[46px]">
-                    {String(timeLeft.minutes).padStart(2, "0")}
-                  </p>
-                  <p className="mt-4 text-[7px] uppercase tracking-[0.13em] text-[#F4D6C5] sm:text-[8px] sm:tracking-[0.2em] md:text-[9px] md:tracking-[0.27em]">
-                    Minutes
-                  </p>
-                </div>
-
-                <span className="mt-0.5 font-serif text-[23px] font-light leading-none text-[#F1C3AE] sm:text-[28px] md:mt-1 md:text-[34px]">
-                  :
-                </span>
-
-                {/* SECONDES */}
-                <div className="flex min-w-0 flex-1 flex-col items-center">
-                  <p className="font-serif text-[31px] font-light leading-none tracking-[0.04em] text-[#FFF8F0] sm:text-[38px] md:text-[46px]">
-                    {String(timeLeft.seconds).padStart(2, "0")}
-                  </p>
-                  <p className="mt-4 text-[7px] uppercase tracking-[0.09em] text-[#F4D6C5] sm:text-[8px] sm:tracking-[0.16em] md:text-[9px] md:tracking-[0.24em]">
-                    Secondes
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* =====================================================
-                FIN DU COUNTDOWN
-            ===================================================== */}
-            <div className="mt-9 md:mt-10">
-              <div className="flex items-center justify-center gap-4">
-                <div className="h-px w-12 bg-[#F2D0B3]/35" />
-                <span className="text-xs text-[#F1C3AE]">♥</span>
-                <div className="h-px w-12 bg-[#F2D0B3]/35" />
-              </div>
-
-              <p className="mx-auto mt-5 max-w-xl font-serif text-base italic leading-7 text-[#FFEBDD] sm:text-lg md:text-xl">
-                Le plus beau reste à célébrer, avec vous.
+              <p className="mt-4 text-[7px] uppercase tracking-[0.16em] text-white drop-shadow-[0_2px_3px_rgba(109,7,26,0.95)] sm:text-[8px] sm:tracking-[0.22em] md:text-[10px] md:tracking-[0.28em]">
+                {label}
               </p>
             </div>
-          </div>
-        </section>
-      )}
+          ))}
+        </div>
+      </div>
+
+      {/* PHRASE FINALE */}
+      <div className="mt-12 sm:mt-14 md:mt-16">
+        <div className="flex items-center justify-center gap-5">
+          <div className="h-px w-14 bg-white/75" />
+          <span className="text-xs text-white drop-shadow">♥</span>
+          <div className="h-px w-14 bg-white/75" />
+        </div>
+
+        <p
+          className={`${cormorant.className} mx-auto mt-6 max-w-xl text-[21px] italic leading-8 text-white drop-shadow-[0_2px_4px_rgba(109,7,26,0.95)] sm:text-[25px] md:text-[32px]`}
+        >
+          Au plaisir de célébrer ce moment avec vous.
+        </p>
+      </div>
+    </div>
+  </section>
+)}
 
       {/* =========================================================
           NOTRE HISTOIRE
@@ -420,40 +493,34 @@ export default function Home() {
           <div className="pointer-events-none absolute -left-24 top-32 h-72 w-72 rounded-full bg-[#D99573]/10 blur-3xl" />
           <div className="pointer-events-none absolute -right-24 bottom-32 h-80 w-80 rounded-full bg-[#C54716]/10 blur-3xl" />
 
-          <div className="pointer-events-none absolute left-8 top-24 hidden font-serif text-[130px] text-[#C54716]/5 md:block">
+          <div className={`${pinyon.className} pointer-events-none absolute left-8 top-24 hidden text-[145px] text-[#C54716]/5 md:block`}>
             A
           </div>
 
-          <div className="pointer-events-none absolute bottom-24 right-8 hidden font-serif text-[130px] text-[#C54716]/5 md:block">
+          <div className={`${pinyon.className} pointer-events-none absolute bottom-24 right-8 hidden text-[145px] text-[#C54716]/5 md:block`}>
             B
           </div>
 
           <div className="relative z-10 mx-auto max-w-6xl">
             {/* ================= TITRE HISTOIRE ================= */}
             <div className="mx-auto max-w-3xl text-center">
-              <p className="text-xs uppercase tracking-[0.4em] text-[#A93D17]">
+              <h3 className="text-xs uppercase tracking-[0.4em] text-[#A93D17]">
                 Notre histoire
-              </p>
-
-              <h2 className="mt-4 font-serif text-4xl leading-tight md:text-6xl">
-                Une histoire.
-                <br />
-                Deux regards.
-              </h2>
+              </h3>
 
               <div className="mx-auto mt-7 h-px w-24 bg-[#D77A57]" />
 
-              <p className="mx-auto mt-7 max-w-2xl font-serif text-lg italic leading-8 text-[#805B4E] md:text-xl">
-                Il y a son souvenir à elle.
+              <p className={`${cormorant.className} mx-auto mt-7 max-w-2xl text-xl italic leading-8 text-[#805B4E] md:text-2xl`}>
+                Plongez dans nos moments précieux et
                 <br className="hidden sm:block" />
-                Il y a son souvenir à lui.
+                laissez-vous emporter par l&apos;histoire qui
                 <br className="hidden sm:block" />
-                Et quelque part entre les deux, il y a leur histoire.
+                nous mène jusqu&apos;à notre mariage.
               </p>
             </div>
 
             {/* ================= CHAPITRES ================= */}
-            <div className="mt-16 space-y-10 md:mt-20 md:space-y-12">
+            <div className="mt-20 space-y-20 md:mt-24 md:space-y-28">
               {storyMoments.map((moment, index) => {
                 const imageOnLeft = index % 2 === 0;
 
@@ -463,253 +530,138 @@ export default function Home() {
                     className="relative"
                   >
                     <div
-                      className={`pointer-events-none absolute -top-16 hidden font-serif text-[120px] leading-none text-[#C54716]/[0.045] lg:block ${
+                      className={`${cormorant.className} pointer-events-none absolute -top-16 hidden text-[130px] font-light leading-none text-[#C54716]/[0.045] lg:block ${
                         imageOnLeft ? "right-0" : "left-0"
                       }`}
                     >
                       {String(index + 1).padStart(2, "0")}
                     </div>
 
-                    {/* =================================================
-                        CHAPITRES AVEC PHOTO
-                    ================================================= */}
-                    {moment.image ? (
-                      <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
-                        {/* ================= IMAGE ================= */}
-                        <div
-                          className={
-                            imageOnLeft ? "lg:order-1" : "lg:order-2"
-                          }
-                        >
-                          <div className="relative h-[430px] overflow-hidden rounded-[34px] shadow-[0_25px_70px_rgba(95,45,30,0.16)] md:h-[560px]">
-                            <Image
-                              src={moment.image}
-                              alt={`${moment.title} - Anelka et Baudouin`}
-                              fill
-                              sizes="(max-width: 1024px) 100vw, 50vw"
-                              className="object-cover"
-                              style={{
-                                objectPosition: moment.imagePosition,
-                              }}
-                            />
+                    <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+                      {/* ================= IMAGE ================= */}
+                      <div
+                        className={
+                          imageOnLeft ? "lg:order-1" : "lg:order-2"
+                        }
+                      >
+                        <div className="relative h-[430px] overflow-hidden rounded-[34px] shadow-[0_25px_70px_rgba(95,45,30,0.16)] md:h-[560px]">
+                          <Image
+                            src={moment.image}
+                            alt={`${moment.title} - Anelka et Baudouin`}
+                            fill
+                            sizes="(max-width: 1024px) 100vw, 50vw"
+                            className="object-cover"
+                            style={{
+                              objectPosition: moment.imagePosition,
+                            }}
+                          />
 
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#3A1F1A]/55 via-transparent to-transparent" />
-
-                            <div className="absolute bottom-6 left-6 right-6">
-                              <p className="text-[9px] uppercase tracking-[0.35em] text-[#F4C58C]">
-                                Anelka & Baudouin
-                              </p>
-
-                              <p className="mt-2 font-serif text-2xl text-white md:text-3xl">
-                                {moment.year}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* ================= TEXTES ================= */}
-                        <div
-                          className={
-                            imageOnLeft ? "lg:order-2" : "lg:order-1"
-                          }
-                        >
-                          <p className="text-[10px] uppercase tracking-[0.4em] text-[#B84A20]">
-                            {moment.year}
-                          </p>
-
-                          <h3 className="mt-4 font-serif text-3xl leading-tight text-[#5A3026] md:text-4xl">
-                            {moment.title}
-                          </h3>
-
-                          <div className="mt-6 h-px w-16 bg-[#D77A57]" />
-
-                          {/* ================= ANELKA ================= */}
-                          <div className="mt-8">
-                            <div className="flex items-center gap-3">
-                              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#C54716] text-xs font-medium text-white">
-                                A
-                              </div>
-
-                              <div>
-                                <p className="text-[9px] uppercase tracking-[0.32em] text-[#C54716]">
-                                  Du côté d’Anelka
-                                </p>
-
-                                <p className="mt-1 font-serif text-sm italic text-[#9B6B59]">
-                                  Ce qu’elle a vécu
-                                </p>
-                              </div>
-                            </div>
-
-                            <div className="mt-5">
-                              {moment.anelka.map(
-                                (paragraph, paragraphIndex) => (
-                                  <p
-                                    key={paragraphIndex}
-                                    className="leading-8 text-[#765247]"
-                                  >
-                                    {paragraph}
-                                  </p>
-                                )
-                              )}
-                            </div>
-                          </div>
-
-                          <div className="my-9 flex items-center gap-4">
-                            <div className="h-px flex-1 bg-[#D77A57]/25" />
-
-                            <span className="font-serif text-sm text-[#D77A57]">
-                              ♡
-                            </span>
-
-                            <div className="h-px flex-1 bg-[#D77A57]/25" />
-                          </div>
-
-                          {/* ================= BAUDOUIN ================= */}
-                          <div className="rounded-[26px] border border-[#274E13]/10 bg-[#F1F4EC]/65 p-6 md:p-7">
-                            <div className="flex items-center gap-3">
-                              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#274E13] text-xs font-medium text-white">
-                                B
-                              </div>
-
-                              <div>
-                                <p className="text-[9px] uppercase tracking-[0.32em] text-[#274E13]">
-                                  Du côté de Baudouin
-                                </p>
-
-                                <p className="mt-1 font-serif text-sm italic text-[#68805B]">
-                                  Ce qu’il a vécu
-                                </p>
-                              </div>
-                            </div>
-
-                            <div className="mt-5">
-                              {moment.baudouin.map(
-                                (paragraph, paragraphIndex) => (
-                                  <p
-                                    key={paragraphIndex}
-                                    className="leading-8 text-[#56604D]"
-                                  >
-                                    {paragraph}
-                                  </p>
-                                )
-                              )}
-                            </div>
-                          </div>
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#3A1F1A]/55 via-transparent to-transparent" />
                         </div>
                       </div>
-                    ) : (
-                      /* =================================================
-                          DERNIER CHAPITRE SANS PHOTO NI CARTE
-                      ================================================= */
-                      <div className="mx-auto max-w-6xl py-6 md:py-14">
-                        {/* TITRE PLEINE LARGEUR */}
-                        <div className="mx-auto max-w-4xl text-center">
-                          <p className="text-[10px] uppercase tracking-[0.45em] text-[#B84A20]">
-                            {moment.year}
-                          </p>
 
-                          <h3 className="mt-5 font-serif text-4xl leading-tight text-[#5A3026] md:text-6xl">
-                            {moment.title}
-                          </h3>
+                      {/* ================= TEXTES ================= */}
+                      <div
+                        className={
+                          imageOnLeft ? "lg:order-2" : "lg:order-1"
+                        }
+                      >
+                        <p className="text-[10px] uppercase tracking-[0.4em] text-[#B84A20]">
+                          {moment.year}
+                        </p>
 
-                          <div className="mx-auto mt-7 h-px w-24 bg-[#D77A57]" />
+                        <h3 className={`${cormorant.className} mt-4 text-4xl font-medium leading-[1.08] text-[#5A3026] md:text-5xl`}>
+                          {moment.title}
+                        </h3>
 
-                          <p className="mx-auto mt-7 max-w-2xl font-serif text-lg italic leading-8 text-[#9B6B59] md:text-xl">
-                            Deux familles qui se rencontrent.
-                            <br className="hidden sm:block" />
-                            Une nouvelle étape dans leur histoire.
-                          </p>
-                        </div>
+                        <div className="mt-6 h-px w-16 bg-[#D77A57]" />
 
-                        {/* ================= DEUX RÉCITS ================= */}
-                        <div className="mt-16 grid gap-12 md:grid-cols-2 md:gap-16 lg:gap-20">
-                          {/* ================= ANELKA ================= */}
-                          <div>
-                            <div className="flex items-center gap-3">
-                              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#C54716] text-xs font-medium text-white">
-                                A
-                              </div>
-
-                              <div>
-                                <p className="text-[9px] uppercase tracking-[0.32em] text-[#C54716]">
-                                  Du côté d’Anelka
-                                </p>
-
-                                <p className="mt-1 font-serif text-sm italic text-[#9B6B59]">
-                                  Ce qu’elle a vécu
-                                </p>
-                              </div>
+                        {/* ================= ANELKA ================= */}
+                        <div className="mt-8">
+                          <div className="flex items-center gap-3">
+                            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#C54716] text-xs font-medium text-white">
+                              A
                             </div>
 
-                            <div className="mt-6">
-                              {moment.anelka.map(
-                                (paragraph, paragraphIndex) => (
-                                  <p
-                                    key={paragraphIndex}
-                                    className="text-[16px] leading-8 text-[#765247] md:text-[17px]"
-                                  >
-                                    {paragraph}
-                                  </p>
-                                )
-                              )}
+                            <div>
+                              <p className="text-[9px] uppercase tracking-[0.32em] text-[#C54716]">
+                                Du côté d’Anelka
+                              </p>
+
+                              <p className={`${cormorant.className} mt-1 text-base italic text-[#9B6B59]`}>
+                                Ce qu’elle a vécu
+                              </p>
                             </div>
                           </div>
 
-                          {/* ================= BAUDOUIN ================= */}
-                          <div className="border-t border-[#D77A57]/20 pt-10 md:border-l md:border-t-0 md:pl-16 md:pt-0 lg:pl-20">
-                            <div className="flex items-center gap-3">
-                              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#274E13] text-xs font-medium text-white">
-                                B
-                              </div>
-
-                              <div>
-                                <p className="text-[9px] uppercase tracking-[0.32em] text-[#274E13]">
-                                  Du côté de Baudouin
+                          <div className="mt-5 space-y-4">
+                            {moment.anelka.map(
+                              (paragraph, paragraphIndex) => (
+                                <p
+                                  key={paragraphIndex}
+                                  className="leading-8 text-[#765247]"
+                                >
+                                  {paragraph}
                                 </p>
-
-                                <p className="mt-1 font-serif text-sm italic text-[#68805B]">
-                                  Ce qu’il a vécu
-                                </p>
-                              </div>
-                            </div>
-
-                            <div className="mt-6">
-                              {moment.baudouin.map(
-                                (paragraph, paragraphIndex) => (
-                                  <p
-                                    key={paragraphIndex}
-                                    className="text-[16px] leading-8 text-[#56604D] md:text-[17px]"
-                                  >
-                                    {paragraph}
-                                  </p>
-                                )
-                              )}
-                            </div>
+                              )
+                            )}
                           </div>
                         </div>
 
-                        {/* SIGNATURE */}
-                        <div className="mx-auto mt-16 flex max-w-xl items-center justify-center gap-5">
+                        <div className="my-9 flex items-center gap-4">
                           <div className="h-px flex-1 bg-[#D77A57]/25" />
 
-                          <span className="font-serif text-lg tracking-[0.15em] text-[#A93D17]">
-                            A | B
+                          <span className="font-serif text-sm text-[#D77A57]">
+                            ♡
                           </span>
 
                           <div className="h-px flex-1 bg-[#D77A57]/25" />
                         </div>
+
+                        {/* ================= BAUDOUIN ================= */}
+                        <div className="rounded-[26px] border border-[#274E13]/10 bg-[#F1F4EC]/65 p-6 md:p-7">
+                          <div className="flex items-center gap-3">
+                            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#274E13] text-xs font-medium text-white">
+                              B
+                            </div>
+
+                            <div>
+                              <p className="text-[9px] uppercase tracking-[0.32em] text-[#274E13]">
+                                Du côté de Baudouin
+                              </p>
+
+                              <p className={`${cormorant.className} mt-1 text-base italic text-[#68805B]`}>
+                                Ce qu’il a vécu
+                              </p>
+                            </div>
+                          </div>
+
+                          <div className="mt-5 space-y-4">
+                            {moment.baudouin.map(
+                              (paragraph, paragraphIndex) => (
+                                <p
+                                  key={paragraphIndex}
+                                  className="leading-8 text-[#56604D]"
+                                >
+                                  {paragraph}
+                                </p>
+                              )
+                            )}
+                          </div>
+                        </div>
                       </div>
-                    )}
+                    </div>
 
                     {/* ================= SÉPARATEUR ================= */}
                     {index !== storyMoments.length - 1 && (
-                      <div className="mx-auto mt-10 flex max-w-xl items-center gap-5 md:mt-12">
+                      <div className="mx-auto mt-16 flex max-w-xl items-center gap-5 md:mt-20">
                         <div className="h-px flex-1 bg-[#D77A57]/25" />
 
-                        <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#D77A57]/35 bg-[#F8EFE9]">
-                          <span className="font-serif text-xs tracking-[0.12em] text-[#A93D17]">
-                            A|B
+                        <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-[#D77A57]/35 bg-[#F8EFE9]">
+                          <span
+                            className={`${pinyon.className} whitespace-nowrap translate-y-0.5 text-[21px] leading-none text-[#A93D17]`}
+                          >
+                            A | B
                           </span>
                         </div>
 
@@ -724,37 +676,30 @@ export default function Home() {
             {/* =========================================================
                 CONCLUSION
             ========================================================= */}
-            <div className="mx-auto mt-32 max-w-4xl text-center md:mt-40">
-              <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full border border-[#D77A57]/50 bg-white/30">
-                <span className="font-serif text-lg tracking-[0.15em] text-[#A93D17]">
+            <div className="mx-auto mt-28 max-w-4xl text-center md:mt-36">
+              <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full border border-[#D77A57]/50 bg-white/30">
+                <span
+                  className={`${pinyon.className} whitespace-nowrap translate-y-1 text-[32px] leading-none text-[#A93D17]`}
+                >
                   A | B
                 </span>
               </div>
 
               <div className="mx-auto mt-8 h-px w-24 bg-[#D77A57]" />
 
-              <p className="mx-auto mt-8 max-w-3xl font-serif text-2xl italic leading-10 text-[#6D3828] md:text-3xl md:leading-[1.55]">
-                Deux souvenirs parfois différents.
-                <br />
-                Une seule histoire.
-                <br />
-                Et aujourd’hui, un même avenir.
-              </p>
-
-              <p className="mx-auto mt-8 max-w-2xl leading-8 text-[#805B4E]">
-                Il aura suffi d’une photo aperçue un mardi matin,
-                d’un appel vidéo lancé presque spontanément
-                et de quelques longues soirées à refaire le monde
-                pour que deux anciens camarades de classe
-                commencent à écrire l’histoire qui les mène aujourd’hui
-                jusqu’au mariage.
+              <p className={`${cormorant.className} mx-auto mt-8 max-w-3xl text-2xl italic leading-10 text-[#6D3828] md:text-3xl md:leading-[1.55]`}>
+                De deux anciens camarades de classe à une famille,
+                <br className="hidden sm:block" />
+                notre histoire s’est écrite au fil des années,
+                <br className="hidden sm:block" />
+                des retrouvailles et des petits moments devenus précieux.
               </p>
 
               <p className="mt-9 text-[10px] uppercase tracking-[0.4em] text-[#A93D17]">
                 Anelka & Baudouin
               </p>
 
-              <p className="mt-6 font-serif text-2xl italic text-[#9B6B59] md:text-3xl">
+              <p className={`${pinyon.className} mt-5 text-[38px] leading-none text-[#9B6B59] md:text-[50px]`}>
                 La suite s’écrira ensemble.
               </p>
             </div>
@@ -763,29 +708,6 @@ export default function Home() {
       )}
 
       {enteredSite && <Footer />}
-
-      {/* =========================================================
-          TRANSITION HISTOIRE → PROGRAMME
-      ========================================================= */}
-      {enteredSite && (
-        <div className="bg-[#C54716] py-12 md:py-14">
-          <div className="mx-auto flex max-w-4xl items-center justify-center gap-6 px-6">
-            <div className="h-px flex-1 bg-[#F1C3AE]/55" />
-
-            <div className="shrink-0 text-center">
-              <p className="font-serif text-xl tracking-[0.22em] text-[#F1C3AE]">
-                A | B
-              </p>
-
-              <p className="mt-2 text-[9px] uppercase tracking-[0.42em] text-[#FBEDE3]">
-                26 · 28 novembre 2026
-              </p>
-            </div>
-
-            <div className="h-px flex-1 bg-[#F1C3AE]/55" />
-          </div>
-        </div>
-      )}
 
       {/* =========================================================
           POPUP ENVELOPPE
@@ -910,16 +832,18 @@ export default function Home() {
               />
 
               <div
-                className={`absolute left-1/2 top-[112px] z-50 flex h-[72px] w-[72px] -translate-x-1/2 items-center justify-center rounded-full border-[3px] border-[#e0ad72] bg-[#A93D17] shadow-[0_8px_20px_rgba(0,0,0,0.35)] transition-all duration-500 ${
-                  opened
-                    ? "scale-0 rotate-45 opacity-0"
-                    : "scale-100 rotate-0 opacity-100"
-                }`}
-              >
-                <div className="flex h-[58px] w-[58px] items-center justify-center rounded-full border border-[#dda66c]/60 font-serif text-lg tracking-wide text-[#f6d1a7]">
-                  A | B
-                </div>
-              </div>
+  className={`absolute left-1/2 top-[112px] z-50 flex h-[82px] w-[82px] -translate-x-1/2 items-center justify-center rounded-full border-[3px] border-[#e0ad72] bg-[#A93D17] shadow-[0_8px_20px_rgba(0,0,0,0.35)] transition-all duration-500 ${
+    opened
+      ? "scale-0 rotate-45 opacity-0"
+      : "scale-100 rotate-0 opacity-100"
+  }`}
+>
+  <div className="flex h-[68px] w-[68px] items-center justify-center rounded-full border border-[#dda66c]/60">
+    <span className="whitespace-nowrap font-serif text-[15px] leading-none tracking-[0.06em] text-[#f6d1a7]">
+      A | B
+    </span>
+  </div>
+</div>
             </div>
 
             <p

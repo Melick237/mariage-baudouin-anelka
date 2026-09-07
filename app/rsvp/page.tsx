@@ -267,7 +267,7 @@ export default function RsvpPage() {
                               : "text-[#9B8178]"
                           }`}
                         >
-                          26 novembre 2026
+                          26 novembre 2026 a Bayangam
                         </p>
                       </div>
 
@@ -311,7 +311,7 @@ export default function RsvpPage() {
                               : "text-[#9B8178]"
                           }`}
                         >
-                          26 novembre 2026
+                          26 novembre 2026 a Bayangam
                         </p>
                       </div>
 
@@ -355,7 +355,7 @@ export default function RsvpPage() {
                               : "text-[#9B8178]"
                           }`}
                         >
-                          28 novembre 2026
+                          28 novembre 2026 a Yaounde
                         </p>
                       </div>
 
@@ -397,7 +397,7 @@ export default function RsvpPage() {
                               : "text-[#9B8178]"
                           }`}
                         >
-                          28 novembre 2026
+                          28 novembre 2026 a Yaounde
                         </p>
                       </div>
 

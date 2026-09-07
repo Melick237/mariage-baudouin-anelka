@@ -28,7 +28,7 @@ export default function ProgrammePage() {
             </p>
 
             <h1 className="mt-4 font-serif text-5xl text-[#4A2924] md:text-7xl">
-              Le programme
+              Programme
             </h1>
 
             <div className="mx-auto mt-7 h-px w-20 bg-[#D77A57]" />
@@ -118,7 +118,7 @@ export default function ProgrammePage() {
                   </p>
 
                   <p className="mt-3 font-serif italic text-[#9F4728]">
-                    La Dote
+                    Dote
                   </p>
 
                 </div>
@@ -166,7 +166,7 @@ export default function ProgrammePage() {
                   </p>
 
                   <p className="mt-3 font-serif italic text-[#9F4728]">
-                    La Mairie
+                    Union devant les hommes
                   </p>
 
                 </div>
