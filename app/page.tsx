@@ -143,7 +143,7 @@ export default function Home() {
   ========================================================= */
   const storyMoments = [
     {
-      year: "Avant 2019",
+      year: "",
       title: "L'aube de notre histoire",
       image: "/images/histoires1.jpeg",
       imagePosition: "center 30%",
@@ -156,7 +156,7 @@ export default function Home() {
     },
 
     {
-      year: "2021",
+      year: "",
       title: "Notre Histoire d'amour",
       image: "/images/histoire222.JPG",
       imagePosition: "center",
@@ -169,7 +169,7 @@ export default function Home() {
     },
 
     {
-      year: "2022",
+      year: "",
       title: "Notre rencontre",
       image: "/images/histoire22.jpeg",
       imagePosition: "center",
@@ -182,7 +182,7 @@ export default function Home() {
     },
 
     {
-      year: "2024",
+      year: "",
       title: "Notre famille",
       image: "/images/histoire5.jpeg",
       imagePosition: "center",
@@ -198,6 +198,62 @@ export default function Home() {
       ],
     },
   ];
+
+  const memoryLane = [
+  {
+    year: "2019",
+    text: "Première sortie en couple",
+    image: "/images/memory-2019.jpeg",
+    position: "center 48%",
+    photoClass: "object-cover",
+  },
+  {
+    year: "2020",
+    text: "Nos soirées en amoureux",
+    image: "/images/memory-2020.jpeg",
+    position: "center 40%",
+    photoClass: "object-cover",
+  },
+  {
+    year: "2021",
+    text: "Notre réconciliation après une remise en question sur notre couple",
+    image: "/images/memory-2021.jpeg",
+    position: "center 26%",
+    photoClass: "object-cover",
+  },
+  {
+    year: "2022",
+    text: "Une petite balade en amoureux",
+    image: "/images/histoire22.jpeg",
+    position: "center 50%",
+    photoClass: "object-cover",
+  },
+  {
+    year: "2023",
+    text: "Grandir et devenir plus forts côte à côte",
+    image: "/images/histoire33.jpeg",
+    position: "center 30%",
+    photoClass: "object-cover",
+  },
+  {
+    year: "2024",
+    text: "Côte à côte, à travers chaque saison",
+    image: "/images/memory-2024.jpeg",
+    position: "center 30%",
+    photoClass: "object-cover",
+  },
+  {
+    year: "2025",
+    text: "D’un appel à une promesse pour toute une vie",
+    image: "/images/memory-2025.jpeg",
+
+    // On déplace le cadrage vers la gauche
+    // pour laisser davantage de place à Anelka à droite.
+    position: "10% center",
+
+    photoClass: "object-cover",
+  },
+];
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#7f4634]">
@@ -511,9 +567,9 @@ export default function Home() {
               <div className="mx-auto mt-7 h-px w-24 bg-[#D77A57]" />
 
               <p className={`${cormorant.className} mx-auto mt-7 max-w-2xl text-xl italic leading-8 text-[#805B4E] md:text-2xl`}>
-                Plongez dans nos moments précieux et
+                Plongez dans nos moments précieux et{" "}
                 <br className="hidden sm:block" />
-                laissez-vous emporter par l&apos;histoire qui
+                laissez-vous emporter par l&apos;histoire qui{" "}
                 <br className="hidden sm:block" />
                 nous mène jusqu&apos;à notre mariage.
               </p>
@@ -538,27 +594,33 @@ export default function Home() {
                     </div>
 
                     <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
-                      {/* ================= IMAGE ================= */}
+                    {/* ================= IMAGE ================= */}
+                    <div
+                      className={
+                        imageOnLeft ? "lg:order-1" : "lg:order-2"
+                      }
+                    >
                       <div
                         className={
-                          imageOnLeft ? "lg:order-1" : "lg:order-2"
+                          index === 1
+                            ? "relative mx-auto aspect-[1/1.65] w-full max-w-[430px] overflow-hidden rounded-[34px] shadow-[0_25px_70px_rgba(95,45,30,0.16)]"
+                            : "relative h-[430px] overflow-hidden rounded-[34px] shadow-[0_25px_70px_rgba(95,45,30,0.16)] md:h-[560px]"
                         }
                       >
-                        <div className="relative h-[430px] overflow-hidden rounded-[34px] shadow-[0_25px_70px_rgba(95,45,30,0.16)] md:h-[560px]">
-                          <Image
-                            src={moment.image}
-                            alt={`${moment.title} - Anelka et Baudouin`}
-                            fill
-                            sizes="(max-width: 1024px) 100vw, 50vw"
-                            className="object-cover"
-                            style={{
-                              objectPosition: moment.imagePosition,
-                            }}
-                          />
+                        <Image
+                          src={moment.image}
+                          alt={`${moment.title} - Anelka et Baudouin`}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 50vw"
+                          className="object-cover"
+                          style={{
+                            objectPosition: moment.imagePosition,
+                          }}
+                        />
 
-                          <div className="absolute inset-0 bg-gradient-to-t from-[#3A1F1A]/55 via-transparent to-transparent" />
-                        </div>
+                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#3A1F1A]/55 via-transparent to-transparent" />
                       </div>
+                    </div>
 
                       {/* ================= TEXTES ================= */}
                       <div
@@ -701,6 +763,221 @@ export default function Home() {
 
               <p className={`${pinyon.className} mt-5 text-[38px] leading-none text-[#9B6B59] md:text-[50px]`}>
                 La suite s’écrira ensemble.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* =========================================================
+          MEMORY LANE
+      ========================================================= */}
+      {enteredSite && (
+        <section
+          id="memory-lane"
+          className="relative overflow-hidden bg-[#F7F1E6] px-4 py-24 text-[#4A2924] sm:px-6 md:py-32"
+        >
+          {/* Décor de fond */}
+          <div className="pointer-events-none absolute -left-32 top-32 h-80 w-80 rounded-full bg-[#C54716]/5 blur-3xl" />
+          <div className="pointer-events-none absolute -right-32 bottom-32 h-80 w-80 rounded-full bg-[#274E13]/5 blur-3xl" />
+
+          <div className="relative mx-auto max-w-5xl">
+
+            {/* ================= TITRE ================= */}
+            <div className="mx-auto mb-16 text-center sm:mb-20 md:mb-28">
+              <p
+                className={`${pinyon.className} text-[54px] leading-none text-[#6D3828] sm:text-[68px] md:text-[82px]`}
+              >
+                Memory Lane
+              </p>
+
+              <div className="mx-auto mt-6 h-px w-20 bg-[#C54716]/60" />
+
+              <p className="mx-auto mt-6 max-w-xl text-sm leading-7 text-[#805B4E] md:text-base">
+                Quelques souvenirs précieux qui ont marqué notre chemin,
+                année après année.
+              </p>
+            </div>
+
+            {/* ================= TIMELINE ================= */}
+            <div className="relative">
+
+              {/* Ligne centrale */}
+              <div className="absolute bottom-0 left-1/2 top-0 w-px -translate-x-1/2 bg-[#9B7B68]/35" />
+
+              <div className="space-y-16 sm:space-y-20 md:space-y-28">
+
+                {memoryLane.map((memory, index) => {
+                  const photoOnLeft = index % 2 !== 0;
+
+                  /* Inclinaison différente pour chaque Polaroid */
+                  const polaroidRotation =
+                    index % 4 === 0
+                      ? "rotate-[2deg]"
+                      : index % 4 === 1
+                        ? "-rotate-[2deg]"
+                        : index % 4 === 2
+                          ? "rotate-[1.5deg]"
+                          : "-rotate-[1.5deg]";
+
+                  /*
+                    2019 / 2020 / 2021 / 2025
+                    → photo plus large pour montrer davantage les visages.
+
+                    2022 / 2023 / 2024
+                    → on garde exactement le cadrage actuel.
+                  */
+                  const useWidePhoto = [
+                    "2019",
+                    "2020",
+                    "2021",
+                    "2025",
+                  ].includes(memory.year);
+
+                  const Polaroid = (
+                    <div
+                      className={`
+                        w-full max-w-[158px]
+                        ${polaroidRotation}
+                        rounded-[3px]
+                        bg-[#FFFCF7]
+                        p-2 pb-7
+                        shadow-[0_14px_36px_rgba(75,45,35,0.18)]
+                        ring-1 ring-[#6D3828]/[0.04]
+                        transition duration-500
+                        hover:rotate-0 hover:scale-[1.025]
+
+                        sm:max-w-[205px]
+                        sm:p-2.5 sm:pb-9
+
+                        md:max-w-[270px]
+                        md:p-3 md:pb-10
+                      `}
+                    >
+                      {/* ================= PHOTO ================= */}
+                      <div
+                        className={`
+                          relative
+                          overflow-hidden
+                          rounded-[2px]
+                          bg-[#EFE7DD]
+
+                          ${
+                            useWidePhoto
+                              ? "aspect-[4/3]"
+                              : "aspect-[4/5] sm:aspect-[5/6] md:aspect-[4/3]"
+                          }
+                        `}
+                      >
+                        <Image
+                          src={memory.image}
+                          alt={`${memory.year} - ${memory.text}`}
+                          fill
+                          sizes="
+                            (max-width: 640px) 158px,
+                            (max-width: 768px) 205px,
+                            270px
+                          "
+                          className={`${memory.photoClass} transition duration-500`}
+                          style={{
+                            objectPosition: memory.position,
+                          }}
+                        />
+
+                        {/* Bord intérieur très léger */}
+                        <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/[0.025]" />
+                      </div>
+
+                      {/* ================= ANNÉE ================= */}
+                      <p
+                        className={`${pinyon.className} mt-2.5 text-center text-[28px] leading-none text-[#6D3828] sm:mt-3 sm:text-[33px] md:text-[38px]`}
+                      >
+                        {memory.year}
+                      </p>
+                    </div>
+                  );
+
+                  return (
+                    <div
+                      key={memory.year}
+                      className="
+                        relative
+                        grid
+                        grid-cols-[minmax(0,1fr)_22px_minmax(0,1fr)]
+                        items-center
+                        gap-x-2.5
+
+                        sm:grid-cols-[minmax(0,1fr)_32px_minmax(0,1fr)]
+                        sm:gap-x-5
+
+                        md:gap-x-10
+                      "
+                    >
+                      {/* ================= CÔTÉ GAUCHE ================= */}
+                      <div
+                        className={`flex min-w-0 ${
+                          photoOnLeft
+                            ? "justify-end pr-1 sm:pr-2"
+                            : "justify-end pr-1 text-right sm:pr-2"
+                        }`}
+                      >
+                        {photoOnLeft ? (
+                          Polaroid
+                        ) : (
+                          <div className="max-w-[145px] sm:max-w-[220px] md:max-w-[300px]">
+                            <p className="text-[11px] font-medium leading-[1.55] text-[#5E443C] sm:text-sm sm:leading-6 md:text-base md:leading-7">
+                              {memory.text}
+                            </p>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* ================= POINT CENTRAL ================= */}
+                      <div className="relative z-10 flex items-center justify-center">
+                        <div className="h-[8px] w-[8px] rounded-full border border-[#6D3828]/80 bg-[#F7F1E6] shadow-[0_0_0_4px_rgba(247,241,230,0.85)] sm:h-[9px] sm:w-[9px]" />
+                      </div>
+
+                      {/* ================= CÔTÉ DROIT ================= */}
+                      <div
+                        className={`flex min-w-0 ${
+                          photoOnLeft
+                            ? "justify-start pl-1 text-left sm:pl-2"
+                            : "justify-start pl-1 sm:pl-2"
+                        }`}
+                      >
+                        {photoOnLeft ? (
+                          <div className="max-w-[145px] sm:max-w-[220px] md:max-w-[300px]">
+                            <p className="text-[11px] font-medium leading-[1.55] text-[#5E443C] sm:text-sm sm:leading-6 md:text-base md:leading-7">
+                              {memory.text}
+                            </p>
+                          </div>
+                        ) : (
+                          Polaroid
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* ================= FIN ================= */}
+            <div className="mx-auto mt-24 text-center md:mt-32">
+
+              <div className="mx-auto flex max-w-xs items-center gap-4">
+                <div className="h-px flex-1 bg-[#C54716]/30" />
+
+                <span className="text-sm text-[#C54716]">
+                  ♥
+                </span>
+
+                <div className="h-px flex-1 bg-[#C54716]/30" />
+              </div>
+
+              <p
+                className={`${pinyon.className} mt-7 text-[36px] text-[#6D3828] sm:text-[44px] md:text-[52px]`}
+              >
+                Et l’histoire continue...
               </p>
             </div>
           </div>

@@ -37,8 +37,8 @@ export default function HebergementsPage() {
             <div className="mx-auto mt-6 h-px w-20 bg-[#C54716]/50" />
 
             <p className="mx-auto mt-7 max-w-2xl leading-8 text-[#765B52]">
-              Pour faciliter votre séjour à Yaoundé, voici quelques
-              hébergements situés à Odza et aux alentours.
+              Pour faciliter votre séjour, voici quelques hébergements
+              situés à proximité des lieux de célébration à Bayangam et à Yaoundé.
             </p>
 
             <p className="mx-auto mt-3 max-w-xl font-serif italic text-[#9A6D5E]">
@@ -50,9 +50,344 @@ export default function HebergementsPage() {
 
 
           {/* =====================================================
-              LES 3 HÉBERGEMENTS
+              26 NOVEMBRE — BAYANGAM & ENVIRONS
           ====================================================== */}
-          <div className="mt-16 grid items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-20">
+
+            <div className="mx-auto max-w-3xl text-center">
+
+              <p className="text-[10px] uppercase tracking-[0.4em] text-[#C54716]">
+                26 novembre 2026
+              </p>
+
+              <h2 className="mt-4 font-serif text-4xl text-[#4A2924] md:text-5xl">
+                Bayangam & environs
+              </h2>
+
+              <div className="mx-auto mt-5 h-px w-16 bg-[#C54716]/50" />
+
+              <p className="mx-auto mt-6 max-w-2xl leading-7 text-[#765B52]">
+                Quelques hébergements situés à proximité de la concession
+                pour votre séjour autour de la cérémonie du 26 novembre.
+              </p>
+
+            </div>
+
+
+            <div className="mt-12 grid items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+              {/* ===================================================
+                  01 — HÔTEL FOHAM OASIS
+              =================================================== */}
+              <article
+                className="
+                  group
+                  flex h-full flex-col
+                  overflow-hidden
+                  rounded-[32px]
+                  border border-[#6D071A]/10
+                  bg-white
+                  shadow-[0_20px_60px_rgba(70,30,20,0.10)]
+                  transition duration-500
+                  hover:-translate-y-2
+                  hover:shadow-[0_30px_80px_rgba(70,30,20,0.16)]
+                "
+              >
+
+                <div className="relative h-[320px] shrink-0 overflow-hidden bg-[#EFE5DE]">
+
+                  <Image
+                    src="/images/foham-oasis.jpg"
+                    alt="Hôtel Foham Oasis"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition duration-700 group-hover:scale-105"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+
+                  <div className="absolute bottom-5 left-5 right-5">
+
+                    <p className="text-[9px] uppercase tracking-[0.3em] text-white/70">
+                      Hôtel
+                    </p>
+
+                    <h2 className="mt-1 font-serif text-3xl text-white">
+                      Hôtel Foham Oasis
+                    </h2>
+
+                  </div>
+
+                </div>
+
+
+                <div className="flex flex-1 flex-col p-7">
+
+                  <p className="text-sm font-medium text-[#6D071A]">
+                    Bandjoun
+                  </p>
+
+                  <div className="mt-4 min-h-[120px]">
+
+                    <p className="leading-7 text-[#765B52]">
+                      Un hébergement situé à environ 25 minutes du lieu de la
+                      cérémonie à Bayangam.
+                    </p>
+
+                  </div>
+
+                  <div className="mt-auto space-y-3 pt-8">
+
+                    <a
+                      href="https://www.booking.com/Share-4Yo8f57"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="
+                        flex w-full items-center justify-center
+                        rounded-full
+                        bg-[#274E13]
+                        px-5 py-4
+                        text-center text-[10px]
+                        uppercase tracking-[0.22em]
+                        text-white
+                        transition duration-300
+                        hover:-translate-y-1
+                        hover:bg-[#1D3C0D]
+                      "
+                    >
+                      Voir l&apos;hébergement
+                    </a>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+
+              {/* ===================================================
+                  02 — HOTEL LA RÉFÉRENCE
+              =================================================== */}
+              <article
+                className="
+                  group
+                  flex h-full flex-col
+                  overflow-hidden
+                  rounded-[32px]
+                  border border-[#6D071A]/10
+                  bg-white
+                  shadow-[0_20px_60px_rgba(70,30,20,0.10)]
+                  transition duration-500
+                  hover:-translate-y-2
+                  hover:shadow-[0_30px_80px_rgba(70,30,20,0.16)]
+                "
+              >
+
+                <div className="relative h-[320px] shrink-0 overflow-hidden bg-[#EFE5DE]">
+
+                  <Image
+                    src="/images/hotel-la-reference.jpg"
+                    alt="Hotel la référence"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition duration-700 group-hover:scale-105"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+
+                  <div className="absolute bottom-5 left-5 right-5">
+
+                    <p className="text-[9px] uppercase tracking-[0.3em] text-white/70">
+                      Hôtel
+                    </p>
+
+                    <h2 className="mt-1 font-serif text-3xl text-white">
+                      Hotel la référence
+                    </h2>
+
+                  </div>
+
+                </div>
+
+
+                <div className="flex flex-1 flex-col p-7">
+
+                  <p className="text-sm font-medium text-[#6D071A]">
+                    À proximité de Bayangam
+                  </p>
+
+                  <div className="mt-4 min-h-[120px]">
+
+                    <p className="leading-7 text-[#765B52]">
+                      L&apos;hôtel se trouve à environ 27 minutes de la concession.
+                    </p>
+
+                  </div>
+
+                  <div className="mt-auto space-y-3 pt-8">
+
+                    <a
+                      href="https://maps.app.goo.gl/b4akWcxzf77bTfRu5?g_st=aw"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="
+                        flex w-full items-center justify-center
+                        rounded-full
+                        bg-[#274E13]
+                        px-5 py-4
+                        text-center text-[10px]
+                        uppercase tracking-[0.22em]
+                        text-white
+                        transition duration-300
+                        hover:-translate-y-1
+                        hover:bg-[#1D3C0D]
+                      "
+                    >
+                      Voir sur Google Maps
+                    </a>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+
+              {/* ===================================================
+                  03 — RÉSIDENCE MPILE DOMINIQUE BANDJOUN
+              =================================================== */}
+              <article
+                className="
+                  group
+                  flex h-full flex-col
+                  overflow-hidden
+                  rounded-[32px]
+                  border border-[#6D071A]/10
+                  bg-white
+                  shadow-[0_20px_60px_rgba(70,30,20,0.10)]
+                  transition duration-500
+                  hover:-translate-y-2
+                  hover:shadow-[0_30px_80px_rgba(70,30,20,0.16)]
+                "
+              >
+
+                <div className="relative h-[320px] shrink-0 overflow-hidden bg-[#EFE5DE]">
+
+                  <Image
+                    src="/images/residence-mpile-dominique.jpg"
+                    alt="Résidence Mpile Dominique"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition duration-700 group-hover:scale-105"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+
+                  <div className="absolute bottom-5 left-5 right-5">
+
+                    <p className="text-[9px] uppercase tracking-[0.3em] text-white/70">
+                      Résidence
+                    </p>
+
+                    <h2 className="mt-1 font-serif text-3xl text-white">
+                      Résidence Mpile Dominique
+                    </h2>
+
+                  </div>
+
+                </div>
+
+
+                <div className="flex flex-1 flex-col p-7">
+
+                  <p className="text-sm font-medium text-[#6D071A]">
+                    Bandjoun
+                  </p>
+
+                  <div className="mt-4 min-h-[120px]">
+
+                    <p className="leading-7 text-[#765B52]">
+                      La résidence se trouve à environ 27 minutes de la concession.
+                    </p>
+
+                  </div>
+
+                  <div className="mt-auto space-y-3 pt-8">
+
+                    <a
+                      href="https://share.google/JGifBzInHE37TkMcA"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="
+                        flex w-full items-center justify-center
+                        rounded-full
+                        bg-[#274E13]
+                        px-5 py-4
+                        text-center text-[10px]
+                        uppercase tracking-[0.22em]
+                        text-white
+                        transition duration-300
+                        hover:-translate-y-1
+                        hover:bg-[#1D3C0D]
+                      "
+                    >
+                      Voir l&apos;hébergement
+                    </a>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+            </div>
+
+          </div>
+
+
+          {/* =====================================================
+              SÉPARATEUR
+          ====================================================== */}
+          <div className="mx-auto my-20 flex max-w-xl items-center gap-5">
+
+            <div className="h-px flex-1 bg-[#C54716]/20" />
+
+            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#C54716]/30">
+              <span className="font-serif text-xs text-[#C54716]">
+                A | B
+              </span>
+            </div>
+
+            <div className="h-px flex-1 bg-[#C54716]/20" />
+
+          </div>
+
+
+          {/* =====================================================
+              28 NOVEMBRE — YAOUNDÉ & ENVIRONS
+          ====================================================== */}
+          <div>
+
+            <div className="mx-auto max-w-3xl text-center">
+
+              <p className="text-[10px] uppercase tracking-[0.4em] text-[#C54716]">
+                28 novembre 2026
+              </p>
+
+              <h2 className="mt-4 font-serif text-4xl text-[#4A2924] md:text-5xl">
+                Yaoundé & environs
+              </h2>
+
+              <div className="mx-auto mt-5 h-px w-16 bg-[#C54716]/50" />
+
+              <p className="mx-auto mt-6 max-w-2xl leading-7 text-[#765B52]">
+                Quelques hébergements situés à Odza et aux alentours pour
+                profiter pleinement de la célébration du 28 novembre.
+              </p>
+
+            </div>
+
+            <div className="mt-12 grid items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
 
 
             {/* ===================================================
@@ -441,6 +776,8 @@ export default function HebergementsPage() {
               </div>
 
             </article>
+
+            </div>
 
           </div>
 
