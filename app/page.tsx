@@ -23,6 +23,7 @@ export default function Home() {
   const [opened, setOpened] = useState(false);
   const [enteredSite, setEnteredSite] = useState(false);
   const [siteReady, setSiteReady] = useState(false);
+  const [showFullStory, setShowFullStory] = useState(false);
 
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -147,6 +148,8 @@ export default function Home() {
       title: "L'aube de notre histoire",
       image: "/images/histoires1.jpeg",
       imagePosition: "center 30%",
+      anelkaImage: "/images/histoire-chapitre1-anelka.jpeg",
+      baudouinImage: "/images/histoire-chapitre1-baudouin.jpeg",
       anelka: [
         `Avant que nous nous retrouvions en Allemagne, je me rappelle une fois où il m'a séduit par son charme, le dernier jour d'une formation en langage C++ qu'on avait fait au Lycée. Le gar était, je crois le meilleur de la formation et avait un petit charisme que j'aimais beaucoup. Bon après la formation, nous nous sommes perdus de vue.`,
       ],
@@ -160,6 +163,8 @@ export default function Home() {
       title: "Notre Histoire d'amour",
       image: "/images/histoire222.JPG",
       imagePosition: "center",
+      anelkaImage: null,
+      baudouinImage: null,
       anelka: [
         `Une fois en Allemagne il m'a appelé, un appel qui a rendu ma journée particulière et joyeuse. Je ne l’avais pas appréhendé comme un appel pour draguer mais un appel qui me faisait plaisir, causer avec lui, me rendait heureuse. Après ce jour on s’appelait tous les jours, quand je finissais mes cours, je courais directement pour m’asseoir dans ma chambre et pouvoir discuter avec lui en appel vidéo sur Skype. Je me rappelle qu’il me faisait toujours rire, qu’il m’encourageait beaucoup et qu’il me faisait me sentir importante. Ça a été pour moi la période la plus belle de notre relation jusqu’à aujourd’hui.`,
       ],
@@ -173,6 +178,8 @@ export default function Home() {
       title: "Notre rencontre",
       image: "/images/histoire22.jpeg",
       imagePosition: "center",
+      anelkaImage: null,
+      baudouinImage: null,
       anelka: [
         `Puis quand j’ai fini de composer, il m’a invité dans sa ville, je pense à l’occasion de son anniversaire, non en fait son anniversaire était déjà passé et puis il s’est fâché que je n’étais pas là et qu’il aurait aimé que je sois là. J’ai donc fait un voyage et nous nous sommes retrouvés dans sa ville et c’est là que notre relation a vraiment débuté. Ce qui m’a marqué quand je suis arrivé chez lui, c’est sa personnalité. Il était très humble, très poli, pas juste avec moi mais aussi avec son entourage. Il m’offrait une stabilité de cœur et une perspective de vie que j’admirait beaucoup, il était travailleur et ce que j’apprécie le plus sur lui, c’est qu’il trouvait solution à tous mes problèmes, dans mes études, dans mes procédures administratives, il m’accompagnait. Il m’a montré qu’il avait une volonté de réussir et surtout qu’il s’en donne les moyens.`,
       ],
@@ -186,6 +193,8 @@ export default function Home() {
       title: "Notre famille",
       image: "/images/histoire5.jpeg",
       imagePosition: "center",
+      anelkaImage: null,
+      baudouinImage: null,
       anelka: [
         `En février 2024 on a aménagé ensemble, ce fut une période très bouleversante compte tenu de tout le stress et les dépenses que ça entrainait, d’autant plus que j’étais enceinte. En avril 2024 est venu au monde notre petit bout de choux, mon chéri d’amour, comme j’aime l’appeler, il est venu comme un torrent ce qui nous a bouleversé psychologiquement, mais comme le beau temps vient après la pluie, il a rayonné notre vie, et continue de le faire tous les jours, c’est notre levée du soleil, comme son prénom LONAAM l'indique. Il est né pour illuminer nos vies. Notre guerrier, notre lion, sa venue était comme un tremblement de terre, il venait avec puissance.`,
         `Merci d’avoir été la solution à mes problèmes mon chéri.`,
@@ -577,7 +586,9 @@ export default function Home() {
 
             {/* ================= CHAPITRES ================= */}
             <div className="mt-20 space-y-20 md:mt-24 md:space-y-28">
-              {storyMoments.map((moment, index) => {
+              {storyMoments
+                .slice(0, showFullStory ? storyMoments.length : 2)
+                .map((moment, index) => {
                 const imageOnLeft = index % 2 === 0;
 
                 return (
@@ -593,41 +604,8 @@ export default function Home() {
                       {String(index + 1).padStart(2, "0")}
                     </div>
 
-                    <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
-                    {/* ================= IMAGE ================= */}
-                    <div
-                      className={
-                        imageOnLeft ? "lg:order-1" : "lg:order-2"
-                      }
-                    >
-                      <div
-                        className={
-                          index === 1
-                            ? "relative mx-auto aspect-[1/1.65] w-full max-w-[430px] overflow-hidden rounded-[34px] shadow-[0_25px_70px_rgba(95,45,30,0.16)]"
-                            : "relative h-[430px] overflow-hidden rounded-[34px] shadow-[0_25px_70px_rgba(95,45,30,0.16)] md:h-[560px]"
-                        }
-                      >
-                        <Image
-                          src={moment.image}
-                          alt={`${moment.title} - Anelka et Baudouin`}
-                          fill
-                          sizes="(max-width: 1024px) 100vw, 50vw"
-                          className="object-cover"
-                          style={{
-                            objectPosition: moment.imagePosition,
-                          }}
-                        />
-
-                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#3A1F1A]/55 via-transparent to-transparent" />
-                      </div>
-                    </div>
-
-                      {/* ================= TEXTES ================= */}
-                      <div
-                        className={
-                          imageOnLeft ? "lg:order-2" : "lg:order-1"
-                        }
-                      >
+                    {index === 0 ? (
+                      <div>
                         <p className="text-[10px] uppercase tracking-[0.4em] text-[#B84A20]">
                           {moment.year}
                         </p>
@@ -638,81 +616,222 @@ export default function Home() {
 
                         <div className="mt-6 h-px w-16 bg-[#D77A57]" />
 
-                        {/* ================= ANELKA ================= */}
-                        <div className="mt-8">
-                          <div className="flex items-center gap-3">
-                            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#C54716] text-xs font-medium text-white">
-                              A
+                        <div className="mt-10 grid gap-8 lg:grid-cols-2 lg:gap-10">
+                          {/* ================= ANELKA + PHOTO ================= */}
+                          <div className="overflow-hidden rounded-[30px] border border-[#C54716]/10 bg-white/55 shadow-[0_18px_50px_rgba(95,45,30,0.08)]">
+                            <div className="relative h-[360px] overflow-hidden sm:h-[430px]">
+                              <Image
+                                src={moment.anelkaImage || moment.image}
+                                alt={`${moment.title} - Anelka`}
+                                fill
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                                className="object-cover"
+                                style={{ objectPosition: "center 25%" }}
+                              />
+                              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#3A1F1A]/45 via-transparent to-transparent" />
                             </div>
 
-                            <div>
-                              <p className="text-[9px] uppercase tracking-[0.32em] text-[#C54716]">
-                                Du côté d’Anelka
-                              </p>
+                            <div className="p-6 md:p-7">
+                              <div className="flex items-center gap-3">
+                                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#C54716] text-xs font-medium text-white">
+                                  A
+                                </div>
 
-                              <p className={`${cormorant.className} mt-1 text-base italic text-[#9B6B59]`}>
-                                Ce qu’elle a vécu
-                              </p>
-                            </div>
-                          </div>
+                                <div>
+                                  <p className="text-[9px] uppercase tracking-[0.32em] text-[#C54716]">
+                                    Du côté d’Anelka
+                                  </p>
 
-                          <div className="mt-5 space-y-4">
-                            {moment.anelka.map(
-                              (paragraph, paragraphIndex) => (
-                                <p
-                                  key={paragraphIndex}
-                                  className="leading-8 text-[#765247]"
-                                >
-                                  {paragraph}
-                                </p>
-                              )
-                            )}
-                          </div>
-                        </div>
+                                  <p className={`${cormorant.className} mt-1 text-base italic text-[#9B6B59]`}>
+                                    Ce qu’elle a vécu
+                                  </p>
+                                </div>
+                              </div>
 
-                        <div className="my-9 flex items-center gap-4">
-                          <div className="h-px flex-1 bg-[#D77A57]/25" />
-
-                          <span className="font-serif text-sm text-[#D77A57]">
-                            ♡
-                          </span>
-
-                          <div className="h-px flex-1 bg-[#D77A57]/25" />
-                        </div>
-
-                        {/* ================= BAUDOUIN ================= */}
-                        <div className="rounded-[26px] border border-[#274E13]/10 bg-[#F1F4EC]/65 p-6 md:p-7">
-                          <div className="flex items-center gap-3">
-                            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#274E13] text-xs font-medium text-white">
-                              B
-                            </div>
-
-                            <div>
-                              <p className="text-[9px] uppercase tracking-[0.32em] text-[#274E13]">
-                                Du côté de Baudouin
-                              </p>
-
-                              <p className={`${cormorant.className} mt-1 text-base italic text-[#68805B]`}>
-                                Ce qu’il a vécu
-                              </p>
+                              <div className="mt-5 space-y-4">
+                                {moment.anelka.map(
+                                  (paragraph, paragraphIndex) => (
+                                    <p
+                                      key={paragraphIndex}
+                                      className="leading-8 text-[#765247]"
+                                    >
+                                      {paragraph}
+                                    </p>
+                                  )
+                                )}
+                              </div>
                             </div>
                           </div>
 
-                          <div className="mt-5 space-y-4">
-                            {moment.baudouin.map(
-                              (paragraph, paragraphIndex) => (
-                                <p
-                                  key={paragraphIndex}
-                                  className="leading-8 text-[#56604D]"
-                                >
-                                  {paragraph}
-                                </p>
-                              )
-                            )}
+                          {/* ================= BAUDOUIN + PHOTO ================= */}
+                          <div className="overflow-hidden rounded-[30px] border border-[#274E13]/10 bg-[#F1F4EC]/70 shadow-[0_18px_50px_rgba(53,75,43,0.08)]">
+                            <div className="relative h-[360px] overflow-hidden sm:h-[430px]">
+                              <Image
+                                src={moment.baudouinImage || moment.image}
+                                alt={`${moment.title} - Baudouin`}
+                                fill
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                                className="object-cover"
+                                style={{ objectPosition: "center 25%" }}
+                              />
+                              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1E2E19]/40 via-transparent to-transparent" />
+                            </div>
+
+                            <div className="p-6 md:p-7">
+                              <div className="flex items-center gap-3">
+                                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#274E13] text-xs font-medium text-white">
+                                  B
+                                </div>
+
+                                <div>
+                                  <p className="text-[9px] uppercase tracking-[0.32em] text-[#274E13]">
+                                    Du côté de Baudouin
+                                  </p>
+
+                                  <p className={`${cormorant.className} mt-1 text-base italic text-[#68805B]`}>
+                                    Ce qu’il a vécu
+                                  </p>
+                                </div>
+                              </div>
+
+                              <div className="mt-5 space-y-4">
+                                {moment.baudouin.map(
+                                  (paragraph, paragraphIndex) => (
+                                    <p
+                                      key={paragraphIndex}
+                                      className="leading-8 text-[#56604D]"
+                                    >
+                                      {paragraph}
+                                    </p>
+                                  )
+                                )}
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    ) : (
+                      <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+                        {/* ================= IMAGE ================= */}
+                        <div
+                          className={
+                            imageOnLeft ? "lg:order-1" : "lg:order-2"
+                          }
+                        >
+                          <div
+                            className={
+                              index === 1
+                                ? "relative mx-auto aspect-[1/1.65] w-full max-w-[430px] overflow-hidden rounded-[34px] shadow-[0_25px_70px_rgba(95,45,30,0.16)]"
+                                : "relative h-[430px] overflow-hidden rounded-[34px] shadow-[0_25px_70px_rgba(95,45,30,0.16)] md:h-[560px]"
+                            }
+                          >
+                            <Image
+                              src={moment.image}
+                              alt={`${moment.title} - Anelka et Baudouin`}
+                              fill
+                              sizes="(max-width: 1024px) 100vw, 50vw"
+                              className="object-cover"
+                              style={{
+                                objectPosition: moment.imagePosition,
+                              }}
+                            />
+
+                            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#3A1F1A]/55 via-transparent to-transparent" />
+                          </div>
+                        </div>
+
+                        {/* ================= TEXTES ================= */}
+                        <div
+                          className={
+                            imageOnLeft ? "lg:order-2" : "lg:order-1"
+                          }
+                        >
+                          <p className="text-[10px] uppercase tracking-[0.4em] text-[#B84A20]">
+                            {moment.year}
+                          </p>
+
+                          <h3 className={`${cormorant.className} mt-4 text-4xl font-medium leading-[1.08] text-[#5A3026] md:text-5xl`}>
+                            {moment.title}
+                          </h3>
+
+                          <div className="mt-6 h-px w-16 bg-[#D77A57]" />
+
+                          {/* ================= ANELKA ================= */}
+                          <div className="mt-8">
+                            <div className="flex items-center gap-3">
+                              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#C54716] text-xs font-medium text-white">
+                                A
+                              </div>
+
+                              <div>
+                                <p className="text-[9px] uppercase tracking-[0.32em] text-[#C54716]">
+                                  Du côté d’Anelka
+                                </p>
+
+                                <p className={`${cormorant.className} mt-1 text-base italic text-[#9B6B59]`}>
+                                  Ce qu’elle a vécu
+                                </p>
+                              </div>
+                            </div>
+
+                            <div className="mt-5 space-y-4">
+                              {moment.anelka.map(
+                                (paragraph, paragraphIndex) => (
+                                  <p
+                                    key={paragraphIndex}
+                                    className="leading-8 text-[#765247]"
+                                  >
+                                    {paragraph}
+                                  </p>
+                                )
+                              )}
+                            </div>
+                          </div>
+
+                          <div className="my-9 flex items-center gap-4">
+                            <div className="h-px flex-1 bg-[#D77A57]/25" />
+
+                            <span className="font-serif text-sm text-[#D77A57]">
+                              ♡
+                            </span>
+
+                            <div className="h-px flex-1 bg-[#D77A57]/25" />
+                          </div>
+
+                          {/* ================= BAUDOUIN ================= */}
+                          <div className="rounded-[26px] border border-[#274E13]/10 bg-[#F1F4EC]/65 p-6 md:p-7">
+                            <div className="flex items-center gap-3">
+                              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#274E13] text-xs font-medium text-white">
+                                B
+                              </div>
+
+                              <div>
+                                <p className="text-[9px] uppercase tracking-[0.32em] text-[#274E13]">
+                                  Du côté de Baudouin
+                                </p>
+
+                                <p className={`${cormorant.className} mt-1 text-base italic text-[#68805B]`}>
+                                  Ce qu’il a vécu
+                                </p>
+                              </div>
+                            </div>
+
+                            <div className="mt-5 space-y-4">
+                              {moment.baudouin.map(
+                                (paragraph, paragraphIndex) => (
+                                  <p
+                                    key={paragraphIndex}
+                                    className="leading-8 text-[#56604D]"
+                                  >
+                                    {paragraph}
+                                  </p>
+                                )
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
 
                     {/* ================= SÉPARATEUR ================= */}
                     {index !== storyMoments.length - 1 && (
@@ -735,10 +854,73 @@ export default function Home() {
               })}
             </div>
 
+            {/* ================= LIRE LA SUITE ================= */}
+            {!showFullStory && (
+              <div className="mx-auto mt-14 max-w-2xl text-center md:mt-16">
+                <div className="mx-auto flex items-center justify-center gap-4">
+                  <div className="h-px flex-1 bg-[#D77A57]/25" />
+
+                  <span className="text-sm text-[#C54716]">♥</span>
+
+                  <div className="h-px flex-1 bg-[#D77A57]/25" />
+                </div>
+
+                <p className={`${cormorant.className} mx-auto mt-7 text-xl italic text-[#805B4E] md:text-2xl`}>
+                  Envie de découvrir la suite ?
+                </p>
+
+                <button
+                  type="button"
+                  onClick={() => setShowFullStory(true)}
+                  className="
+                    mt-6
+                    inline-flex items-center justify-center
+                    rounded-full
+                    border border-[#C54716]
+                    bg-[#C54716]
+                    px-8 py-4
+                    text-[10px] font-semibold uppercase
+                    tracking-[0.22em]
+                    text-white
+                    shadow-[0_14px_35px_rgba(197,71,22,0.24)]
+                    transition duration-300
+                    hover:-translate-y-1
+                    hover:bg-[#A93D17]
+                    hover:shadow-[0_18px_42px_rgba(197,71,22,0.30)]
+                  "
+                >
+                  Lire la suite de notre histoire
+                  <span className="ml-3 text-sm">↓</span>
+                </button>
+              </div>
+            )}
+
+            {showFullStory && (
+              <div className="mx-auto mt-14 text-center md:mt-16">
+                <button
+                  type="button"
+                  onClick={() => setShowFullStory(false)}
+                  className="
+                    text-[9px]
+                    font-medium uppercase
+                    tracking-[0.22em]
+                    text-[#A93D17]/75
+                    underline
+                    decoration-[#C54716]/25
+                    underline-offset-8
+                    transition
+                    hover:text-[#A93D17]
+                  "
+                >
+                  Réduire l&apos;histoire
+                </button>
+              </div>
+            )}
+
             {/* =========================================================
                 CONCLUSION
             ========================================================= */}
-            <div className="mx-auto mt-28 max-w-4xl text-center md:mt-36">
+            <div className="mx-auto mt-24 max-w-4xl text-center md:mt-32">
               <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full border border-[#D77A57]/50 bg-white/30">
                 <span
                   className={`${pinyon.className} whitespace-nowrap translate-y-1 text-[32px] leading-none text-[#A93D17]`}
@@ -764,10 +946,24 @@ export default function Home() {
               <p className={`${pinyon.className} mt-5 text-[38px] leading-none text-[#9B6B59] md:text-[50px]`}>
                 La suite s’écrira ensemble.
               </p>
+
             </div>
           </div>
         </section>
       )}
+
+      {/* ================= SÉPARATEUR STORY / MEMORY LANE ================= */}
+      <div className="bg-[#F8EFE9] py-4">
+        <div className="mx-auto flex max-w-[220px] items-center gap-4 px-4">
+          <div className="h-px flex-1 bg-[#C54716]/30" />
+
+          <span className="text-[9px] text-[#C54716]/70">
+            ♥
+          </span>
+
+          <div className="h-px flex-1 bg-[#C54716]/30" />
+        </div>
+      </div>
 
       {/* =========================================================
           MEMORY LANE

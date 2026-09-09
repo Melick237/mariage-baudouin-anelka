@@ -598,67 +598,13 @@ export default function RsvpPage() {
                 </div>
               </details>
 
+
               {/* 04 */}
               <details className="group overflow-hidden rounded-[26px] border border-[#E7D5CA] bg-white shadow-[0_12px_40px_rgba(98,47,31,0.06)]">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-6 px-6 py-6 md:px-8">
                   <div className="flex items-center gap-5">
                     <span className="font-serif text-sm text-[#C54716]">
                       04
-                    </span>
-
-                    <h3 className="font-serif text-xl text-[#4A2924] md:text-2xl">
-                      Que signifie réellement notre dress code ?
-                    </h3>
-                  </div>
-
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#C54716]/20 text-xl text-[#C54716] transition group-open:rotate-45">
-                    +
-                  </span>
-                </summary>
-
-                <div className="border-t border-[#E7D5CA] px-6 py-6 md:px-8 md:pl-[76px]">
-                  <div className="space-y-5 leading-8 text-[#765B52]">
-                    <p>
-                      <strong className="font-medium text-[#C54716]">
-                        Le terracotta
-                      </strong>{" "}
-                      évoque notre connexion à nos racines, mais aussi la
-                      chaleur et la stabilité. Nous sommes intimement
-                      convaincus que la puissance de nos racines nous aide à
-                      avancer tout en gardant un équilibre solide.
-                    </p>
-
-                    <p>
-                      <strong className="font-medium text-[#6D071A]">
-                        Le rouge bordeaux
-                      </strong>{" "}
-                      est porteur d’une sagesse ancestrale et d’une force
-                      tranquille qui invite à l’introspection.
-                    </p>
-
-                    <p>
-                      <strong className="font-medium text-[#274E13]">
-                        Le vert émeraude
-                      </strong>{" "}
-                      représente l’ouverture du cœur, la tranquillité de l’âme
-                      et la guérison émotionnelle.
-                    </p>
-
-                    <p className="font-serif text-lg italic text-[#9B6B59]">
-                      Ainsi, nous souhaitons commencer cette nouvelle étape de
-                      notre vie dans l’authenticité, la sagesse et la paix de
-                      l’âme.
-                    </p>
-                  </div>
-                </div>
-              </details>
-
-              {/* 05 */}
-              <details className="group overflow-hidden rounded-[26px] border border-[#E7D5CA] bg-white shadow-[0_12px_40px_rgba(98,47,31,0.06)]">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 px-6 py-6 md:px-8">
-                  <div className="flex items-center gap-5">
-                    <span className="font-serif text-sm text-[#C54716]">
-                      05
                     </span>
 
                     <h3 className="font-serif text-xl text-[#4A2924] md:text-2xl">
@@ -682,12 +628,12 @@ export default function RsvpPage() {
                 </div>
               </details>
 
-              {/* 06 */}
+              {/* 05 */}
               <details className="group overflow-hidden rounded-[26px] border border-[#E7D5CA] bg-white shadow-[0_12px_40px_rgba(98,47,31,0.06)]">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-6 px-6 py-6 md:px-8">
                   <div className="flex items-center gap-5">
                     <span className="font-serif text-sm text-[#C54716]">
-                      06
+                      05
                     </span>
 
                     <h3 className="font-serif text-xl text-[#4A2924] md:text-2xl">
@@ -708,12 +654,12 @@ export default function RsvpPage() {
                 </div>
               </details>
 
-              {/* 07 */}
+              {/* 06 */}
               <details className="group overflow-hidden rounded-[26px] border border-[#E7D5CA] bg-white shadow-[0_12px_40px_rgba(98,47,31,0.06)]">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-6 px-6 py-6 md:px-8">
                   <div className="flex items-center gap-5">
                     <span className="font-serif text-sm text-[#C54716]">
-                      07
+                      06
                     </span>
 
                     <h3 className="font-serif text-xl text-[#4A2924] md:text-2xl">
@@ -737,12 +683,12 @@ export default function RsvpPage() {
                 </div>
               </details>
 
-              {/* 08 */}
+              {/* 07 */}
               <details className="group overflow-hidden rounded-[26px] border border-[#E7D5CA] bg-white shadow-[0_12px_40px_rgba(98,47,31,0.06)]">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-6 px-6 py-6 md:px-8">
                   <div className="flex items-center gap-5">
                     <span className="font-serif text-sm text-[#C54716]">
-                      08
+                      07
                     </span>
 
                     <h3 className="font-serif text-xl text-[#4A2924] md:text-2xl">
@@ -771,12 +717,12 @@ export default function RsvpPage() {
                 </div>
               </details>
 
-              {/* 09 */}
+              {/* 08 */}
               <details className="group overflow-hidden rounded-[26px] border border-[#E7D5CA] bg-white shadow-[0_12px_40px_rgba(98,47,31,0.06)]">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-6 px-6 py-6 md:px-8">
                   <div className="flex items-center gap-5">
                     <span className="font-serif text-sm text-[#C54716]">
-                      09
+                      08
                     </span>
 
                     <h3 className="font-serif text-xl text-[#4A2924] md:text-2xl">
@@ -798,12 +744,12 @@ export default function RsvpPage() {
                 </div>
               </details>
 
-              {/* 10 */}
+              {/* 09 */}
               <details className="group overflow-hidden rounded-[26px] border border-[#E7D5CA] bg-white shadow-[0_12px_40px_rgba(98,47,31,0.06)]">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-6 px-6 py-6 md:px-8">
                   <div className="flex items-center gap-5">
                     <span className="font-serif text-sm text-[#C54716]">
-                      10
+                      09
                     </span>
 
                     <h3 className="font-serif text-xl text-[#4A2924] md:text-2xl">
