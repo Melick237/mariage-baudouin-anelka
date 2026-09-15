@@ -88,6 +88,24 @@ export default function CadeauxPage() {
                     qui nous accompagnera dans cette nouvelle étape de notre vie.
                   </p>
 
+                  <div className="mt-6 max-w-xl rounded-[20px] border border-[#C54716]/15 bg-[#FFF8F2] px-5 py-4">
+                    <p className="text-sm leading-7 text-[#765B52]">
+                      Pour celles et ceux qui sont au Cameroun et qui souhaitent
+                      nous offrir un cadeau de notre liste, vous pouvez contacter :
+                    </p>
+
+                    <p className="mt-3 font-serif text-lg text-[#4A2924]">
+                      Lehwu Maguie
+                    </p>
+
+                    <a
+                      href="tel:+237697766524"
+                      className="mt-1 inline-block font-medium text-[#C54716] transition hover:text-[#A83D13]"
+                    >
+                      +237 6 97 76 65 24
+                    </a>
+                  </div>
+
                   <a
                     href="https://www.mesenvies.fr/liste-mariage/33833755"
                     target="_blank"

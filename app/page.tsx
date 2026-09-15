@@ -176,7 +176,7 @@ export default function Home() {
     {
       year: "",
       title: "Notre rencontre",
-      image: "/images/histoire22.jpeg",
+      image: "/images/histoires1.jpeg",
       imagePosition: "center",
       anelkaImage: null,
       baudouinImage: null,
@@ -225,7 +225,7 @@ export default function Home() {
   },
   {
     year: "2021",
-    text: "Notre réconciliation après une remise en question sur notre couple",
+    text: "Notre réconciliation après une remise en question de notre relation",
     image: "/images/memory-2021.jpeg",
     position: "center 26%",
     photoClass: "object-cover",

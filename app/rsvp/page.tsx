@@ -764,8 +764,48 @@ export default function RsvpPage() {
 
                 <div className="border-t border-[#E7D5CA] px-6 py-6 md:px-8 md:pl-[76px]">
                   <p className="leading-8 text-[#765B52]">
-                    Les coordonnées de la personne à contacter le jour J seront
-                    ajoutées ici prochainement.
+                    Si vous êtes au village et que vous avez des questions, vous pouvez
+                    contacter :
+                    <br />
+                    <span className="font-medium text-[#4A2924]">
+                      Papa Ngasseu Clovis
+                    </span>
+                    <br />
+                    6 99 99 24 31
+                    <br />
+                    6 79 87 55 32
+                  </p>
+                </div>
+              </details>
+
+              {/* 10 */}
+              <details className="group overflow-hidden rounded-[26px] border border-[#E7D5CA] bg-white shadow-[0_12px_40px_rgba(98,47,31,0.06)]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 px-6 py-6 md:px-8">
+                  <div className="flex items-center gap-5">
+                    <span className="font-serif text-sm text-[#C54716]">
+                      10
+                    </span>
+
+                    <h3 className="font-serif text-xl text-[#4A2924] md:text-2xl">
+                      Qui contacter à Yaoundé en cas de question ?
+                    </h3>
+                  </div>
+
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#C54716]/20 text-xl text-[#C54716] transition group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+
+                <div className="border-t border-[#E7D5CA] px-6 py-6 md:px-8 md:pl-[76px]">
+                  <p className="leading-8 text-[#765B52]">
+                    Si vous êtes à Yaoundé et que vous avez des questions, vous pouvez
+                    contacter :
+                    <br />
+                    <span className="font-medium text-[#4A2924]">
+                      Lehwu Maguie
+                    </span>
+                    <br />
+                    6 97 76 65 24
                   </p>
                 </div>
               </details>

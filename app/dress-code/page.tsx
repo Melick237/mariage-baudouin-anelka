@@ -236,7 +236,7 @@ export default function DressCodePage() {
             <div className="flex h-14 w-14 items-center justify-center rounded-full border border-[#C54716]/35">
 
               <span className="font-serif text-sm tracking-[0.12em] text-[#C54716]">
-                B|A
+                A|B
               </span>
 
             </div>
