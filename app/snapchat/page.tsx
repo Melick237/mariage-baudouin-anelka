@@ -781,12 +781,11 @@ export default function SnapchatPage() {
 
 
                   <p className="mt-6 leading-8 text-[#755B54]">
-                    Un vœu, une anecdote, un conseil pour notre vie à deux,
-                    un souvenir partagé ou simplement quelques mots venus du cœur.
+                    Chaque souvenir compte et nous permettra de revivre cette journée à travers vos yeux.
                   </p>
 
                   <p className="mt-4 font-serif text-lg italic leading-7 text-[#8A3947]">
-                    Prenez quelques secondes et laissez-nous votre petit message ❤️
+                    Merci de nous aider à conserver chaque petit morceau de cette belle journée.
                   </p>
 
 
@@ -796,7 +795,7 @@ export default function SnapchatPage() {
                     <span className="h-2 w-2 animate-pulse rounded-full bg-[#C54716]" />
 
                     <span className="text-[9px] uppercase tracking-[0.3em] text-[#6D071A]/60">
-                      Votre message vidéo
+                      Envoyer mes photos/vidéos
                     </span>
 
                   </div>
@@ -838,7 +837,7 @@ export default function SnapchatPage() {
                         </svg>
 
                         <span>
-                          Laisser un message
+                          Partager plus d'images
                         </span>
                       </>
                     )}
@@ -875,92 +874,10 @@ export default function SnapchatPage() {
 
             </div>
 
-
-            {/* =====================================================
-                BANDEAU BAS
-            ====================================================== */}
-            <div className="mx-auto mt-12 max-w-4xl overflow-hidden rounded-[28px] border border-[#DDBFAF]/45 bg-[#FFF3EB] px-6 py-7">
-
-              <div className="flex flex-col items-center justify-center gap-4 text-center sm:flex-row sm:gap-6">
-
-                <div className="flex items-center gap-3">
-
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-sm text-[#C54716] shadow-sm">
-                    01
-                  </span>
-
-                  <span className="text-xs text-[#755B54]">
-                    Choisissez
-                  </span>
-
-                </div>
-
-
-                <span className="hidden text-[#C54716]/30 sm:block">
-                  —
-                </span>
-
-
-                <div className="flex items-center gap-3">
-
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-sm text-[#C54716] shadow-sm">
-                    02
-                  </span>
-
-                  <span className="text-xs text-[#755B54]">
-                    Partagez
-                  </span>
-
-                </div>
-
-
-                <span className="hidden text-[#C54716]/30 sm:block">
-                  —
-                </span>
-
-
-                <div className="flex items-center gap-3">
-
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-sm text-[#C54716] shadow-sm">
-                    03
-                  </span>
-
-                  <span className="text-xs text-[#755B54]">
-                    Souvenez-vous
-                  </span>
-
-                </div>
-
-              </div>
-
-            </div>
-
           </div>
 
 
-          {/* =====================================================
-              FIN DE LA NOUVELLE SECTION
-          ====================================================== */}
-          <div className="mt-16 text-center">
-
-            <div className="mx-auto flex items-center justify-center gap-4">
-
-              <div className="h-px w-16 bg-[#C54716]/25" />
-
-              <span className="font-serif text-sm text-[#C54716]">
-                A | B
-              </span>
-
-              <div className="h-px w-16 bg-[#C54716]/25" />
-
-            </div>
-
-            <p className="mx-auto mt-6 max-w-lg font-serif text-lg italic leading-8 text-[#755B54]">
-              Merci de nous aider à conserver chaque petit morceau
-              de cette belle journée.
-            </p>
-
-          </div>
+          
 
         </div>
       </section>
