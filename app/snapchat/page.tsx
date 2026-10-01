@@ -416,469 +416,119 @@ export default function SnapchatPage() {
 
       {/* =========================================================
           PHOTOS & VIDÉOS DES INVITÉS
-          NOUVELLE SECTION
       ========================================================= */}
       <section className="relative overflow-hidden bg-[#FFF8F2] px-6 py-24 text-[#4A2924] md:px-12 md:py-32">
-
-        {/* =======================================================
-            DÉCORATIONS
-        ======================================================= */}
         <div className="pointer-events-none absolute -left-32 top-12 h-[380px] w-[380px] rounded-full border border-[#C54716]/10" />
-
         <div className="pointer-events-none absolute -right-32 bottom-0 h-[420px] w-[420px] rounded-full border border-[#6D071A]/10" />
-
-        <div className="pointer-events-none absolute left-10 top-16 hidden font-serif text-[170px] text-[#6D071A]/[0.025] lg:block">
-          A
-        </div>
-
-        <div className="pointer-events-none absolute bottom-10 right-10 hidden font-serif text-[170px] text-[#C54716]/[0.035] lg:block">
-          B
-        </div>
-
+        <div className="pointer-events-none absolute left-10 top-16 hidden font-serif text-[170px] text-[#6D071A]/[0.025] lg:block">A</div>
+        <div className="pointer-events-none absolute bottom-10 right-10 hidden font-serif text-[170px] text-[#C54716]/[0.035] lg:block">B</div>
 
         <div className="relative mx-auto max-w-6xl">
-
-          {/* =====================================================
-              EN-TÊTE
-          ====================================================== */}
-          <div className="mx-auto max-w-3xl text-center">
-
-            <p className="text-[10px] uppercase tracking-[0.45em] text-[#C54716] md:text-[11px]">
-              Petits instants, grands souvenirs
-            </p>
-
-            <h2 className="mt-5 font-serif text-5xl leading-tight text-[#6D071A] md:text-6xl lg:text-7xl">
-              À travers vos yeux
-            </h2>
-
-            <div className="mx-auto mt-7 flex items-center justify-center gap-4">
-
-              <div className="h-px w-12 bg-[#C54716]/40" />
-
-              <span className="font-serif text-xl text-[#C54716]">
-                ♡
-              </span>
-
-              <div className="h-px w-12 bg-[#C54716]/40" />
-
-            </div>
-
-
-            <p className="mx-auto mt-8 max-w-2xl font-serif text-xl leading-9 text-[#5E4038] md:text-2xl md:leading-10">
-              Notre mariage, nous le vivrons entourés de vous.
-            </p>
-
-            <p className="mx-auto mt-5 max-w-2xl leading-8 text-[#755B54]">
-              Et pendant que nous profiterons de chaque instant,
-              vous capturerez sûrement des sourires, des éclats de rire,
-              des pas de danse et tous ces petits moments que nous ne verrons
-              peut-être pas.
-            </p>
-
-          </div>
-
-
-          {/* =====================================================
-              DEUX EXPÉRIENCES DE PARTAGE
-          ====================================================== */}
-          <div className="mx-auto mt-14 max-w-5xl">
-
-            {/* INTRODUCTION */}
-            <div className="mx-auto max-w-2xl text-center">
-              <p className="text-sm leading-7 text-[#8A6A60]">
-                Gardez les souvenirs que vous capturez, mais laissez-nous aussi
-                quelques mots que nous pourrons redécouvrir après le mariage.
-              </p>
-            </div>
-
-
-            {/* =====================================================
-                LES DEUX CARTES
-            ====================================================== */}
-            <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:gap-8">
-
-              {/* ===================================================
-                  CARTE 1 — VOS MOMENTS
-              =================================================== */}
-              <div className="group relative overflow-hidden rounded-[38px] border border-[#EBCDBD] bg-[#FFFCF9] shadow-[0_20px_60px_rgba(109,7,26,0.06)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_25px_70px_rgba(109,7,26,0.10)]">
-
-                {/* DÉCORATION BOTANIQUE */}
-                <svg
-                  viewBox="0 0 180 180"
-                  fill="none"
-                  className="pointer-events-none absolute -left-4 -top-2 h-40 w-40 text-[#C54716]/10"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M20 160C45 120 45 75 80 25M44 119C29 109 22 94 22 76M51 101C70 94 81 80 87 62M62 78C51 65 49 49 54 34M74 52C91 48 104 38 113 22"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M24 77C37 78 45 85 50 98M54 35C66 40 73 50 76 61M87 62C100 63 109 70 114 81M113 22C124 27 130 36 132 47"
-                    stroke="currentColor"
-                    strokeWidth="1.2"
-                    strokeLinecap="round"
-                  />
-                </svg>
-
-
-                <div className="relative flex h-full flex-col px-7 py-10 text-center md:px-10 md:py-12">
-
-                  {/* ICÔNE */}
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-[#C54716]/20 bg-[#FFF5EE]">
-
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      className="h-7 w-7 text-[#C54716]"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M3 7.5A2.5 2.5 0 0 1 5.5 5h2l1.2-1.5h6.6L16.5 5h2A2.5 2.5 0 0 1 21 7.5v9A2.5 2.5 0 0 1 18.5 19h-13A2.5 2.5 0 0 1 3 16.5v-9Z"
-                      />
-
-                      <circle
-                        cx="12"
-                        cy="12"
-                        r="3.5"
-                      />
-                    </svg>
-
-                  </div>
-
-
-                  <p className="mt-7 text-[10px] uppercase tracking-[0.4em] text-[#C54716]">
-                    Vos moments
-                  </p>
-
-                  <h3 className="mt-4 font-serif text-3xl leading-tight text-[#4A2924] md:text-4xl">
-                    Le mariage à travers vos yeux
-                  </h3>
-
-
-                  {/* PETIT SÉPARATEUR */}
-                  <div className="mx-auto mt-6 flex items-center gap-3">
-
-                    <div className="h-px w-10 bg-[#C54716]/25" />
-
-                    <span className="text-sm text-[#D98B57]">
-                      ♥
-                    </span>
-
-                    <div className="h-px w-10 bg-[#C54716]/25" />
-
-                  </div>
-
-
-                  <p className="mt-6 leading-8 text-[#755B54]">
-                    Les sourires, les selfies, les photos de groupe, les petits
-                    détails et tous ces instants spontanés que nous ne verrons
-                    peut-être pas.
-                  </p>
-
-                  <p className="mt-4 font-serif text-lg italic leading-7 text-[#A96851]">
-                    Montrez-nous cette journée telle que vous l&apos;avez vécue.
-                  </p>
-
-
-                  {/* =================================================
-                      INPUT INVISIBLE
-                  ================================================= */}
-                  <input
-                    ref={fileInputRef}
-                    type="file"
-                    accept="image/*,video/*"
-                    multiple
-                    className="hidden"
-                    onChange={handleFiles}
-                  />
-
-
-                  {/* =================================================
-                      BOUTON PHOTOS / MOMENTS
-                  ================================================= */}
-                  <div className="mt-auto pt-9">
-
-                    <div className="mt-auto pt-9">
-
-                      <a
-                        href="https://script.google.com/macros/s/AKfycbyOyVkGVKKdE-n3EcuaUwSR5Z_i0EnwEZL4Gdl5C9s6vxV5HyIw9vmhIq_IhvjjuPNxWg/exec"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex w-full items-center justify-center gap-3 rounded-full bg-[#6D071A] px-7 py-5 text-center text-[10px] uppercase tracking-[0.22em] text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-[#520515] hover:shadow-xl sm:text-[11px]"
-                      >
-
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="1.7"
-                          className="h-5 w-5 shrink-0 text-[#F4C58C]"
-                          aria-hidden="true"
-                        >
-                          <rect
-                            x="3"
-                            y="6"
-                            width="13"
-                            height="12"
-                            rx="2"
-                          />
-
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="m16 10 5-3v10l-5-3"
-                          />
-                        </svg>
-
-                        <span>
-                          Partager mes photos/videos
-                        </span>
-
-                      </a>
-
-                    </div>
-
-
-                    {/* PROGRESSION */}
-                    {uploading && (
-                      <div className="mx-auto mt-6 w-full">
-
-                        <div className="mb-2 flex items-center justify-between gap-4 text-xs text-[#755B54]">
-
-                          <span className="max-w-[260px] truncate">
-                            {currentFile}
-                          </span>
-
-                          <span className="shrink-0 font-medium text-[#C54716]">
-                            {progress} %
-                          </span>
-
-                        </div>
-
-                        <div className="h-2 w-full overflow-hidden rounded-full bg-[#F1DDD2]">
-
-                          <div
-                            className="h-full rounded-full bg-[#C54716] transition-[width] duration-300"
-                            style={{
-                              width: `${progress}%`,
-                            }}
-                          />
-
-                        </div>
-
-                      </div>
-                    )}
-
-
-                    {/* MESSAGE UPLOAD */}
-                    {message && (
-                      <div
-                        className={`mx-auto mt-5 rounded-2xl px-5 py-3 text-sm leading-6 ${
-                          message.includes("succès")
-                            ? "bg-[#FFF3EB] text-[#6D071A]"
-                            : message.includes("/")
-                            ? "bg-[#FFF3EB] text-[#755B54]"
-                            : "bg-red-50 text-red-700"
-                        }`}
-                      >
-                        {message}
-                      </div>
-                    )}
-
-                  </div>
-
-                </div>
-
-              </div>
-
-
-              {/* ===================================================
-                  CARTE 2 — MESSAGE VIDÉO
-              =================================================== */}
-              <div className="group relative overflow-hidden rounded-[38px] border border-[#D9AFA8] bg-[#FFF8F5] shadow-[0_20px_60px_rgba(109,7,26,0.06)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_25px_70px_rgba(109,7,26,0.10)]">
-
-                {/* DÉCORATION BOTANIQUE */}
-                <svg
-                  viewBox="0 0 180 180"
-                  fill="none"
-                  className="pointer-events-none absolute -right-4 -top-2 h-40 w-40 rotate-12 text-[#6D071A]/[0.07]"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M20 160C45 120 45 75 80 25M44 119C29 109 22 94 22 76M51 101C70 94 81 80 87 62M62 78C51 65 49 49 54 34M74 52C91 48 104 38 113 22"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M24 77C37 78 45 85 50 98M54 35C66 40 73 50 76 61M87 62C100 63 109 70 114 81M113 22C124 27 130 36 132 47"
-                    stroke="currentColor"
-                    strokeWidth="1.2"
-                    strokeLinecap="round"
-                  />
-                </svg>
-
-
-                <div className="relative flex h-full flex-col px-7 py-10 text-center md:px-10 md:py-12">
-
-                  {/* ICÔNE */}
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#6D071A] shadow-md">
-
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      className="h-7 w-7 text-[#F4C58C]"
-                      aria-hidden="true"
-                    >
-                      <rect
-                        x="3"
-                        y="6"
-                        width="13"
-                        height="12"
-                        rx="2"
-                      />
-
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="m16 10 5-3v10l-5-3"
-                      />
-                    </svg>
-
-                  </div>
-
-
-                  <p className="mt-7 text-[10px] uppercase tracking-[0.4em] text-[#6D071A]">
-                    Un mot pour nous
-                  </p>
-
-                  <h3 className="mt-4 font-serif text-3xl leading-tight text-[#6D071A] md:text-4xl">
-                    Quelques secondes, un souvenir pour toujours
-                  </h3>
-
-
-                  {/* PETIT SÉPARATEUR */}
-                  <div className="mx-auto mt-6 flex items-center gap-3">
-
-                    <div className="h-px w-10 bg-[#6D071A]/20" />
-
-                    <span className="text-sm text-[#D98B57]">
-                      ♥
-                    </span>
-
-                    <div className="h-px w-10 bg-[#6D071A]/20" />
-
-                  </div>
-
-
-                  <p className="mt-6 leading-8 text-[#755B54]">
-                    Chaque souvenir compte et nous permettra de revivre cette journée à travers vos yeux.
-                  </p>
-
-                  <p className="mt-4 font-serif text-lg italic leading-7 text-[#8A3947]">
-                    Merci de nous aider à conserver chaque petit morceau de cette belle journée.
-                  </p>
-
-
-                  {/* PETIT INDICATEUR VIDÉO */}
-                  <div className="mx-auto mt-7 flex w-fit items-center gap-2 rounded-full border border-[#6D071A]/10 bg-white/70 px-4 py-2">
-
-                    <span className="h-2 w-2 animate-pulse rounded-full bg-[#C54716]" />
-
-                    <span className="text-[9px] uppercase tracking-[0.3em] text-[#6D071A]/60">
-                      Envoyer mes photos/vidéos
-                    </span>
-
-                  </div>
-
-
-                  {/* =================================================
-                      BOUTON MESSAGE VIDÉO
-                  ================================================= */}
-                  <button
-                    type="button"
-                    disabled={uploading}
-                    onClick={() => fileInputRef.current?.click()}
-                    className="flex w-full items-center justify-center gap-3 rounded-full bg-[#C54716] px-7 py-5 text-center text-[10px] uppercase tracking-[0.22em] text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-[#A83D13] hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-60 sm:text-[11px]"
-                  >
-
-                    {uploading ? (
-                      <>
-                        <span className="h-5 w-5 shrink-0 animate-spin rounded-full border-2 border-white/40 border-t-white" />
-
-                        <span>
-                          Envoi en cours...
-                        </span>
-                      </>
-                    ) : (
-                      <>
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="1.7"
-                          className="h-5 w-5 shrink-0"
-                          aria-hidden="true"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M12 16V4m0 0-4 4m4-4 4 4M5 13v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"
-                          />
-                        </svg>
-
-                        <span>
-                          Partager plus d'images
-                        </span>
-                      </>
-                    )}
-
-                  </button>
-
-                </div>
-
-              </div>
-
-            </div>
-
-
-            {/* =====================================================
-                PETITE PHRASE APRÈS LES DEUX CARTES
-            ====================================================== */}
-            <div className="mt-12 text-center">
-
-              <div className="mx-auto flex max-w-lg items-center justify-center gap-4">
-
-                <div className="h-px flex-1 bg-[#C54716]/20" />
-
-                <span className="font-serif text-sm tracking-[0.15em] text-[#C54716]">
-                  A | B
-                </span>
-
-                <div className="h-px flex-1 bg-[#C54716]/20" />
-
-              </div>
-
-              <p className="mx-auto mt-6 max-w-xl font-serif text-xl italic leading-8 text-[#755B54]">
-                Vos regards. Vos voix. Notre histoire.
+          <div className="group relative mx-auto max-w-[820px] overflow-hidden rounded-[32px] border border-[#EBCDBD] bg-[#FFFCF9] shadow-[0_20px_60px_rgba(109,7,26,0.06)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_25px_70px_rgba(109,7,26,0.10)] sm:rounded-[38px]">
+            <svg viewBox="0 0 180 180" fill="none" className="pointer-events-none absolute -left-6 -top-4 h-36 w-36 text-[#C54716]/10 sm:h-44 sm:w-44" aria-hidden="true">
+              <path d="M20 160C45 120 45 75 80 25M44 119C29 109 22 94 22 76M51 101C70 94 81 80 87 62M62 78C51 65 49 49 54 34M74 52C91 48 104 38 113 22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              <path d="M24 77C37 78 45 85 50 98M54 35C66 40 73 50 76 61M87 62C100 63 109 70 114 81M113 22C124 27 130 36 132 47" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+            </svg>
+
+            <svg viewBox="0 0 180 180" fill="none" className="pointer-events-none absolute -bottom-8 -right-8 h-40 w-40 rotate-180 text-[#6D071A]/[0.05] sm:h-48 sm:w-48" aria-hidden="true">
+              <path d="M20 160C45 120 45 75 80 25M44 119C29 109 22 94 22 76M51 101C70 94 81 80 87 62M62 78C51 65 49 49 54 34M74 52C91 48 104 38 113 22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              <path d="M24 77C37 78 45 85 50 98M54 35C66 40 73 50 76 61M87 62C100 63 109 70 114 81M113 22C124 27 130 36 132 47" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+            </svg>
+
+            <div className="pointer-events-none absolute -right-20 top-1/2 h-52 w-52 -translate-y-1/2 rounded-full border border-[#C54716]/[0.06]" />
+
+            <div className="relative z-10 flex flex-col items-center px-6 py-11 text-center sm:px-10 sm:py-14 md:px-16 md:py-16">
+              <p className="text-[10px] uppercase tracking-[0.4em] text-[#C54716] md:text-[11px]">
+                Petits instants, grands souvenirs
               </p>
 
+              <div className="mt-7 flex h-[68px] w-[68px] items-center justify-center rounded-full border border-[#C54716]/20 bg-[#FFF5EE] shadow-[0_8px_25px_rgba(197,71,22,0.08)] sm:h-[74px] sm:w-[74px]">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-7 w-7 text-[#C54716] sm:h-8 sm:w-8" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 7.5A2.5 2.5 0 0 1 5.5 5h2l1.2-1.5h6.6L16.5 5h2A2.5 2.5 0 0 1 21 7.5v9A2.5 2.5 0 0 1 18.5 19h-13A2.5 2.5 0 0 1 3 16.5v-9Z" />
+                  <circle cx="12" cy="12" r="3.5" />
+                </svg>
+              </div>
+
+              <h2 className="mx-auto mt-6 max-w-2xl font-serif text-[34px] leading-[1.12] text-[#6D071A] sm:text-5xl md:text-6xl">
+                À travers vos yeux
+              </h2>
+
+              <div className="mx-auto mt-6 flex items-center justify-center gap-4">
+                <div className="h-px w-12 bg-[#C54716]/30 sm:w-16" />
+                <span className="font-serif text-lg text-[#C54716]">♡</span>
+                <div className="h-px w-12 bg-[#C54716]/30 sm:w-16" />
+              </div>
+
+              <p className="mx-auto mt-7 max-w-2xl font-serif text-xl leading-8 text-[#5E4038] sm:text-2xl sm:leading-9">
+                Notre mariage, nous le vivrons entourés de vous.
+              </p>
+
+              <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-[#755B54] sm:text-base sm:leading-8">
+                Pendant que nous profiterons de chaque instant, vous capturerez sûrement des sourires,
+                des éclats de rire, des pas de danse, des selfies et tous ces petits moments que nous
+                ne verrons peut-être pas.
+              </p>
+
+              <p className="mx-auto mt-4 max-w-xl font-serif text-[17px] italic leading-7 text-[#A96851] sm:text-lg">
+                Partagez-les avec nous pour que nous puissions revivre cette journée à travers vos yeux.
+              </p>
+
+              <input ref={fileInputRef} type="file" accept="image/*,video/*" multiple className="hidden" onChange={handleFiles} />
+
+              <div className="mt-9 w-full max-w-[520px] sm:mt-10">
+                <a
+                  href="https://script.google.com/macros/s/AKfycbyOyVkGVKKdE-n3EcuaUwSR5Z_i0EnwEZL4Gdl5C9s6vxV5HyIw9vmhIq_IhvjjuPNxWg/exec"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex w-full items-center justify-center gap-3 rounded-full bg-[#6D071A] px-5 py-4 text-center text-[9px] uppercase tracking-[0.16em] text-white shadow-[0_10px_30px_rgba(109,7,26,0.18)] transition duration-300 hover:-translate-y-1 hover:bg-[#520515] hover:shadow-[0_15px_35px_rgba(109,7,26,0.24)] sm:px-7 sm:py-5 sm:text-[11px] sm:tracking-[0.22em]"
+                >
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className="h-5 w-5 shrink-0 text-[#F4C58C]" aria-hidden="true">
+                    <rect x="3" y="6" width="13" height="12" rx="2" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m16 10 5-3v10l-5-3" />
+                  </svg>
+                  <span>Partager mes photos / vidéos</span>
+                </a>
+              </div>
+
+              <p className="mx-auto mt-5 max-w-md text-xs leading-6 text-[#9A7A70]">
+                Photos, vidéos et petits instants capturés pendant la célébration.
+              </p>
+
+              {uploading && (
+                <div className="mx-auto mt-7 w-full max-w-[520px]">
+                  <div className="mb-2 flex items-center justify-between gap-4 text-xs text-[#755B54]">
+                    <span className="max-w-[220px] truncate sm:max-w-[360px]">{currentFile}</span>
+                    <span className="shrink-0 font-medium text-[#C54716]">{progress} %</span>
+                  </div>
+                  <div className="h-2 w-full overflow-hidden rounded-full bg-[#F1DDD2]">
+                    <div className="h-full rounded-full bg-[#C54716] transition-[width] duration-300" style={{ width: `${progress}%` }} />
+                  </div>
+                </div>
+              )}
+
+              {message && (
+                <div className={`mx-auto mt-5 w-full max-w-[520px] rounded-2xl px-5 py-3 text-sm leading-6 ${
+                  message.includes("succès")
+                    ? "bg-[#FFF3EB] text-[#6D071A]"
+                    : message.includes("/")
+                    ? "bg-[#FFF3EB] text-[#755B54]"
+                    : "bg-red-50 text-red-700"
+                }`}>
+                  {message}
+                </div>
+              )}
+
+              <div className="mt-11 flex w-full max-w-lg items-center justify-center gap-4">
+                <div className="h-px flex-1 bg-[#C54716]/20" />
+                <span className="font-serif text-sm tracking-[0.15em] text-[#C54716]">A | B</span>
+                <div className="h-px flex-1 bg-[#C54716]/20" />
+              </div>
+
+              <p className="mx-auto mt-5 max-w-xl font-serif text-lg italic leading-8 text-[#755B54] sm:text-xl">
+                Vos regards. Nos souvenirs. Notre histoire.
+              </p>
             </div>
-
           </div>
-
-
-          
-
         </div>
       </section>
 

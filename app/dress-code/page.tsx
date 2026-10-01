@@ -99,7 +99,7 @@ export default function DressCodePage() {
                 />
 
                 <p className="mt-4 font-serif text-lg">
-                  Bordeaux
+                  Rouge Bordeaux
                 </p>
 
                 <p className="mt-1 text-xs uppercase tracking-[0.2em] text-[#8A6D63]">
