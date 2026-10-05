@@ -200,7 +200,7 @@ export default function CadeauxPage() {
             <div className="mx-auto max-w-3xl text-center">
 
               <p className="text-[10px] uppercase tracking-[0.4em] text-[#6D071A]">
-                Une attention, si vous le souhaitez
+                En toute liberté
               </p>
 
               <h2 className="mt-4 font-serif text-4xl md:text-5xl">
