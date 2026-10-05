@@ -392,6 +392,12 @@ export default function DressCodePage() {
               <h3 className="mt-3 font-serif text-3xl text-[#4A2924] md:text-4xl">
                 Quelques modèles avec le pagne
               </h3>
+              
+              <p className="mx-auto mt-6 max-w-2xl leading-8 text-[#765B52]">
+                Notre joli pagne accompagnera les célébrations au village uniquement. 
+                Pour Yaounde, nous vous invitons à suivre le dress code indiqué pour 
+                les différentes cérémonies.
+              </p>
 
             </div>
 

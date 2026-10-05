@@ -15,6 +15,7 @@ export default function CadeauxPage() {
         id="cadeaux"
         className="relative overflow-hidden bg-[#FFF8F2] px-6 pb-24 pt-32 text-[#4A2924] md:px-12 md:pb-28 md:pt-36"
       >
+
         {/* Décorations */}
         <div className="pointer-events-none absolute -left-32 top-20 h-[380px] w-[380px] rounded-full bg-[#C54716]/5 blur-3xl" />
 
@@ -38,17 +39,16 @@ export default function CadeauxPage() {
             <div className="mx-auto mt-6 h-px w-20 bg-[#D77A57]" />
 
             <p className="mx-auto mt-7 max-w-2xl leading-8 text-[#765B52]">
-              Votre présence à nos côtés est déjà un merveilleux cadeau.
-              Si vous souhaitez toutefois nous faire une attention,
-              plusieurs possibilités s’offrent à vous.
+              Votre présence à nos côtés est déjà le plus beau des cadeaux.
+              Si vous souhaitez néanmoins nous faire une attention,
+              quelques possibilités s’offrent à vous.
             </p>
 
             <p className="mx-auto mt-4 max-w-xl font-serif text-lg italic text-[#9B6B59]">
-              Choisissez simplement celle qui vous convient le mieux.
+              En toute simplicité, et surtout selon vos envies.
             </p>
 
           </div>
-
 
           {/* =====================================================
               1 — LISTE DE CADEAUX
@@ -84,11 +84,12 @@ export default function CadeauxPage() {
 
                   <p className="mt-6 max-w-xl leading-8 text-[#765B52]">
                     Nous avons préparé une sélection de cadeaux pour celles
-                    et ceux qui souhaitent choisir une attention particulière
+                    et ceux qui souhaiteraient nous offrir une attention particulière
                     qui nous accompagnera dans cette nouvelle étape de notre vie.
                   </p>
 
                   <div className="mt-6 max-w-xl rounded-[20px] border border-[#C54716]/15 bg-[#FFF8F2] px-5 py-4">
+
                     <p className="text-sm leading-7 text-[#765B52]">
                       Pour celles et ceux qui sont au Cameroun et qui souhaitent
                       nous offrir un cadeau de notre liste, vous pouvez contacter :
@@ -104,6 +105,7 @@ export default function CadeauxPage() {
                     >
                       +237 6 97 76 65 24
                     </a>
+
                   </div>
 
                   <a
@@ -118,7 +120,6 @@ export default function CadeauxPage() {
                 </div>
               </div>
 
-
               {/* PARTIE DROITE */}
               <div className="relative flex min-h-[420px] items-center justify-center overflow-hidden bg-[#6D071A] p-8 text-center text-white md:p-10">
 
@@ -128,9 +129,11 @@ export default function CadeauxPage() {
                 <div className="relative z-10 w-full max-w-sm">
 
                   <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-[#F4C58C]/30 bg-white/5">
+
                     <span className="font-serif text-xl text-[#F4C58C]">
                       A | B
                     </span>
+
                   </div>
 
                   <p className="mt-6 text-[9px] uppercase tracking-[0.35em] text-[#F4C58C]">
@@ -138,7 +141,7 @@ export default function CadeauxPage() {
                   </p>
 
                   <p className="mx-auto mt-3 max-w-xs font-serif text-xl leading-8 text-white">
-                    Choisissez librement le cadeau qui vous fera plaisir de nous offrir.
+                    Si vous le souhaitez, découvrez les quelques idées que nous avons sélectionnées.
                   </p>
 
                   {/* QR CODE */}
@@ -174,7 +177,6 @@ export default function CadeauxPage() {
 
           </div>
 
-
           {/* =====================================================
               SÉPARATEUR
           ====================================================== */}
@@ -190,36 +192,34 @@ export default function CadeauxPage() {
 
           </div>
 
-
           {/* =====================================================
-              2 — PARTICIPATION LIBRE
+              2 — UNE ATTENTION, SI VOUS LE SOUHAITEZ
           ====================================================== */}
           <div className="mx-auto max-w-5xl">
 
             <div className="mx-auto max-w-3xl text-center">
 
               <p className="text-[10px] uppercase tracking-[0.4em] text-[#6D071A]">
-                Une autre façon de participer
+                Une attention, si vous le souhaitez
               </p>
 
               <h2 className="mt-4 font-serif text-4xl md:text-5xl">
-                Une participation libre
+                Une attention, si vous le souhaitez...
               </h2>
 
               <p className="mx-auto mt-6 max-w-2xl leading-8 text-[#765B52]">
-                Si vous préférez nous offrir une contribution libre,
-                vous pourrez également utiliser l’un des moyens ci-dessous,
-                depuis le Cameroun ou depuis l’étranger.
+                Votre présence à nos côtés est déjà le plus beau des cadeaux.
+                Pour celles et ceux qui souhaiteraient néanmoins nous témoigner
+                une attention, quelques possibilités sont disponibles ci-dessous,
+                depuis le Cameroun comme depuis l’étranger.
               </p>
 
             </div>
 
-
             {/* ===================================================
-                MOYENS DE CONTRIBUTION
+                MOYENS POUR UNE ATTENTION
             =================================================== */}
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-2">
-
 
               {/* PAYPAL */}
               <div className="flex min-h-[285px] flex-col rounded-[28px] border border-[#6D071A]/10 bg-white p-6 shadow-[0_15px_45px_rgba(70,30,20,0.06)]">
@@ -245,7 +245,7 @@ export default function CadeauxPage() {
                 </h3>
 
                 <p className="mt-4 text-sm leading-6 text-[#8A6D63]">
-                  Pour celles et ceux qui souhaitent participer simplement
+                  Pour celles et ceux qui souhaitent nous faire une attention
                   depuis l’étranger.
                 </p>
 
@@ -263,7 +263,6 @@ export default function CadeauxPage() {
                 </div>
 
               </div>
-
 
               {/* VIREMENT */}
               <div className="flex min-h-[285px] flex-col rounded-[28px] border border-[#6D071A]/10 bg-white p-6 shadow-[0_15px_45px_rgba(70,30,20,0.06)]">
@@ -289,8 +288,8 @@ export default function CadeauxPage() {
                 </h3>
 
                 <p className="mt-4 text-sm leading-6 text-[#8A6D63]">
-                  Une participation pourra également être envoyée
-                  directement par virement bancaire.
+                  Si vous le souhaitez, une attention peut également
+                  être envoyée par virement bancaire.
                 </p>
 
                 <div className="mt-auto pt-6">
@@ -336,7 +335,6 @@ export default function CadeauxPage() {
 
               </div>
 
-
               {/* ORANGE MONEY */}
               <div className="flex min-h-[285px] flex-col rounded-[28px] border border-[#C54716]/15 bg-[#FFF9F5] p-6 shadow-[0_15px_45px_rgba(70,30,20,0.06)]">
 
@@ -361,7 +359,8 @@ export default function CadeauxPage() {
                 </h3>
 
                 <p className="mt-4 text-sm leading-6 text-[#8A6D63]">
-                  Pour une participation rapide et simple depuis le Cameroun.
+                  Pour celles et ceux qui souhaitent nous faire une attention
+                  depuis le Cameroun.
                 </p>
 
                 <div className="mt-auto pt-6">
@@ -385,7 +384,6 @@ export default function CadeauxPage() {
                 </div>
 
               </div>
-
 
               {/* MTN MOBILE MONEY */}
               <div className="flex min-h-[285px] flex-col rounded-[28px] border border-[#274E13]/15 bg-[#F8FAF5] p-6 shadow-[0_15px_45px_rgba(70,30,20,0.06)]">
@@ -411,8 +409,8 @@ export default function CadeauxPage() {
                 </h3>
 
                 <p className="mt-4 text-sm leading-6 text-[#8A6D63]">
-                  Une autre possibilité pratique pour participer
-                  directement depuis le Cameroun.
+                  Une autre possibilité, pour celles et ceux qui souhaitent
+                  nous faire une attention depuis le Cameroun.
                 </p>
 
                 <div className="mt-auto pt-6">
@@ -439,19 +437,17 @@ export default function CadeauxPage() {
 
             </div>
 
-
             {/* PETITE EXPLICATION */}
             <div className="mx-auto mt-10 max-w-3xl rounded-[26px] border border-[#E7D5CA] bg-white/70 px-7 py-6 text-center">
 
               <p className="font-serif text-lg italic text-[#6D071A]">
-                Que vous choisissiez un cadeau ou une participation libre,
-                chaque attention sera reçue avec beaucoup de gratitude.
+                Votre présence est ce qui compte le plus pour nous.
+                Chaque attention supplémentaire sera reçue avec beaucoup de gratitude.
               </p>
 
             </div>
 
           </div>
-
 
           {/* =====================================================
               FIN
@@ -477,6 +473,7 @@ export default function CadeauxPage() {
           </div>
 
         </div>
+
       </section>
 
       <Footer />
